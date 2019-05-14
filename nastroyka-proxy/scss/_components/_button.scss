@@ -1,0 +1,21 @@
+.btn {
+	display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+	background-image: linear-gradient(279deg, #d7a63d, #b5b92e);
+	border-radius: 6px;
+	border: 0;
+	outline: 0;
+	font-size: 24px;
+  font-weight: bold;
+  line-height: 1.17;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.93);
+  padding: 8px 10px 12px 10px;
+  width: 100%;
+  max-width: 200px;
+  &:active {
+  	color: rgba(0, 0, 0, 0.93);
+  	transform: scale(1.02);
+  }
+}

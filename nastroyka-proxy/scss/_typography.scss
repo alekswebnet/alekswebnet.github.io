@@ -1,0 +1,51 @@
+.h-1st-level{
+	font-family: $header-font;
+	font-size: rem(88px);
+	line-height: 1.175;
+	text-align: center;
+	color: $white;
+	@media (max-width: grid-width(lg)-1) {
+		font-size: 40px;
+	}
+	@media (max-width: grid-width(smd)-1) {
+		font-size: 24px;
+	}
+}
+.h-2nd-level{
+	font-family: $default-font;
+	font-size: rem(40px);
+	line-height: 1.5;
+	text-align: center;
+	color: $white;
+	@media (max-width: grid-width(lg)-1) {
+		font-size: 24px;
+	}
+}
+.h-3rd-level{
+	font-family: $default-font;
+	font-size: rem(32px);
+	font-weight: bold;
+	line-height: 1.15625;
+}
+.h-4th-level{
+	font-family: $default-font;
+	font-size: rem(24px);
+	font-weight: bold;
+	line-height: 1.1666;
+}
+.h-5th-level{
+	font-family: $default-font;
+	font-size: rem(16px);
+	font-weight: bold;
+	line-height: 1.875;
+}
+.h-6th-level{
+	font-family: $default-font;
+	font-size: rem(14px);
+	font-weight: bold;
+	line-height: 1.14285;
+}
+.italic-p {
+	font-family: $italic-font;
+	font-size: rem(24px);
+}

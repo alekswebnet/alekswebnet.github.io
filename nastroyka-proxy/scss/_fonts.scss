@@ -1,0 +1,5 @@
+@import "_mixins/font-face";
+// Included fonts
+@include font-face("Playfair Display", "../fonts/PlayfairDisplayBold/playfairdisplay-bold-webfont");
+@include font-face("PT Serif Italic", "../fonts/PTSerifItalic/PT-Serif-Italic-webfont");
+

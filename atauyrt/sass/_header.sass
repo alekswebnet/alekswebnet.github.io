@@ -1,0 +1,267 @@
+// Header
+
+.top-info
+	padding: 8px
+	background-color: $primary
+	border-bottom: 1.5px solid #e2e2e2
+	color: $white
+	.top-info-wrap
+		display: flex
+		align-items: center
+		@media (max-width: 992px)
+			flex-direction: column
+	.top-socials
+		@media (max-width: 992px)
+			text-align: center
+			padding: 15px
+			font-size: 28px
+		a
+			margin-right: 10px
+	.top-contacts
+		text-align: right
+		margin-left: auto
+		line-height: 1
+		@media (max-width: 992px)
+			display: flex
+			flex-direction: column
+			text-align: center
+			margin-left: 0
+			margin-bottom: 20px
+		span
+			display: inline-block
+			white-space: no-wrap
+			padding: 0 9px
+			border-right: 1px solid $white
+			&:last-of-type
+				border-right-color: transparent
+			@media (max-width: 992px)
+				border: none
+			i 
+				margin-right: 5px
+.top-bar
+	display: flex
+	wlex-wrap: wrap
+	justify-content: space-between
+	align-items: center
+	padding-top: 10px
+	padding-bottom: 10px
+	@media (max-width: 992px)
+		flex-direction: column
+	.tophead-info
+		display: flex
+		margin-right: 120px
+		@media (max-width: 992px)
+			margin-right: 0
+			padding: 20px 0
+		@media (max-width: 500px)
+			flex-direction: column
+			align-items: flex-start
+	.main-info>a
+			width: 50px
+			height: 50px
+			padding: 10px
+			display: flex
+			justify-content: center
+			align-items: center
+			border-radius: 100%
+			border: 1px solid $primary
+	.main-adress
+		margin-left: 50px
+		@media (max-width: 500px)
+			margin-left: 0
+		a
+			padding: 10px
+			display: flex
+			justify-content: center
+			align-items: center
+			border-radius: 100%
+			border: 1px solid $primary
+	.main-info,.main-adress
+		display: flex
+		justify-content: center
+		align-items: center
+		font-size: 14px
+		line-height: 21px
+		i
+			color: $primary	
+		.main-tel, .adress-info
+			margin-left: 23px
+			display: flex
+			flex-direction: column
+			font-weight: bold
+			a
+				color: $black
+				font-weight: 700
+.top-nav
+	border: 1.5px solid #e2e2e2
+
+.navbar-default
+	margin-bottom: 0
+
+#main-menu>li
+		position: relative
+		color: $black
+		font-weight: 700
+		font-size: 14px
+		line-height: 24px
+		border-left: 1.5px solid #e2e2e2
+		&:last-of-type
+			border-right: 1.5px solid #e2e2e2
+		a
+			text-align: center
+			padding: 10px 20px
+			color: $black
+
+
+.navbar
+	min-height: 30px
+.navbar-default
+	background-color: #fff
+.navbar-collapse
+	padding-left: 0
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover
+	background-color: #fff
+	&:after
+		content: ''
+		position: absolute
+		display: block
+		height: 2px
+		width: 100%
+		top: 39px
+		left: 0
+		z-index: 2
+		background-color: #fff200
+.navbar-nav>li>
+	.dropdown-menu
+		border-radius: 5px
+.dropdown-menu>li>a
+	border-bottom: 1px solid #e2e2e2 
+.search-form
+	display: inline-block
+	margin-top: 11px
+	margin-left: auto
+	align-items: center
+	@media (max-width: 992px)
+		margin-left: 180px
+	a
+		@media (max-width: 992px)
+			display: inline-block
+	i
+		color: $primary
+		font-size: 16px
+
+
+// Slider
+
+.header-slider
+	position: relative
+.header-slider-item
+	display: block
+	text-align: right
+	background-image: url(../img/slider-photo1.jpg)
+	background-size: cover
+	min-height: 550px
+	@media (max-width: 992px)
+		min-height: 450px
+	@media (max-width: 768px)
+		min-height: 400px
+.slider-text
+	padding: 15px 0 15px 15px
+	display: inline-block
+	vertical-align: middle
+	margin-top: 10%
+	text-align: left
+	h2
+		font-weight: bold
+		font-size: 28px
+		padding: 15px
+		color: $white
+		max-width: 394px
+		background-color: rgba(0,0,0, .7)
+		margin-bottom: 0
+		@media (max-width: 768px)
+			font-size: 20px
+	p
+		padding: 15px
+		color: $white
+		background-color: rgba(0,0,0, .7)
+		max-width: 420px
+		margin-top: 1.5px
+		margin-bottom: 1.5px
+.slick-arrow
+	cursor: pointer
+	color: #fff
+	font-size: 25px
+	padding: 40px 10px
+	background-color: rgba(0,0,0, .7)
+	z-index: 10000
+	@media (max-width: 768px)
+		display: none !important
+	&:hover
+		background-color: rgba(0,0,0, .8)
+.slick-arrow.fa-chevron-left
+	position: absolute
+	left: 0
+	top: 50%
+	transform: translateY(-50%)
+.slick-arrow.fa-chevron-right
+	position: absolute
+	right: 0
+	top: 50%
+	transform: translateY(-50%)
+.slick-dots
+	bottom: 15px
+.slick-dots li
+	font-size: 20px
+	width: 24px
+	margin: 0 2px
+	color: #979e48
+.slick-dots li button:before
+	font-size: 20px
+	width: 24px
+	padding: 0
+.slick-dots li.slick-active button:before
+	font-size: 20px
+	width: 24px
+.slick-dots li button:before
+	color: #fff200
+	opacity: .5
+.slick-dots li.slick-active button:before
+	opacity: 1
+	color: #fff200
+
+// Modal
+
+#form-modal.modal
+	.modal-dialog
+		padding: 15px
+		top: 50%
+		transform: translateY(-50%)
+	.modal-body
+		height: 470px
+	.modal-header
+		border: 0
+	button.close
+	    width: 38px
+	    height: 38px
+	    line-height: 1;
+	    color: #fff;
+	    position: absolute
+	    right: -24px
+	    top: -24px
+	.modal-header .close
+		opacity: 1
+		text-align: center
+		margin-top: 0
+		background-color: #f0541b
+		i
+			vertical-align: middle
+			margin-top: -8px
+	.close
+		float: none
+	    font-size: 40px;
+	    font-weight: 700;
+	    line-height: 1;
+	    color: rgb(0, 0, 0);
+	    text-shadow: rgb(255, 255, 255) 0px 1px 0px;
+	    opacity: 0.2;

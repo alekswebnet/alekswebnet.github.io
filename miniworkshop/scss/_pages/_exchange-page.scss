@@ -1,0 +1,124 @@
+// Exchange page
+
+.exchange-about{
+	&__block{
+		@include grid-row();
+		@media (max-width: grid-width(lg)){
+			margin-top: 40px;
+		}
+	}
+	&__col-left{
+		@include grid-col(12 6 8);
+	}
+	&__col-right{
+		@include grid-col(12 6 4);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@media (max-width: grid-width(lg)){
+			margin-top: 40px;
+			margin-bottom: 20px;
+		}
+	}
+}
+.exchange-work{
+	&__block{
+		@include grid-row();
+		justify-content: center;
+	}
+	&__item{
+		@include grid-col(12 (1 of 4) (1 of 5));
+		@media (max-width: grid-width(md)){
+			margin-bottom: rem(5px);
+		}
+		@media (max-width: grid-width(sm)){
+			display: flex;
+			align-items: center;
+		}
+		span{
+			display: block;
+			margin-top: 30px;
+			text-align: center;
+			font-size: rem(87px);
+			display: block;
+			line-height: 1;
+			position: relative;
+			color: #fff;
+			margin-bottom: 50px;
+			font-weight: 700;
+			padding: 15px;
+			@media (max-width: grid-width(sm)){
+				display: block;
+				margin-left: 0;
+				margin-right: 20px;
+				font-size: rem(30px);
+				margin-top: 0;
+				margin-bottom: 5px;
+			}
+			&:before{
+				content: '';
+				position: absolute;
+				z-index: -1;
+				display: block;
+				width: 120px;
+				height: 120px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				background-color: $base-light;
+				border-radius: 50%;
+				@media (max-width: grid-width(sm)){
+					width: 50px;
+					height: 50px;
+				}
+			}
+			&:after{
+				content: '';
+				display: block;
+				position: absolute;
+				z-index: -1;
+				width: 48%;
+				height: 45px;
+				top: 12%;
+				left: 85%;
+				background-image: url(../img/Forma1.png);
+				background-size: cover;
+				background-position: right 100%;
+				@media (max-width: grid-width(sm)){
+					display: none;
+				}
+			}
+
+		}
+		&:last-of-type{
+			span{
+				&:after{
+					content: none;
+				}
+			}
+		}
+		p{
+			font-size: 1rem;
+			text-align: center;
+			font-weight: 600;
+			color: $dark;
+			margin-bottom: 15px;
+			strong{
+				color: $accent;
+			}
+			@media (max-width: grid-width(sm)){
+				margin-right: auto;
+				text-align: left;
+			}
+		}
+	}
+}
+.exchange-popularity{
+	&__block{
+		@include grid-row();
+		justify-content: center;
+	}
+	&__desc{
+		@include grid-col(12 10 9);
+	}
+}

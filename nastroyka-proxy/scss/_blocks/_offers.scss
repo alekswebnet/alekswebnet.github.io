@@ -1,0 +1,153 @@
+.offers {
+	position: relative;
+	padding-top: rem(37px);
+	justify-content: center;
+	@include grid-row();
+	&-wrap {
+		background-color: #2A251E;
+		background-image: url('../img/corner-top-left.svg'), url('../img/corner-top-right.svg'), url('../img/corner-bottom-right.svg'), url('../img/corner-bottom-left.svg'),;
+		background-repeat: no-repeat;
+		background-position: left top, right top, right bottom, left bottom;
+		border: 0;
+		padding-top: rem(40px);
+		padding-left: 17.62%;
+		padding-right: 17.62%;
+		padding-bottom: rem(49px);
+	}
+	&-item {
+		text-align: center;
+		@include grid-col(12 12 6 6 6 5);
+		margin-bottom: 15px;
+		&__header {
+			font-size: rem(20px);
+		  font-weight: bold;
+		  line-height: 1.15;
+		  color: $white;
+		  margin-bottom: rem(12px);
+		}
+		&__val {
+			display: block;
+			font-size: rem(12px);
+		  font-weight: bold;
+		  line-height: 1.17;
+		  color: #c0c0c0;
+			
+		}
+		&__price {
+			display: block;
+			font-family: $header-font;
+			font-size: rem(73px);
+			font-weight: bold;
+			line-height: 1;
+			color: $white;
+			margin-bottom: rem(15px);
+			b{
+				font-family: $default-font;
+				font-size: rem(13px);
+			  font-weight: bold;
+			  font-style: normal;
+			  font-stretch: normal;
+			  line-height: 1.15;
+			}
+		}
+		&__dur {
+			display: block;
+			font-size: rem(13px);
+		  font-weight: bold;
+		  line-height: 1.15;
+		  letter-spacing: normal;
+		  color: $accent;
+		  margin-bottom: rem(19px);
+		  @media (max-width: grid-width(lg)-1) {
+		  	min-height: 30px;
+		  }
+		}
+		&__country {
+			display: block;
+			font-size: rem(13px);
+		  font-weight: bold;
+		  line-height: 1.15;
+		  color: #c0c0c0;
+		  margin-bottom: rem(19px);
+		}
+		&__tech {
+			display: block;
+			font-size: rem(13px);
+		  font-weight: bold;
+		  line-height: 1.15;
+		  color: #c0c0c0;
+		  margin-bottom: rem(17px);
+		}
+	}
+}
+.buy-proxy__price {
+	margin-top: rem(12px);
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	span:first-of-type {
+		font-size: rem(12px);
+	  font-weight: bold;
+	  line-height: 1.17;
+	  color: $accent;
+	  margin-bottom: 8px;
+	}
+	span:last-of-type {
+		font-size: rem(35px);
+	  font-weight: bold;
+	  font-style: normal;
+	  font-stretch: normal;
+	  line-height: 1.29;
+	  letter-spacing: normal;
+	  text-align: left;
+	  color: #ffffff;
+	  >span {
+	  	font-size: rem(7px);
+	  	font-weight: bold;
+	  }
+	}
+}
+.buy-proxy__btn {
+	margin-top: rem(12px);
+}
+.socials-bar {
+	position: absolute;
+	right: 15px;
+	margin-left: auto;
+	top: rem(60px);
+	@media (max-width: 1199px) {
+		display: none;
+	}
+	.soc-link {
+		margin-top: 38px;
+	}
+}
+.next-screen {
+	top: 100px;
+	position: absolute;
+	left: 15px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	@media (max-width: 1199px) {
+		display: none;
+	}
+	&__line {
+		width: 1px;
+		margin-left: 8px;
+		height: 265px;
+		background-color: $accent-light;
+	}
+	&__text {
+		color: $accent-light;
+		transform: translate(-39px,58px) rotate(270deg);
+	}
+	&__icon {
+		margin-top: 115px;
+		width: 16px;
+		height: 24px;
+		background-image: url('../img/Symbol-mouse.svg');
+		background-size: cover;
+		font-size: 14px;
+	}
+}

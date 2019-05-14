@@ -1,0 +1,152 @@
+// Accordion
+
+ .accordion {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    font-size: rem(15px);
+    border: 0;
+    border-bottom: 1px solid $gray;
+    outline: 0;
+    cursor: pointer;
+    transition: 0.4s;
+    color: #C0C0C0;
+    padding: 16px 0;
+    position: relative;
+    padding-left: rem(32px);
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 16px;
+      height: 16px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background-image: url('../img/question-icon.svg');
+      background-size: cover;
+      background-position: center center;
+    }
+    span{
+        display: inline-block;
+        &:first-of-type{
+            text-align: left;
+        }
+        &:last-of-type{
+            width: 10px;
+            height: 10px;
+            background-color: transparent;
+            position: absolute;
+            right: 0;
+            &:before{
+                content: '';
+                position: absolute;
+                width: 10px;
+                height: 2px;
+                background-color: $white;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            &:after{
+                content: '';
+                position: absolute;
+                width: 2px;
+                height: 10px;
+                background-color: $white;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
+.accordion-panel {
+  font-family: $italic-font;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: italic;
+  line-height: 1.75;
+  text-align: left;
+  color: $white;
+  padding-left: 0;
+  padding-right: 0;
+  max-height: 0;
+  display: block;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  p {
+    display: block;
+    position: relative;
+    margin-top: rem(32px);
+    margin-bottom: 30px;
+    padding-top: 10px;
+    padding-left: 46px;
+    padding-right: 70px;
+    max-width: 890px;
+    height: 100%;
+    @media (max-width: grid-width(lg)-1) {
+      margin-top: rem(10px);
+      max-width: 100%;
+      font-size: 14px;
+      padding-left: 28px;
+      padding-top: 0;
+      padding-right: 28px;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 36px;
+      height: 48px;
+      top: 0;
+      left: 0;
+      background-image: url('../img/q-icon.svg');
+      background-size: cover;
+      @media (max-width: grid-width(lg)-1) {
+        width: 20px;
+        height: 28px;
+        background-image: url('../img/q-icon-m.svg');
+      }
+    }
+  }
+}
+.active, .accordion:hover {
+  color: $accent-light;
+}
+.accordion:hover span:last-of-type:before{
+  background-color: #fff;
+}
+.accordion:hover span:last-of-type:after{
+  background-color: #fff;
+}
+.accordion.active span:last-of-type:before{
+  background-color: #fff;
+}
+.accordion.active span:last-of-type:after{
+  content: none;
+  background-color: #fff;
+}
+.accordion-close {
+  position: absolute;
+  display: block;
+  width: 36px;
+  height: 36px;
+  margin-top: rem(32px);
+  right: 0;
+  background-image: url('../img/close-icon.svg');
+  background-size: cover;
+  cursor: pointer;
+  @media (max-width: grid-width(lg)-1) {
+    width: 20px;
+    height: 20px;
+    background-image: url('../img/close-icon-m.svg');
+    margin-top: rem(10px);
+  }
+}

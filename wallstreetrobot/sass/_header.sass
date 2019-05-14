@@ -1,0 +1,259 @@
+// Header
+
+.main-header
+	position: absolute
+	left: 0
+	top: 0
+	width: 100%
+	background-image: url(../img/Bg.png)
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center top
+	padding-bottom: 100px
+	@media (max-width: 992px)
+		padding-bottom: 100px
+		background: #fcfcfc
+	@media (max-width: 768px)
+		padding-bottom: 80px
+.logo
+	display: block
+	margin-bottom: 81px
+	@media (max-width: 992px)
+		text-align: center
+		margin-bottom: 7%
+	h1
+		display: block
+		color: #2c2c2c
+		font-size: 30px
+		font-weight: 700
+		line-height: 1
+		strong
+			color: #009ce7
+.main-navbar
+	position: absolute
+	width: 100%
+	left: 0
+	padding-top: 56px
+	z-index: 100
+	&-wrap
+		position: relative
+.main-menu
+	padding-left: 50px
+	display: flex
+	justify-content: space-between
+	@media (max-width: 992px)
+		padding-left: 0
+	&-link
+		color: #2c2c2c
+		padding: 13px 22px
+		font-size: 14px;
+		font-weight: 500
+		line-height: 1
+		&:hover 
+			color: #f4f4f4
+			border-radius: 18px
+			background-image: linear-gradient(to top, #009ce7, #29a9e7)
+			box-shadow: 0 0 30.7px 1.3px rgba(20, 163, 231, 0.15)
+		&.active
+			color: #f4f4f4
+			border-radius: 18px
+			background-image: linear-gradient(to top, #009ce7, #29a9e7)
+			box-shadow: 0 0 30.7px 1.3px rgba(20, 163, 231, 0.15)
+.start-free
+.start-free-left
+	padding-top: 4.9%
+	@media (max-width: 992px)
+		padding-top: 150px
+	@media (max-width: 992px)
+		padding-left: 15px
+		padding-right: 15px
+	p
+		margin-top: 111px
+		position: relative
+		z-index: 1
+		font-size: 18px
+		font-weight: 500
+		letter-spacing: 0.2px
+		color: #2c2c2c
+		@media (max-width: 992px)
+			margin-top: 50px
+		&:nth-of-type(2)
+			font-size: 14px
+			font-weight: bold
+			line-height: 1.71
+			letter-spacing: .1px
+			color: $primary
+		strong
+			font-weight: bold
+			color: #009ce7
+.product-image
+	position: relative
+	width: 100%
+	height: 570px
+	@media (max-width: 992px)
+		width: 80%
+	@media (max-width: 768px)
+		max-width: 70%
+		height: 250px
+	img
+		position: absolute
+		display: block
+		width: 640px
+		left: -29%
+		top: -29%
+		@media (max-width: 768px)
+			width: 120%
+			top: 0
+			left: 50%
+			transform: translateX(-50%)
+
+.licenses-counter-box
+	width: 220px
+	height: 214px
+	position: relative
+	top: 2%
+	left: 51%
+	@media (max-width: 768px)
+		left: 50%
+		transform: translateX(-50%)
+		top: 0%
+	@media (max-width: 768px)
+		width: 110px
+		height: 107px
+		top: 40%
+		left: 95%
+
+.licenses-counter-bg
+	background-color: $primary
+	width: 220px
+	height: 214px
+	border-radius: 50%
+	position: absolute
+	@media (max-width: 768px)
+		width: 110px
+		height: 107px
+.licenses-counter-inner
+	position: absolute
+	display: flex
+	flex-direction: column
+	align-items: center
+	justify-content: space-between
+	width: 212px
+	z-index: 10
+	right: 0
+	height: 214px
+	border-radius: 50%
+	background-color: #fdfdfd
+	box-shadow: 0 0 8.6px 0.4px #e5e5e5
+	@media (max-width: 768px)
+		width: 106px
+		height: 107px
+	span
+		&:nth-of-type(1)
+			padding-top: 28px
+			font-size: 17.2px
+			font-weight: bold
+			line-height: 1.33
+			letter-spacing: 0.2px
+			color: #009ce7
+			@media (max-width: 768px)
+				font-size: 10px
+				padding-top: 14px
+		&:nth-of-type(2)
+			font-size: 86.7px
+			font-weight: bold
+			line-height: 1.33
+			letter-spacing: 0.9px
+			color: #009ce7
+			@media (max-width: 768px)
+				font-size: 43px
+		&:nth-of-type(3)
+			font-size: 17.2px
+			font-weight: bold
+			line-height: 1.33
+			letter-spacing: 0.2px
+			color: #009ce7
+			padding-bottom: 32px
+			@media (max-width: 768px)
+				font-size: 10px
+				padding-bottom: 16px
+.start-free-right
+	padding-top: 4.9%
+	border-top-left-radius: 30px
+	padding-left: 56px
+	box-shadow: -40px 0 100px 1.1px rgba(0, 0, 0, 0.07)
+	@media (max-width: 992px)
+		box-shadow: 0 0 55.9px 1.1px rgba(0, 0, 0, 0.07)
+		padding-right: 56px
+		padding-top: 2%
+	@media (max-width: 768px)
+		margin-top: 20%
+		padding-left: 15px
+	@media (max-width: 768px)
+		margin-top: 30%
+	h2
+		font-size: 30px
+		font-weight: bold
+		line-height: normal
+		letter-spacing: 0.3px
+		color: #009ce7
+		margin-top: 100px
+		@media (max-width: 768px)
+			margin-top: 50px
+			font-size: 26px
+		strong
+			color: #2c2c2c
+.start-form
+	margin-top: 77px
+	label
+		display: block
+		font-size: 14px
+		font-weight: 300
+		line-height: 1
+		letter-spacing: 0.1px
+		color: #7a7a7a
+		margin-bottom: 21px
+		background-color: transparent
+	@media (max-width: 992px)
+		margin-bottom: 50px
+	input
+		display: block
+		width: 100%
+		margin-bottom: 50px
+		border: 0
+		padding-bottom: 15px
+		border-bottom: 1px solid #d3d3d3
+		font-size: 16px
+		font-weight: 500
+		line-height: 1
+		letter-spacing: 0.2px
+		color: #2c2c2c
+		background-color: transparent
+	button
+		position: relative
+		margin-top: 150px
+#phone-dropdown
+	display: block
+	position: relative
+	outline: none
+	border: none
+	height: 25px
+.iti-flag
+	background-image: url("../libs/intl-tel-input-12.2.0/build/img/flags.png")
+	@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)
+		background-image: url("../libs/intl-tel-input-12.2.0/build/img/flags@2x.png")
+.intl-tel-input.allow-dropdown
+	position: absolute
+	width: 100%
+	height: 100%
+#field-phone
+	display: block
+	width: 100%
+	position: absolute
+	top: 20px
+	left: 0
+	padding-left: 0
+.selected-flag
+	position: absolute
+	top: -41px
+	left: 47px

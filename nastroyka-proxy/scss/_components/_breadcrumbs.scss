@@ -1,0 +1,13 @@
+.breadcrumbs {
+	color: #8e8e8e;
+	a {
+		font-size: 14px;
+	  font-weight: normal;
+	  line-height: 1.29;
+	  color: #8e8e8e;
+	  text-decoration: none;
+	  &.active {
+	  	color: $accent-light;
+	  }
+	}
+}

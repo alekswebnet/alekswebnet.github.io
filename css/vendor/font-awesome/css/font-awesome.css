@@ -1,0 +1,159 @@
+/*!
+ *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+ */
+/* FONT PATH
+ * -------------------------- */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* makes the font 33% larger relative to the icon container */
+.fa-lg {
+  font-size: 1.33333333em;
+  line-height: 0.75em;
+  vertical-align: -15%;
+}
+.fa-2x {
+  font-size: 2em;
+}
+.fa-3x {
+  font-size: 3em;
+}
+/* Deprecated as of 4.4.0 */
+@-webkit-keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes fa-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+.fa-search:before {
+  content: "\f002";
+}
+.fa-envelope-o:before {
+  content: "\f003";
+}
+
+.fa-times:before {
+  content: "\f00d";
+}
+.fa-ban:before {
+  content: "\f05e";
+}
+.fa-expand:before {
+  content: "\f065";
+}
+.fa-key:before {
+  content: "\f084";
+}
+.fa-sign-in:before {
+  content: "\f090";
+}
+.fa-phone:before {
+  content: "\f095";
+}
+.fa-twitter:before {
+  content: "\f099";
+}
+
+.fa-facebook:before {
+  content: "\f09a";
+}
+.fa-github:before {
+  content: "\f09b";
+}
+.fa-google-plus:before {
+  content: "\f0d5";
+}
+.fa-envelope:before {
+  content: "\f0e0";
+}
+.fa-angle-left:before {
+  content: "\f104";
+}
+.fa-angle-right:before {
+  content: "\f105";
+}
+.fa-angle-down:before {
+  content: "\f107";
+}
+.fa-info:before {
+  content: "\f129";
+}
+.fa-html5:before {
+  content: "\f13b";
+}
+.fa-bullseye:before {
+  content: "\f140";
+}
+.fa-youtube-square:before {
+  content: "\f166";
+}
+.fa-youtube:before {
+  content: "\f167";
+}
+.fa-instagram:before {
+  content: "\f16d";
+}
+.fa-vk:before {
+  content: "\f189";
+}
+.fa-wordpress:before {
+  content: "\f19a";
+}
+
+.fa-graduation-cap:before {
+  content: "\f19d";
+}
+.fa-user-secret:before {
+  content: "\f21b";
+}
+.fa-facebook-official:before {
+  content: "\f230";
+}
+.fa-map:before {
+  content: "\f279";
+}
+.fa-handshake-o:before {
+  content: "\f2b5";
+}
+.fa-id-badge:before {
+  content: "\f2c1";
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

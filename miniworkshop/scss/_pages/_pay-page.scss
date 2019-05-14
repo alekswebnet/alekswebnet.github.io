@@ -1,0 +1,49 @@
+// Pay and delivery page
+
+.pay-questions{
+	margin-bottom: 120px;
+	margin-top: 70px;
+	@media (max-width: grid-width(lg)){
+		margin-bottom: 0;
+	}
+	@media (max-width: grid-width(lg)){
+		margin-top: 30px;;
+	}
+}
+.pay-question{
+	@include grid-row();
+	margin-bottom: 50px;
+	@media (max-width: grid-width(md)){
+		margin-bottom: 30px;
+	}
+	&__icon{
+		@include grid-col(12 2 2);
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		img{
+			height: rem(70px);
+			@media (max-width: grid-width(md)){
+				height: rem(50px);
+			}
+		}
+	}
+	&__content{
+		@include grid-col(12 10 10);
+		h2{
+			font-family: $header-font;
+			font-size: rem(18px);
+			font-weight: 600;
+			line-height: 1.2;
+			color: $base-dark;
+			margin-bottom: 20px;
+			@media (max-width: grid-width(sm)){
+				text-align: center;
+				margin-top: 20px;
+			}
+		}
+		ul{
+			margin-top: 15px;
+		}
+	}
+}

@@ -1,0 +1,139 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+html
+	box-sizing: border-box
+*, *::before, *::after
+	box-sizing: inherit
+	margin: 0
+	padding: 0
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $primary
+	color: #fff
+
+html, body
+	height: 100%
+
+body
+	position: relative
+	min-width: 320px
+	font-family: $default-font
+	font-size: 16px
+	line-height: 1.52
+	font-weight: 400
+	overflow-x: hidden
+	background-color: #f4f4f4
+	color: #323232
+	-webkit-font-smoothing: antialiased;
+
+input, textarea
+	border-radius: 5px
+	background-color: #ffffff
+	border: solid 1px rgba(53, 53, 53, 0.77)
+	outline: 0
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+a
+	color: inherit
+	text-decoration: none
+	&:hover
+		color: inherit
+		text-decoration: none
+	&:focus
+		color: inherit
+		text-decoration: none
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+.no-gutter
+	padding-left: 0
+	padding-right: 0
+.hr-header-dark
+	text-align: center
+	font-size: 30px
+	font-weight: normal
+	padding-top: 30px
+	padding-bottom: 20px
+	margin-bottom: 20px
+	text-transform: uppercase
+	position: relative
+	&:after
+		content: ''
+		display: block
+		width: 100%
+		position: absolute
+		left: 0
+		top: 100%
+		height: 2px
+		background-image: url(../img/Rectangle-2-1.svg)
+		background-position: center center
+		background-repeat: no-repeat
+.hr-header-light
+	text-align: center
+	font-size: 30px
+	font-weight: normal
+	padding-top: 30px
+	padding-bottom: 20px
+	margin-bottom: 20px
+	text-transform: uppercase
+	position: relative
+	color: $white
+	&:after
+		content: ''
+		display: block
+		width: 100%
+		position: absolute
+		left: 0
+		top: 100%
+		height: 2px
+		background-image: url(../img/Rectangle-2-2.svg)
+		background-size: cover
+		background-position: center center
+		background-repeat: no-repeat
+.hr-2-header
+	text-align: right
+	font-size: 30px
+	color: $white
+	z-index: 20
+	position: relative
+	&:after
+		content: ''
+		display: block
+		width: 304px
+		height: 2px
+		position: absolute
+		left: 0
+		top: 0
+		background-image: url(../img/Rectangle-2-5.svg)
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: 100% 50%
+	&:before
+		content: ''
+		display: block
+		width: 304px
+		height: 2px
+		position: absolute
+		bottom: 0
+		left: 0
+		background-image: url(../img/Rectangle-2-5.svg)
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: 100% 50%
+
+@import "header"
+@import "button"
+@import "content"
+@import "footer"
+
+// @import "media" // Always at the end

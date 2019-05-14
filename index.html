@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#111111">
+    <meta name="msapplication-TileColor" content="#fafafa">
+    <meta name="thspe-color" content="#fafafa">
+
+    <title>Сайт web-разработчика redrobot</title>
+
+    <style>
+      :root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}*,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar}@-ms-viewport{width:device-width}header,nav{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}h1{margin-top:0;margin-bottom:.5rem}ul{margin-top:0;margin-bottom:1rem}strong{font-weight:bolder}a{color:#007bff;text-decoration:none;background-color:transparent;-webkit-text-decoration-skip:objects}img{vertical-align:middle;border-style:none}button{border-radius:0}button{margin:0;font-family:inherit;font-size:inherit;line-height:inherit}button{overflow:visible}button{text-transform:none}button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,button::-moz-focus-inner{padding:0;border-style:none}::-webkit-file-upload-button{font:inherit;-webkit-appearance:button}h1{margin-bottom:.5rem;font-family:inherit;font-weight:500;line-height:1.2;color:inherit}h1{font-size:2.5rem}.list-inline-item{display:inline-block}.list-inline-item:not(:last-child){margin-right:.5rem}.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}@media (min-width:576px){.container{max-width:540px}}@media (min-width:768px){.container{max-width:720px}}@media (min-width:992px){.container{max-width:960px}}@media (min-width:1200px){.container{max-width:1140px}}.row{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}.col-lg-12,.col-lg-6{position:relative;width:100%;min-height:1px;padding-right:15px;padding-left:15px}@media (min-width:992px){.col-lg-6{-webkit-box-flex:0;-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}.col-lg-12{-webkit-box-flex:0;-ms-flex:0 0 100%;flex:0 0 100%;max-width:100%}.offset-lg-6{margin-left:50%}}.btn{display:inline-block;font-weight:400;text-align:center;white-space:nowrap;vertical-align:middle;border:1px solid transparent;padding:.375rem .75rem;font-size:1rem;line-height:1.5;border-radius:.25rem}.btn-primary{color:#fff;background-color:#007bff;border-color:#007bff}.collapse{display:none}.nav-link{display:block;padding:.5rem 1rem}.navbar{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;padding:.5rem 1rem}.navbar>.container{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.navbar-brand{display:inline-block;padding-top:.3125rem;padding-bottom:.3125rem;margin-right:1rem;font-size:1.25rem;line-height:inherit;white-space:nowrap}.navbar-nav{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;padding-left:0;margin-bottom:0;list-style:none}.navbar-nav .nav-link{padding-right:0;padding-left:0}.navbar-collapse{-ms-flex-preferred-size:100%;flex-basis:100%;-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.navbar-toggler{padding:.25rem .75rem;font-size:1.25rem;line-height:1;background-color:transparent;border:1px solid transparent;border-radius:.25rem}.navbar-toggler-icon{display:inline-block;width:1.5em;height:1.5em;vertical-align:middle;content:"";background:no-repeat center center;background-size:100% 100%}@media (max-width:991.98px){.navbar-expand-lg>.container{padding-right:0;padding-left:0}}@media (min-width:992px){.navbar-expand-lg{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-flow:row nowrap;flex-flow:row nowrap;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start}.navbar-expand-lg .navbar-nav{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}.navbar-expand-lg .navbar-nav .nav-link{padding-right:.5rem;padding-left:.5rem}.navbar-expand-lg>.container{-ms-flex-wrap:nowrap;flex-wrap:nowrap}.navbar-expand-lg .navbar-collapse{display:-webkit-box!important;display:-ms-flexbox!important;display:flex!important;-ms-flex-preferred-size:auto;flex-basis:auto}.navbar-expand-lg .navbar-toggler{display:none}}.navbar-light .navbar-brand{color:rgba(0,0,0,.9)}.navbar-light .navbar-nav .nav-link{color:rgba(0,0,0,.5)}.navbar-light .navbar-toggler{color:rgba(0,0,0,.5);border-color:rgba(0,0,0,.1)}.navbar-light .navbar-toggler-icon{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")}.list-group{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;padding-left:0;margin-bottom:0}.d-flex{display:-webkit-box!important;display:-ms-flexbox!important;display:flex!important}.align-items-end{-webkit-box-align:end!important;-ms-flex-align:end!important;align-items:flex-end!important}@media (min-width:768px){.justify-content-md-end{-webkit-box-pack:end!important;-ms-flex-pack:end!important;justify-content:flex-end!important}}.fixed-top{position:fixed;top:0;right:0;left:0;z-index:1030}.mb-4{margin-bottom:1.5rem!important}.mt-5{margin-top:3rem!important}.my-auto{margin-top:auto!important}.my-auto{margin-bottom:auto!important}.ml-auto{margin-left:auto!important}.text-white{color:#fff!important}@font-face{font-family:'Open Sans';font-style:italic;font-weight:300;src:local('Open Sans Light Italic'),local('OpenSans-LightItalic'),url(https://fonts.gstatic.com/s/opensans/v15/memnYaGs126MiZpBA-UFUKWyV9hrIqY.ttf) format('truetype')}@font-face{font-family:'Open Sans';font-style:italic;font-weight:400;src:local('Open Sans Italic'),local('OpenSans-Italic'),url(https://fonts.gstatic.com/s/opensans/v15/mem6YaGs126MiZpBA-UFUK0Zdcg.ttf) format('truetype')}@font-face{font-family:'Open Sans';font-style:italic;font-weight:600;src:local('Open Sans SemiBold Italic'),local('OpenSans-SemiBoldItalic'),url(https://fonts.gstatic.com/s/opensans/v15/memnYaGs126MiZpBA-UFUKXGUdhrIqY.ttf) format('truetype')}@font-face{font-family:'Open Sans';font-style:italic;font-weight:700;src:local('Open Sans Bold Italic'),local('OpenSans-BoldItalic'),url(https://fonts.gstatic.com/s/opensans/v15/memnYaGs126MiZpBA-UFUKWiUNhrIqY.ttf) format('truetype')}@font-face{font-family:'Open Sans';font-style:italic;font-weight:800;src:local('Open Sans ExtraBold Italic'),local('OpenSans-ExtraBoldItalic'),url(https://fonts.gstatic.com/s/opensans/v15/memnYaGs126MiZpBA-UFUKW-U9hrIqY.ttf) format('truetype')}@font-face{font-family:'Open Sans';font-style:normal;font-weight:300;src:local('Open Sans Light'),local('OpenSans-Light'),url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OUuhs.ttf) format('truetype')}@font-face{font-family:'Open Sans';font-style:normal;font-weight:400;src:local('Open Sans Regular'),local('OpenSans-Regular'),url(https://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0e.ttf) format('truetype')}@font-face{font-family:'Open Sans';font-style:normal;font-weight:600;src:local('Open Sans SemiBold'),local('OpenSans-SemiBold'),url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UNirkOUuhs.ttf) format('truetype')}@font-face{font-family:'Open Sans';font-style:normal;font-weight:700;src:local('Open Sans Bold'),local('OpenSans-Bold'),url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOUuhs.ttf) format('truetype')}@font-face{font-family:'Open Sans';font-style:normal;font-weight:800;src:local('Open Sans ExtraBold'),local('OpenSans-ExtraBold'),url(https://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN8rsOUuhs.ttf) format('truetype')}@font-face{font-family:Merriweather;font-style:italic;font-weight:300;src:local('Merriweather Light Italic'),local('Merriweather-LightItalic'),url(https://fonts.gstatic.com/s/merriweather/v19/u-4l0qyriQwlOrhSvowK_l5-eR7lXff4jvk.ttf) format('truetype')}@font-face{font-family:Merriweather;font-style:italic;font-weight:400;src:local('Merriweather Italic'),local('Merriweather-Italic'),url(https://fonts.gstatic.com/s/merriweather/v19/u-4m0qyriQwlOrhSvowK_l5-eRZOf-c.ttf) format('truetype')}@font-face{font-family:Merriweather;font-style:italic;font-weight:700;src:local('Merriweather Bold Italic'),local('Merriweather-BoldItalic'),url(https://fonts.gstatic.com/s/merriweather/v19/u-4l0qyriQwlOrhSvowK_l5-eR71Wvf4jvk.ttf) format('truetype')}@font-face{font-family:Merriweather;font-style:italic;font-weight:900;src:local('Merriweather #000 Italic'),local('Merriweather-BlackItalic'),url(https://fonts.gstatic.com/s/merriweather/v19/u-4l0qyriQwlOrhSvowK_l5-eR7NWPf4jvk.ttf) format('truetype')}@font-face{font-family:Merriweather;font-style:normal;font-weight:300;src:local('Merriweather Light'),local('Merriweather-Light'),url(https://fonts.gstatic.com/s/merriweather/v19/u-4n0qyriQwlOrhSvowK_l521wRZWMf_.ttf) format('truetype')}@font-face{font-family:Merriweather;font-style:normal;font-weight:400;src:local('Merriweather Regular'),local('Merriweather-Regular'),url(https://fonts.gstatic.com/s/merriweather/v19/u-440qyriQwlOrhSvowK_l5-fCZJ.ttf) format('truetype')}@font-face{font-family:Merriweather;font-style:normal;font-weight:700;src:local('Merriweather Bold'),local('Merriweather-Bold'),url(https://fonts.gstatic.com/s/merriweather/v19/u-4n0qyriQwlOrhSvowK_l52xwNZWMf_.ttf) format('truetype')}@font-face{font-family:Merriweather;font-style:normal;font-weight:900;src:local('Merriweather Black'),local('Merriweather-Black'),url(https://fonts.gstatic.com/s/merriweather/v19/u-4n0qyriQwlOrhSvowK_l52_wFZWMf_.ttf) format('truetype')}button::-moz-focus-inner{padding:0;border:0}body,html{width:100%;height:100%}body{font-family:Merriweather,'Helvetica Neue',Arial,sans-serif;font-weight:300;font-size:calc(12px + (16 - 12) * ((100vw - 320px)/ (1920 - 320)))}a{color:#f05f44}h1{font-family:'Open Sans','Helvetica Neue',Arial,sans-serif}#mainNav{border-bottom:1px solid rgba(33,37,41,.8);background-color:#fff;padding:.5rem;font-family:'Open Sans','Helvetica Neue',Arial,sans-serif}#mainNav .navbar-brand{font-weight:700;font-size:1.4rem;color:#f05f44;font-family:'Open Sans','Helvetica Neue',Arial,sans-serif}#mainNav .navbar-brand img{width:25px;margin:0 5px;position:relative;top:-4px}#mainNav .navbar-nav>li.nav-item>a.nav-link{font-size:.92rem;font-weight:600;text-align:center;position:relative;text-transform:uppercase;color:#495057}@media (max-width:767px){#mainNav .navbar-nav>li.nav-item>a.nav-link{padding:1.7rem .2rem}}@media (min-width:992px){#mainNav{border-color:transparent;background-color:transparent}#mainNav .navbar-brand{color:rgba(255,255,255,.8)}#mainNav .navbar-nav>li.nav-item>a.nav-link{padding:.5rem 1rem}#mainNav .navbar-nav>li.nav-item>a.nav-link{color:rgba(255,255,255,.7)}}.navbar-light .navbar-toggler{border:2px solid rgba(0,0,0,.5);border-radius:0;padding:.2rem .6rem}header.masthead{position:relative;padding-top:10rem;padding-bottom:calc(10rem - 56px);background-color:#212529;background-image:url(img/hero.jpg);background-position:center 5%;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover}@supports (background-image:-webkit-image-set(url("img/hero.jpg") 1x)){header.masthead{background-image:-webkit-image-set(url("img/hero.webp") 1x)}}@media (max-width:767px){header.masthead{background-position:0 center;background-image:url(img/hero-mob.jpg)}@supports (background-image:-webkit-image-set(url("img/hero-mob.jpg") 1x)){header.masthead{background-image:-webkit-image-set(url("img/hero-mob.webp") 1x)}}}header.masthead h1{font-size:2rem;font-weight:400}@media (min-width:992px){header.masthead{height:100vh;min-height:650px;padding-top:0;padding-bottom:0}header.masthead h1{font-size:4rem}}@media (min-width:1200px){header.masthead h1{font-size:3.5rem}}header.masthead .list-group{padding-top:70px;font-size:1.11em;position:relative;letter-spacing:.5px}@media (max-width:767px){header.masthead .list-group{font-size:1rem;padding-top:30px}}header.masthead .list-group li{padding-left:20px;line-height:1.55;position:relative;margin-right:0;margin-bottom:.2rem}@media (max-width:767px){header.masthead .list-group li{text-align:left;margin-left:0;padding-left:0;margin-right:auto;font-weight:700}}header.masthead .list-group li:before{content:'';position:absolute;left:0;bottom:0;display:block;background-color:#f05f44;width:15px;z-index:1;height:2px}@media (max-width:767px){header.masthead .list-group li:before{display:none}}.loader-anim{text-align:right;color:#fff;font-family:Consolas,Menlo,Monaco,monospace;font-weight:700;font-size:3.2rem;opacity:.8}@media (max-width:767px){.loader-anim{font-size:2.3rem;text-align:left}}.loader-anim span{display:inline-block;animation:pulse 1.5s alternate infinite ease-in-out}@media (max-width:767px){.loader-anim span{display:none}}.loader-anim span:nth-child(3){animation-delay:1.5s}.loader-anim strong{color:#fff;font-size:3rem;padding:20px}@media (max-width:767px){.loader-anim strong{font-size:2.3rem;text-align:center;padding:0}}@keyframes pulse{to{transform:scale(.7);opacity:.3}}#mainNav .navbar-brand{font-style:normal;letter-spacing:1px}.btn{font-weight:700;text-transform:uppercase;border:none;border-radius:0;border:4px solid #fff;color:#fff;background-color:transparent;font-family:'Open Sans','Helvetica Neue',Arial,sans-serif}.btn-xl{padding:.85rem 2rem}.btn-primary{background-color:transparent;border-color:#f05f44;color:#f05f44}
+    </style>
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="img/logo.png" alt="robothead"><span>redrobot</span></a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">Обо мне</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Услуги</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Портфолио</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Связь</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead text-white d-flex">
+      <div class="container my-auto">
+        <div class="row parallax-js">
+          <div class="col-lg-12">
+            <h1>
+              <div class="loader-anim">
+                  <span>{</span><strong>WEB-разработка</strong><span>}</span>
+              </div>
+            </h1>
+          </div>
+          <div class="col-lg-6 offset-lg-6">
+              <ul class="text-white list-group d-flex align-items-end align-items-end mb-4">
+                  <li class="list-inline-item sr-serv">Создание сайта под ключ</li>
+                  <li class="list-inline-item sr-serv">Адаптивная кроссбраузерная верстка</li>
+                  <li class="list-inline-item sr-serv">Оптимизация сайта для поисковый систем</li>
+                  <li class="list-inline-item sr-serv">Дизайн и анимация для сайта</li>
+                  <li class="list-inline-item sr-serv">Работа с CMS Wordpress</li>
+              </ul>
+          </div>
+          <div class="col-lg-6 offset-lg-6 d-flex justify-content-md-end">
+            <a class="btn btn-primary btn-xl mt-5 js-scroll-trigger sr-serv" href="#about">Узнать больше</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <section class="bg-primary" id="about">
+      <div class="container text-center mb-5">
+        <h2 class="mb-4 mt-lg-5 text-white">Обо мне</h2>
+        <hr class="my-4 border-white">
+      </div>
+      <div id="particles-js"></div>
+      <div class="container">
+        <div class="row">
+           <div class="col-lg-8 offset-lg-2 text-white">
+              <p class="mb-4">Меня зовут Александр, работаю в сфере разработки веб-сайтов более 2-х лет. Буду рад вам помочь решить задачи разной сложности. Предлагаю спектр услуг по веб-разработке: веб-дизайн, SEO-копирайтинг, верстка и подключение CMS. Имею высокие рейтинги на многих фриланс биржах, работаю с частными клиентами, сотрудничаю с веб-студиями на постоянной основе.</p>
+           </div>
+           <div class="col-lg-8 offset-lg-2 text-white">
+              <p class="mb-4">Если у вас есть сайт, и вы хотите изменить дизайн, исправить ошибки, добавить блоки, или усовершенствовать другой функционал, тогда обращайтесь. Тем, кто находится в поисках веб-разработчика для создания лендинга, коммерческого сайта, портфолио и других проектов в сети, предлагаю разработку сайта под ключ.</p>  
+           </div>
+           <div class="col-lg-8 offset-lg-2 text-white text-center">
+               <p class="mb-4 lead">Использую такие инструменты и технологии:</p>
+               <div class="tech-icons mb-4 d-flex justify-content-center">
+                   <img src="img/html-5.svg" alt="html-5">
+                   <img src="img/css-3.svg" alt="css-3">
+                   <img src="img/Sass.svg" alt="Sass">
+                   <img src="img/javascript-original.svg" alt="javascript">
+                   <img src="img/jquery.svg" alt="jquery">
+                   <img src="img/gulp.svg" alt="gulp">
+                   <img src="img/wordpress.svg" alt="wordpress">
+               </div>
+               <p class="mb-4">Связаться со мной можно по <a href="tel:+380973096810">телефону</a>, <a href="mailto:redrobot753@gmail.com">почте</a> или через <a href="#social" class="js-scroll-trigger">соцсети</a>. Всегда рад сотрудничеству!</p>
+                <a class="btn btn-light btn-xl mt-5 js-scroll-trigger sr-button" href="#contact">Приступим к делу</a>
+           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="character">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center text-white">
+            <h2 class="section-heading">Мои профессиональные качества</h2>
+            <hr class="my-4">
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-lg-7 ml-auto">
+            <ul class="character-list text-white pl-0">
+              <li class="sr-contact"><span class="badge badge-dark badge-pill mr-2">1</span><b>Целеустремленность</b> <span class="text-muted">(легко преодолеваю трудности, всегда добиваюсь поставленной цели)</span></li>
+              <li class="sr-contact"><span class="badge badge-dark badge-pill mr-2">2</span><b>Скорость</b> <span class="text-muted">(благодаря хорошему опыту, оперативно выполняю задания)</span></li>
+              <li class="sr-contact"><span class="badge badge-dark badge-pill mr-2">3</span><b>Пунктуальность</b> <span class="text-muted">(укладываюсь в сроки, отведенные на выполнение заказа)</span></li>
+              <li class="sr-contact"><span class="badge badge-dark badge-pill mr-2">4</span><b>Порядочность</b> <span class="text-muted">(честно выполняю все условия, прописанные в ТЗ)</span></li>
+              <li class="sr-contact"><span class="badge badge-dark badge-pill mr-2">5</span><b>Универсальность</b> <span class="text-muted">(успешно работаю в разных сферах веб-разработки)</span></li>
+            </ul>    
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Услуги</h2>
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-3x fa-key text-primary mb-5 sr-icons"></i>
+              <h3 class="mb-3">Cайт под ключ</h3>
+              <p class="text-muted">Лендинг, копроративный сайт, сайт-визитка под ключ на популярной CMS Wordpress</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-3x fa-html5 text-primary mb-5 sr-icons"></i>
+              <h3 class="mb-3">HTML5,CSS3 верстка</h3>
+              <p class="text-muted">Адаптивная верстка под разные устройства и браузеры</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-3x fa-bullseye text-primary mb-5 sr-icons"></i>
+              <h3 class="mb-3">Javascript, Jquery интерактив</h3>
+              <p class="text-muted">Написание и редактирование скриптов, подключение плагинов</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-3x fa-wordpress text-primary mb-5 sr-icons"></i>
+              <h3 class="mb-3">Работа с CMS Wordpress</h3>
+              <p class="text-muted">Выполнение различных задач по CMS <strong>Wordpress</strong></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-dark" id="features">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading text-white">Почему стоит заказать услуги у меня?</h2>
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid mt-lg-5">
+        <div class="row">
+          <div class="col-lg-4 mt-4 mt-lg-5">
+            <div class="features-item mb-3">
+                <header class="d-flex text-white align-items-center justify-content-start justify-content-lg-end">
+                    <i class="fa fa-2x fa-id-badge order-lg-2" aria-hidden="true"></i>
+                    <h3 class="h6 text-uppercase mt-2 mr-3 ml-3 ml-lg-0 text-right">Я – не новичок</h3>    
+                </header>
+                <p class="text-lg-right mt-3 text-white text-muted">Проблем с пониманием задачи не будет, в веб-разработке я уже несколько лет, успешно выполнил более 50 крупных проектов и сделал множество мелких правок</p>
+            </div>
+            <div class="features-item mb-3">
+                <header class="d-flex text-white align-items-center justify-content-start justify-content-lg-end">
+                    <i class="fa fa-2x fa-bullseye order-lg-2" aria-hidden="true"></i>
+                    <h3 class="h6 text-uppercase mt-2 mr-3 ml-3 ml-lg-0 text-right">Иду к цели</h3>
+                </header>
+                <p class="text-lg-right mt-3 text-white text-muted">Работаю на результат, всегда нахожу современные способы решения задачи как в простых, так и в сложных проектах</p>
+            </div>
+            <div class="features-item mb-3">
+                <header class="d-flex text-white align-items-center justify-content-start justify-content-lg-end">
+                    <i class="fa fa-2x fa-handshake-o order-lg-2" aria-hidden="true"></i>
+                    <h3 class="h6 text-uppercase mt-2 mr-3 ml-3 ml-lg-0 text-right">У меня доступные цены</h3>
+                </header>
+                <p class="text-lg-right mt-3 text-white text-muted">Оказываю услуги по приемлемым ценам, со мной можно легко договориться</p>
+            </div>
+          </div>
+          <div class="col-lg-4 mt-lg-5 order-lg-2">
+            <div class="features-item mb-3">
+                <header class="d-flex text-white align-items-center justify-content-start">
+                    <i class="fa fa-2x fa-key" aria-hidden="true"></i>
+                    <h3 class="h6 text-uppercase mt-2 ml-3">Не повторяюсь</h3>
+                </header>
+                <p class="text-left mt-3 text-white text-muted">Проекты под ключ я разрабатываю персонально для каждого заказчика, никогда не использую шаблоны</p>
+            </div>
+            <div class="features-item mb-3">
+                <header class="d-flex text-white align-items-center justify-content-start">
+                    <i class="fa fa-2x fa-user-secret" aria-hidden="true"></i>
+                    <h3 class="h6 text-uppercase mt-2 ml-3">Слежу за чистотой кода</h3>     
+                </header>
+                <p class="text-left mt-3 text-white text-muted">Использую понятный, читабельный, хорошо структурированный код, очищаю его от «мусора»</p>
+            </div>
+            <div class="features-item mb-3">
+                <header class="d-flex text-white align-items-center justify-content-start">
+                    <i class="fa fa-2x fa-graduation-cap" aria-hidden="true"></i>
+                    <h3 class="h6 text-uppercase mt-2 ml-3">Развиваюсь</h3>
+                </header>
+                <p class="text-left mt-3 text-white text-muted">Регулярно совершенствуюсь в сфере веб-разработки. Легко обучусь новым навыкам, изучу программы, необходимые для эффективной работы</p>
+            </div>
+          </div>
+          <div class="d-none d-lg-flex col-lg-4 order-lg-0 align-items-center justify-content-center">
+             <picture>
+                <source srcset="img/comp1.webp" type="image/webp">
+                <source srcset="img/comp1.png" type="image/png"> 
+                <img class="img-fluid" src="img/comp1.png" alt="">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="container mb-3">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Последние работы</h2>
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid p-0">
+        <div class="row no-gutters popup-gallery">
+          <div class="col-lg-4 col-sm-6 p-3 sr-contact">
+              <a href="https://redrobot753.github.io/ugli/" class="project-link" title="Перейти на сайт" target="_blank"><i class="fa fa-2x fa-sign-in"></i></a>
+              <a class="portfolio-box" href="img/portfolio/fullsize/6-ugli.jpg">
+                <picture>
+                  <source srcset="img/portfolio/thumbnails/6-ugli_th.webp" type="image/webp">
+                  <source srcset="img/portfolio/thumbnails/6-ugli_th.jpg" type="image/jpeg"> 
+                  <img class="img-fluid" src="img/portfolio/thumbnails/6-ugli_th.jpg" alt="">
+                </picture>
+                <div class="portfolio-box-caption text-left">
+                  <i class="fa fa-2x fa-expand p-2" aria-hidden="true"></i>
+                  <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                     Верстка сайта
+                    </div>
+                    <div class="project-name">
+                      Сайт продажи углей
+                    </div>
+                  </div>
+                </div>
+              </a>
+          </div>
+          <div class="col-lg-4 col-sm-6 p-3 sr-contact">
+            <a href="https://minishopmaister.com.ua/" class="project-link" title="Перейти на сайт" target="_blank"><i class="fa fa-2x fa-sign-in"></i></a>
+            <a class="portfolio-box" href="img/portfolio/fullsize/minishopmaister.jpg">
+              <picture>
+                  <source srcset="img/portfolio/thumbnails/minishopmaister_th.webp" type="image/webp">
+                  <source srcset="img/portfolio/thumbnails/minishopmaister_th.jpg" type="image/jpeg"> 
+                  <img class="img-fluid" src="img/portfolio/thumbnails/minishopmaister_th.jpg" alt="">
+              </picture>
+              <div class="portfolio-box-caption text-left">
+              <i class="fa fa-2x fa-expand p-2" aria-hidden="true"></i>
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Сайт под ключ
+                  </div>
+                  <div class="project-name">
+                    Сайт услуг на Wordpress
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="col-lg-4 col-sm-6 p-3 sr-contact">
+              <a href="https://redrobot753.github.io/uzufovo/" class="project-link" title="Перейти на сайт" target="_blank"><i class="fa fa-2x fa-sign-in"></i></a>
+              <a class="portfolio-box" href="img/portfolio/fullsize/5-uzufovo.jpg">
+                <picture>
+                  <source srcset="img/portfolio/thumbnails/5-uzufovot_th.webp" type="image/webp">
+                  <source srcset="img/portfolio/thumbnails/5-uzufovot_th.jpg" type="image/jpeg"> 
+                  <img class="img-fluid" src="img/portfolio/thumbnails/5-uzufovot_th.jpg" alt="">
+                </picture>
+                <div class="portfolio-box-caption text-left">
+                  <i class="fa fa-2x fa-expand p-2" aria-hidden="true"></i>
+                  <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                     Верстка сайта
+                    </div>
+                    <div class="project-name">
+                      Сайт "Юзуфово"
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 col-sm-6 p-3 sr-contact">
+              <a href="https://redrobot753.github.io/wallstreetrobot/" class="project-link" title="Перейти на сайт" target="_blank"><i class="fa fa-2x fa-sign-in"></i></a>
+              <a class="portfolio-box" href="img/portfolio/fullsize/7-Wallstreetrobot.jpg">
+                <picture>
+                  <source srcset="img/portfolio/thumbnails/7-Wallstreetrobot_th.webp" type="image/webp">
+                  <source srcset="img/portfolio/thumbnails/7-Wallstreetrobot_th.jpg" type="image/jpeg"> 
+                  <img class="img-fluid" src="img/portfolio/thumbnails/7-Wallstreetrobot_th.jpg" alt="">
+                </picture>
+                <div class="portfolio-box-caption text-left">
+                  <i class="fa fa-2x fa-expand p-2" aria-hidden="true"></i>
+                  <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                     Верстка сайта
+                    </div>
+                    <div class="project-name">
+                      Сайт Wallstreetrobot
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 col-sm-6 p-3 sr-contact">
+              <a href="https://redrobot753.github.io/atauyrt/" class="project-link" title="Перейти на сайт" target="_blank"><i class="fa fa-2x fa-sign-in"></i></a>
+              <a class="portfolio-box" href="img/portfolio/fullsize/4-atauyr.jpg">
+                <picture>
+                  <source srcset="img/portfolio/thumbnails/4-atauyrt_th.webp" type="image/webp">
+                  <source srcset="img/portfolio/thumbnails/4-atauyrt_th.jpg" type="image/jpeg"> 
+                  <img class="img-fluid" src="img/portfolio/thumbnails/4-atauyrt_th.jpg" alt="">
+                </picture>
+                <div class="portfolio-box-caption text-left">
+                  <i class="fa fa-2x fa-expand p-2" aria-hidden="true"></i>
+                  <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                      Верстка страницы
+                    </div>
+                    <div class="project-name">
+                      Сайт завода металлоконструкций
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 col-sm-6 p-3 sr-contact">
+              <a href="https://redrobot753.github.io/colegio_template/" class="project-link" title="Перейти на сайт" target="_blank"><i class="fa fa-2x fa-sign-in"></i></a>
+              <a class="portfolio-box" href="img/portfolio/fullsize/3-colegiot_template.jpg">
+                <picture>
+                  <source srcset="img/portfolio/thumbnails/3-colegiot_template_th.webp" type="image/webp">
+                  <source srcset="img/portfolio/thumbnails/3-colegiot_template_th.jpg" type="image/jpeg"> 
+                  <img class="img-fluid" src="img/portfolio/thumbnails/3-colegiot_template_th.jpg" alt="">
+                </picture>
+                <div class="portfolio-box-caption text-left">
+                  <i class="fa fa-2x fa-expand p-2" aria-hidden="true"></i>
+                  <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                      Верстка макета
+                    </div>
+                    <div class="project-name">
+                      Макет школьного сайта
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 col-sm-6 p-3 sr-contact">
+              <a href="http://j96138cm.beget.tech/" class="project-link" title="Перейти на сайт" target="_blank"><i class="fa fa-2x fa-sign-in"></i></a>
+              <a class="portfolio-box" href="img/portfolio/fullsize/2-insomniaok_portfolio.jpg">
+                <picture>
+                  <source srcset="img/portfolio/thumbnails/2-insomniaok_portfolio_th.webp" type="image/webp">
+                  <source srcset="img/portfolio/thumbnails/2-insomniaok_portfolio_th.jpg" type="image/jpeg"> 
+                  <img class="img-fluid" src="img/portfolio/thumbnails/2-insomniaok_portfolio_th.jpg" alt="">
+                </picture>
+                <div class="portfolio-box-caption text-left">
+                  <i class="fa fa-2x fa-expand p-2" aria-hidden="true"></i>
+                  <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                      Сайт-каталог на Wordpress
+                    </div>
+                    <div class="project-name">
+                      Сайт-портфолио копирайтера
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 col-sm-6 p-3 sr-contact">
+              <a href="https://redrobot753.github.io/callbit_project/" class="project-link" title="Перейти на сайт" target="_blank"><i class="fa fa-2x fa-sign-in"></i></a>
+              <a class="portfolio-box" href="img/portfolio/fullsize/1-callbit_project.jpg">
+                <picture>
+                  <source srcset="img/portfolio/thumbnails/1-callbit_project_th.webp" type="image/webp">
+                  <source srcset="img/portfolio/thumbnails/1-callbit_project_th.jpg" type="image/jpeg"> 
+                  <img class="img-fluid" src="img/portfolio/thumbnails/1-callbit_project_th.jpg" alt="">
+                </picture>
+                <div class="portfolio-box-caption text-left">
+                  <i class="fa fa-2x fa-expand p-2" aria-hidden="true"></i>
+                  <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                     Верстка сайта
+                    </div>
+                    <div class="project-name">
+                      Проект CallBit
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-lg-4 col-sm-6 p-3 sr-contact">
+              <a href="https://redrobot753.github.io/alcohol/" class="project-link" title="Перейти на сайт" target="_blank"><i class="fa fa-2x fa-sign-in"></i></a>
+              <a class="portfolio-box" href="img/portfolio/fullsize/8-alcohol.jpg">
+                <picture>
+                  <source srcset="img/portfolio/thumbnails/8-alcohol_th.webp" type="image/webp">
+                  <source srcset="img/portfolio/thumbnails/8-alcohol_th.jpg" type="image/jpeg"> 
+                  <img class="img-fluid" src="img/portfolio/thumbnails/8-alcohol_th.jpg" alt="">
+                </picture>
+                <div class="portfolio-box-caption text-left">
+                  <i class="fa fa-2x fa-expand p-2" aria-hidden="true"></i>
+                  <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                     Верстка сайта
+                    </div>
+                    <div class="project-name">
+                      Лендинг для центра профилактики
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- <div class="col-lg-4 col-sm-6 p-3 sr-contact">
+              <a href="#" class="project-link" title="Перейти на сайт" target="_blank"><i class="fa fa-2x fa-ban"></i><span>НЕТ СВЯЗИ</span></a>
+              <a class="portfolio-box" href="#">
+                <img class="img-fluid" src="img/portfolio/thumbnails/work-in-progress.png" alt="">
+                <div class="portfolio-box-caption text-left">
+                  <i class="fa fa-2x fa-expand p-2" aria-hidden="true"></i>
+                  <div class="portfolio-box-caption-content">
+                    <div class="project-category text-faded">
+                    </div>
+                    <div class="project-name">
+                      Скоро здесь будет новая работа...
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div> -->
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="pt-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Давайте свяжемся!</h2>
+            <hr class="my-4">
+            <p class="mb-5">Готовы начать сотрудничество? Отлично! Звоните или напишите на почту, и я отвечу Вам в ближайшее время</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 ml-auto text-center">
+            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+            <p>
+              <a href="tel:+380973096810">+380973096810</a>
+            </p>
+          </div>
+          <div class="col-md-4 mr-auto text-center">
+            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+            <p>
+              <a href="mailto:redrobot753@gmail.com">redrobot753@gmail.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-dark text-white social-section" id="social">
+      <div class="container text-center mb-5">
+        <h2 class="mb-4 mt-5">Связаться через:</h2>
+        <hr class="my-4 border-white">
+        <a class="social-link" href="https://www.facebook.com/profile.php?id=100017609407318" target="_blank"><i class="fa fa-2x fa-facebook sr-icons ml-4" aria-hidden="true"></i></a>
+        <a class="social-link" href="https://github.com/redrobot753" target="_blank"><i class="fa fa-2x fa-github sr-icons ml-4" aria-hidden="true"></i></a>
+        <a class="social-link " href="https://plus.google.com/u/0/112716738786474798208" target="_blank"><i class="fa fa-2x fa-google-plus sr-icons ml-4" aria-hidden="true"></i></a>
+      </div>
+    </section>
+
+     <link href="css/vendor/bootstrap/css/bootstrap.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="css/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"></noscript>
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="preload" type="text/css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"></noscript>
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="preload" type="text/css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css"></noscript>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="preload" type="text/css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css"></noscript> -->
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet"></noscript>
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative.min.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="css/creative.min.css" rel="stylesheet"></noscript>
+    <script>!function(n){"use strict";n.loadCSS||(n.loadCSS=function(){});var o=loadCSS.relpreload={};if(o.support=function(){var e;try{e=n.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),o.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},o.poly=function(){if(!o.support())for(var t=n.document.getElementsByTagName("link"),e=0;e<t.length;e++){var a=t[e];"preload"!==a.rel||"style"!==a.getAttribute("as")||a.getAttribute("data-loadcss")||(a.setAttribute("data-loadcss",!0),o.bindMediaToggle(a))}},!o.support()){o.poly();var t=n.setInterval(o.poly,500);n.addEventListener?n.addEventListener("load",function(){o.poly(),n.clearInterval(t)}):n.attachEvent&&n.attachEvent("onload",function(){o.poly(),n.clearInterval(t)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:n.loadCSS=loadCSS}("undefined"!=typeof global?global:this);</script>
+
+    <!-- Webfont.js load fonts -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6/webfont.js"></script>
+    <script>
+     WebFont.load({
+        google: {
+          families: ['Open Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800', 'Merriweather:400,300,300italic,400italic,700,700italic,900,900italic']
+        }
+      });
+    </script>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="vendor/particles/particles.min.js"></script>
+
+    <!-- Custom scripts for this tspplate -->
+    <script src="js/creative.min.js"></script>
+
+  </body>
+
+</html>

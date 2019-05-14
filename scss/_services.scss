@@ -1,0 +1,9 @@
+// Styling for the services section
+.service-box {
+  max-width: 400px;
+}
+.social-link{
+	&:hover{
+		color: lighten($primary, 80%);
+	}
+}

@@ -1,0 +1,44 @@
+.select-css {
+  display: block;
+  font-size: rem(11px);
+  line-height: 1.09;
+  color: $white;
+  padding: rem(21px);
+  width: 100%;
+  max-width: 100%; /* useful when width is set to anything other than 100% */
+  box-sizing: border-box;
+  color: rgba(166, 166, 166, 0.93);
+  margin: 0;
+  border: 0;
+  border-bottom: 1px solid $accent-light;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: $gray;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjUuMTkxIiB2aWV3Qm94PSIwIDAgOCA1LjE5MSI+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI5MS4xNTQgNzI5LjQzNykgcm90YXRlKC05MCkiPjxwYXRoIGQ9Ik02LDcuMTkxbC00LTRMMy4xOTEsMiw2LDQuODA5LDguODA5LDIsMTAsMy4xOTFaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3MzEuNDM3IDI4OS4xNTQpIHJvdGF0ZSg5MCkiIGZpbGw9IiNmZmYiLz48L2c+PC9zdmc+);
+  background-repeat: no-repeat;
+  background-position: right .7em top 50%;
+  background-size: .65em auto;
+  @media (max-width: grid-width(lg)-1) {
+   padding-left: 11px;
+   padding-right: 11px;
+  }
+}
+/* Hide arrow icon in IE browsers */
+.select-css::-ms-expand {
+  display: none;
+}
+.select-css:hover {
+
+}
+.select-css:focus {
+    outline: none;
+}
+.select-css option {
+    font-weight: bold;
+    max-width: 100%;
+    color: $white;
+    &:first-of-type {
+      color: rgba(166, 166, 166, 0.93);
+    }
+}

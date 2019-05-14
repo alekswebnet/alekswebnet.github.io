@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ClickGame</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="app" class="app">
+    <div class="app__header">
+      <h1>Игра: споймай фигурку</h1>
+      <p>Сколько раз успеешь кликнуть? Давай проверим сейчас!</p>
+    </div>
+    <div class="app__game">
+
+      <div class="app__info">
+        <div class="app__counter">
+          <p>Счет:</p>
+          <span id="gameCounter">0</span>
+        </div>
+        <div class="app__timer">
+          <p>Обратный отсчет:</p>
+          <span id="gameTime">20.0</span>
+        </div>
+      </div>
+
+      <div class="app__area">
+        <button class="app__start" id="startButton">Начать игру</button>
+        <div id="game" class="app__container"></div>
+      </div>   
+
+      <div class="app__form">
+        <label class="app__input">
+          <span>Введи время (1-100 сек):</span>
+          <input id="timeInput" type="text" value="20">
+        </label>
+        <button id="changeTimeButton">Изменить</button>
+      </div>
+      
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

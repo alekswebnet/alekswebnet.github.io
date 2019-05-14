@@ -1,0 +1,39 @@
+// Bootstrap overrides for this template
+
+.text-primary {
+  color: $primary !important;
+}
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show > .btn-primary.dropdown-toggle {
+    border-color: $primary;
+}
+.btn {
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0;
+  border: 4px solid $white;
+  color: $white;
+  background-color: transparent;
+  @include sans-serif-font;
+}
+
+.btn-xl {
+  padding: .85rem 2rem;
+}
+
+.btn-primary {
+  background-color: transparent;
+  border-color: $primary;
+  color: $primary;
+  &:hover,
+  &:focus,
+  &:active {
+    color: $white;
+    border-color: $primary;
+    background-color: darken($primary, 5%) !important;
+  }
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(240, 95, 64,.5) !important;
+  }
+}

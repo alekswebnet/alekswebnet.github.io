@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Мини-мастерская по ремонту бытовой техники - Ремонт</title>
+	<meta name="description" content="">
+	<meta name="robots" content="noindex, nofollow" />
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width">
+	
+	<!-- Template Basic Images Start -->
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+	<!-- Template Basic Images End -->
+	
+	<!-- Custom Browsers Color Start -->
+	<meta name="theme-color" content="#fff">
+	<!-- Custom Browsers Color End -->
+
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600&amp;subset=cyrillic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&amp;subset=cyrillic" rel="stylesheet"> 
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+
+<body>
+
+	<div class="page-wrapper">
+
+		<header class="site-header">
+			<div class="site-header__wrapper">
+				<div class="container-top">
+					<div class="navbar-top" id="navbar-top">
+						<div class="navbar-brand">
+							<a href="" class="logo">
+								<img src="img/logo.png" alt="Логотип">
+							</a>
+							<p>Качественный ремонт техники в Кривом Роге и пригороде</p>
+						</div>
+						<nav class="top-nav slideout-menu" id="top-nav">
+							<button class="slideout-close-btn"><span></span></button>
+							<ul class="main-menu">
+								<li class="main-menu__item"><a href="index.html" class="main-menu__link">Главная</a></li>
+								<li class="main-menu__item main-menu__dropdown">
+									<button class="main-menu__button">Услуги</button>
+									<ul class="menu-dropdown dropdown-content">
+										<li class="menu-dropdown__item"><a href="repair-page.html" class="menu-dropdown__link">Ремонт</a></li>
+										<li class="menu-dropdown__item"><a href="exchange-page.html" class="menu-dropdown__link">Обмен</a></li>
+										<li class="menu-dropdown__item"><a href="buy-page.html" class="menu-dropdown__link">Cкупка</a></li>
+									</ul>
+								</li>
+								<li class="main-menu__item"><a href="catalog-page.html" class="main-menu__link">Каталог</a></li>
+								<li class="main-menu__item"><a href="pay-page.html" class="main-menu__link">Оплата и доставка</a></li>
+								<li class="main-menu__item"><a href="contact-page.html" class="main-menu__link">Контакты</a></li>
+							</ul>
+						</nav>
+						<button class="main-menu-toggle js-slideout-toggle">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+						<div class="call-block">
+							<div class="call-top">
+								<div class="call-top__icon snake">
+									<img src="img/call-phone.svg" alt="Телефон">
+								</div>
+								<div class="call-top__tels">
+									<a href="tel:+380973096810">+38<span>(097) 309 6810</span></a>
+									<a href="tel:+380573096810">+38<span>(057) 309 6810</span></a>
+								</div>
+							</div>
+							<div class="call-bottom top-hide" id="call-bottom">
+								<button class="close-btn" id="top-close"><span></span></button>
+								<h5>Хотите <span>бесплатную</span> консультацию?</h5>
+								<form class="call-bottom__form">
+									<div class="input-box"><input type="text" name="name" placeholder="Имя" maxlength="40" title="Введите коректное имя" required><span></span></div><div class="input-box"><input class="input-phone" type="tel" name="phone" pattern="\+([0-9]{1,3})(\([0-9]{2,3}\))-([0-9]{3})-([0-9]{2})-([0-9]{2})" title="Формат: +38(099)-999-99-99" minlength="18" maxlength="18" placeholder="+38(___)-___-__-__" required><span></span></div>
+									<button type="submit" id="callme" class="btn btn-md">Пeрезвонить вам?</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main id="main" class="main-content repair-page panel slideout-panel">
+			<section class="preview-screen">
+				<div class="container">	
+					<div class="pages-preview">
+						<h1 class="page-header">Ремонт бытовой техники</h1>
+						<div class="pages-preview__col">
+							<img src="img/repairing-service.png" alt="Покупка техники" class="img-responsive">
+						</div>
+						<div class="pages-preview__col">
+							<p>Ремонт отличного качества - <span>полгода</span> гарантии!</p>
+						</div>
+						<button class="btn btn-lg js-open-modal">Заявка на ремонт</button>
+					</div>
+				</div>
+			</section>
+			<section class="repair-about">
+				<div class="container">
+					<div class="repair-about__block">
+						<h2 class="page-sect-header">Об услуге</h2>
+						<div class="repair-about__col-left">
+							<img class="img-responsive" src="img/repair-about.png" alt="Ремонт техники">
+						</div>
+						<div class="repair-about__col-right">
+							<p>Наша мастерская специализируется по ремонту <strong>стиральных машин</strong>, <strong>холодильников</strong> и <strong>микроволновок</strong>. Другие виды техники мы не ремонтируем. Именно узкая специализация позволила нам стать лучшими в своей области, так как мы имеем возможность сосредоточиться на определенных категориях техники.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="what-we-repair">
+				<div class="container">
+					<div class="what-we-repair__block">
+						<h2 class="page-sect-header">Что мы ремонтируем?</h2>	
+						<div class="what-we-repair__desc">
+							<p>Наша мастерская специализируется по ремонту <strong>стиральных машин</strong>, <strong>холодильников</strong> и <strong>микроволновок</strong>. Другие виды техники мы не ремонтируем. Именно узкая специализация позволила нам стать лучшими в своей области, так как мы имеем возможность сосредоточиться на определенных категориях техники.</p>
+							<p><span>Обратите внимание</span>, что мы не ремонтируем стиральные машины с вертикальным типом загрузки.</p>
+						</div>
+						<div class="what-we-repair__icons">
+							<img src="img/washing-machine.png" alt="Стиральная машинка">
+							<img src="img/microwave-oven.png" alt="Микроволновка">
+							<img src="img/fridge.png" alt="Холодильник">
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="repair-work">
+				<div class="container">
+					<div class="repair-work__block">
+						<h2 class="page-sect-header">Как мы работаем?</h2>	
+						<div class="repair-work__item">
+							<span>1</span>
+							<p>Подача <strong>заявки</strong> на сайте или заказ услуг по телефону</p>
+						</div>
+						<div class="repair-work__item">
+							<span>2</span>
+							<p>Определение <strong>состояния</strong> техники из описания проблемы заказчиком по телефону, а также личного осмотра техники.</p>
+						</div>
+						<div class="repair-work__item">
+							<span>3</span>
+							<p>Профессиональная <strong>диагностика</strong> техники на дому (при вызове мастера) или в мастерской.</p>
+						</div>
+						<div class="repair-work__item">
+							<span>4</span>
+							<p>Качественный <strong>ремонт</strong> проводится только в случае согласия заказчика, согласования сроков и стоимости работы.</p>
+						</div>
+						<div class="repair-work__item">
+							<span>5</span>
+							<p><strong>Оплата</strong> услуг проводится после проверки заказчиком работы техники.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="repair-pluses">
+				<div class="container">
+					<div class="repair-pluses__block">
+						<h2 class="page-sect-header"><span>7</span> причин заказать ремонт техники у нас:</h2>	
+						<div class="repair-pluses__col">
+							<img class="img-responsive" src="img/master.png" alt="Мастер по ремонту техники">
+							<button class="btn btn-md js-open-modal">Оставить заявку</button>
+						</div>
+						<div class="repair-pluses__col">
+							<ul class="page-list">
+								<li>6 месяцев гарантии на проведенный ремонт.</li>
+								<li>Бесплатная консультация по телефону по любым вопросам поломки вашей техники.</li>
+								<li>Бесплатная диагностика техники.<span>*Бесплатная диагностика предоставляется только при дальнейшем заказе ремонта в мини-мастерской.</span></li>
+								<li>Экономия личного времени и возможность вызвать мастера на дом для осмотра техники.</li>
+								<li>Бесплатная консультация по телефону по любым вопросам поломки вашей техники.</li>
+								<li>Наличие собственного транспорта для доставки отремонтированной техники.</li>
+								<li>Профессиональное оборудование для диагностики и ремонта б/у техники.</li>
+								<li>Использование оригинальных итальянских запчастей для ремонта техники.</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="repair-price">
+				<div class="container">
+					<div class="repair-price__block">
+						<h2 class="page-sect-header">Сколько стоит ремонт бытовой техники?</h2>
+						<div class="repair-price__desc">
+							<p>Цена ремонта стиральной машины, холодильника или микроволновки зависит от ее поломки. Определяется стоимость после проведения диагностики и до начала ремонта. Увидеть стоимость некоторых видов ремонта можно в прайс-листе.</p>
+							<button class="btn btn-md js-open-price-modal">Посмотреть цены</button>
+						</div>	
+					</div>
+				</div>
+			</section>
+			<section class="repair-questions">
+				<div class="container">
+					<div class="repair-questions__block">
+						<h2 class="page-sect-header">Вопросы - ответы</h2>
+						<button class="accordion"><span>Сколько стоит диагностика техники?</span><span></span></button>
+						<div class="accordion-panel">
+							<p>При заказе ремонта б/у техники диагностика не оплачивается, предоставляется клиентам <span>бесплатно</span>. Обычная стоимость диагностики без ремонта - 200 грн.</p>
+						</div>
+						<button class="accordion"><span>Сколько стоит вызов мастера?</span><span></span></button>
+						<div class="accordion-panel">
+							<p>Цена услуги зависит от адреса заказчика. Стоимость услуги в г. Кривой Рог - 100 грн., ЮГОК, СЕВГОК - 150 грн.</p>
+						</div>
+						<button class="accordion"><span>Могу ли я самостоятельно привезти технику в мастерскую?</span><span></span></button>
+						<div class="accordion-panel">
+							<p>Такая возможность существует. Позвоните в нашу компанию и мы вас будем ждать в договоренное время.</p>
+						</div>
+						<button class="accordion"><span>Какие бренды можно отремонтировать в мастерской?</span><span></span></button>
+						<div class="accordion-panel">
+							<p>К сожалению, мы ремонтируем не все марки техники, а только самые популярные, а именно: Samsung, Bosch, Ariston, LG, Indesit.</p>
+						</div>
+						<button class="accordion"><span>На что гарантия распространяется?</span><span></span></button>
+						<div class="accordion-panel">
+							<p>Под гарантией на ремонт подразумевается гарантия на работу именно исправленной детали или части техники. Причину поломки мастер обязательно оглашает заказчику на этапе диагностики (перед ремонтом).</p>
+						</div>
+						<button class="accordion"><span>Как доставить технику на ремонт, если нет грузового транспорта?</span><span></span></button>
+						<div class="accordion-panel">
+							<p>Если у вас нет грузового транспорта, чтобы привезти технику к нам в мастерскую, тогда по предварительной договоренности мы сможем забрать ее личным транспортом. После ремонта мы доставим отремонтированную технику по вашему адресу.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="container">
+				<div class="footer-top">
+					<div class="footer-top__col">
+						<a href="index.html" class="footer-link">Главная</a>
+						<a href="index.html" class="footer-link">О нас</a>
+						<a href="index.html" class="footer-link">Наши преимущества</a>
+						<a href="pay-page.html" class="footer-link">Оплата и доставка</a>		
+					</div>
+					<div class="footer-top__col">
+						<span>Наши услуги:</span>
+						<a href="repair-page.html" class="footer-link">Ремонт</a>
+						<a href="exchange-page.html" class="footer-link">Обмен</a>
+						<a href="buy-page.html" class="footer-link">Cкупка</a>
+						<a href="catalog-page.html" class="footer-link">Каталог б/у техники</a>		
+					</div>
+					<div class="footer-top__logo">
+						<img src="img/logo.png" alt="Логотип">
+						<span>Мини-мастерская по ремонту бытовой техники</span>
+					</div>
+					<div class="footer-top__col">
+						<span>Контакты:</span>
+						<a class="footer-link" href="tel:+380973096810">+38(097) 309 6810</a>
+						<a class="footer-link" href="tel:+380573096810">+38(057) 309 6810</a>
+						<a id="footerCallme" class="footer-call" href="">Перезвонить Вам?</a>
+					</div>
+					<div class="footer-top__col">
+						<span>Связаться с нами:</span>
+						<div class="messengers">
+							<a class="messengers__item" title="Viber" href="viber://chat?number=380973096810"><img src="img/viber.svg" alt="viber"></a>
+							<a class="messengers__item" title="WhatsApp" href="whatsapp://send?phone=+380973096810"><img src="img/whatsapp.svg" alt="whatsapp"></a>
+							<a class="messengers__item" title="Skype" href="skype:schamp789?chat"><img src="img/skype.svg" alt="skype"></a>
+						</div>
+					</div>
+				</div>
+				<div class="footer-down">
+					<div>© Мини-мастерская 2018<span id="current-year"></span></div>
+					<div>Разработка сайта - <a href="">Redrobot</a></div>
+				</div>
+			</div>
+		</footer>
+
+		<div class="price-modal" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-content price-modal-content">
+				<button class="price-modal-close close-btn"><span></span></button>
+				<div class="text-slider">
+					<div class="text-slide active-slide">
+						<h3>Ремонт стиральных машин</h3>
+						<ul>
+							<li>замена насоса - <span>от 400 грн</span></li>
+							<li>замена тэна - <span>от 700 грн</span></li>
+							<li>замена манжеты люка -<span> от 400 грн</span></li>
+							<li>замена амортизаторов - <span>от 400 грн</span></li>
+							<li>замена подшипников - <span>от 700 грн</span></li>
+							<li>устранение утечек - <span>от 400 грн</span></li>
+							<li>ремонт электрики - <span>от 500 грн</span></li>
+							<li>ремонт электр.модуля - <span>от 500 грн</span></li>
+							<li>замена щеток в двигателе - <span>от 500 грн</span></li>
+						</ul>
+					</div>
+					<div class="text-slide">
+						<h3>Ремонт микроволновок</h3>
+						<ul>
+							<li>замена насоса - <span>от 400 грн</span></li>
+							<li>замена тэна - <span>от 700 грн</span></li>
+							<li>замена манжеты люка -<span> от 400 грн</span></li>
+							<li>замена амортизаторов - <span>от 400 грн</span></li>
+							<li>замена подшипников - <span>от 700 грн</span></li>
+							<li>устранение утечек - <span>от 400 грн</span></li>
+							<li>ремонт электрики - <span>от 500 грн</span></li>
+							<li>ремонт электр.модуля - <span>от 500 грн</span></li>
+							<li>замена щеток в двигателе - <span>от 500 грн</span></li>
+						</ul>
+					</div>
+					<div class="text-slide">
+						<h3>Ремонт холодильников</h3>
+						<ul>
+							<li>замена насоса - <span>от 400 грн</span></li>
+							<li>замена тэна - <span>от 700 грн</span></li>
+							<li>замена манжеты люка -<span> от 400 грн</span></li>
+							<li>замена амортизаторов - <span>от 400 грн</span></li>
+							<li>замена подшипников - <span>от 700 грн</span></li>
+							<li>устранение утечек - <span>от 400 грн</span></li>
+							<li>ремонт электрики - <span>от 500 грн</span></li>
+							<li>ремонт электр.модуля - <span>от 500 грн</span></li>
+							<li>замена щеток в двигателе - <span>от 500 грн</span></li>
+						</ul>
+					</div>
+				</div>
+				<a class="modal-next"><strong>Еще цены</strong><span></span></a>
+			</div>
+		</div>
+
+		<div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-content">
+				<button class="modal-close close-btn"><span></span></button>
+				<h3>Заявка на ремонт техники</h3>
+				<form class="modal-content__form">
+					<div class="input-box"><input type="text" name="name" placeholder="Имя *" maxlength="40" title="Введите коректное имя" required><span></span></div>
+					<div class="input-box"><input class="input-phone" type="tel" name="phone" pattern="\+([0-9]{1,3})(\([0-9]{2,3}\))-([0-9]{3})-([0-9]{2})-([0-9]{2})" title="Формат: +38(099)-999-99-99" minlength="18" maxlength="18" placeholder="+38(___)-___-__-__ *" required><span></span></div>
+					<div class="input-box"><input class="input-email" type="email" name="email" placeholder="Email"></div>
+					<textarea name="message" cols="20" rows="5" placeholder="Сообщение"></textarea>
+					<button type="submit" class="btn btn-md">Отправить заявку</button>
+				</form>
+			</div>
+		</div>
+	
+	</div>
+
+	<script src="js/scripts.min.js"></script>
+</body>
+</html>

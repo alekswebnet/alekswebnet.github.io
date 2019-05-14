@@ -1,0 +1,65 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #fff
+
+::selection
+	background-color: $accent
+	color: #fff
+
+html
+	box-sizing: border-box
+*, *::before, *::after
+	box-sizing: border-box
+	margin: 0
+	padding: 0
+
+body
+	font-size: 1.0625rem
+	min-width: 20rem
+	position: relative
+	font-family: $default-font
+	overflow-x: hidden
+	background: #fff
+	input, textarea
+			border: #fff 0.0625rem solid
+			outline: none
+			&:focus:required:invalid
+				border-color: red
+			&:required:valid
+				border-color: green
+a 
+	display: block
+	text-decoration: none
+	color: inherit
+	white-space: nowrap
+	&:hover
+		text-decoration: none
+		color: inherit
+	&:active
+		text-decoration: none
+		color: inherit
+	&:focus
+		text-decoration: none
+		color: inherit
+	&:visited
+		text-decoration: none
+		color: inherit
+
+input[type='submit']  
+	display: block
+    font: 600 1rem $default-font
+    text-align: center
+ul
+	list-style: none
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+
+@import "content"
+@import "media" // Always at the end

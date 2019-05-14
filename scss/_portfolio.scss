@@ -1,0 +1,104 @@
+// Styling for the portfolio section
+
+.project-link{
+  text-decoration: none;
+  padding: .8rem;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  text-transform: uppercase;
+  border: 2px solid $primary;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  font-size: .8rem;
+  right: 1%;
+  z-index: 1000;
+  &:hover{
+    text-decoration: none;
+  }
+  i{
+    display: block;
+  }
+}
+.mfp-content{
+  max-width: 650px;
+  max-height: 100%;
+}
+img.mfp-img{
+  max-height: 100% !important;
+}
+.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close{
+  cursor: pointer;
+}
+
+
+#portfolio{
+  background-color: #fafafc;
+}
+.portfolio-box {
+  border: 2px solid $primary;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  max-width: 650px;
+  margin: 0 auto;
+  max-height: 300px;
+  .portfolio-box-caption {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    opacity: 0;
+    color: $white;
+    background: fade-out($primary, .1);
+    @include transition-all;
+    @media (max-width: 767px) {
+       opacity: 1;
+    }
+    .portfolio-box-caption-content {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      transform: translateY(-50%);
+      text-align: center;
+      .project-category,
+      .project-name {
+        padding: 0 15px;
+        @include sans-serif-font;
+      }
+      .project-category {
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      .project-name {
+        font-size: 18px;
+      }
+    }
+  }
+  &:hover {
+    .portfolio-box-caption {
+      opacity: 1;
+      transition: all .5s;
+      z-index: 100;
+    }
+  }
+  &:focus {
+    outline: none;
+  }
+  @media (min-width: 768px) {
+    .portfolio-box-caption {
+      .portfolio-box-caption-content {
+        .project-category {
+          font-size: 16px;
+        }
+        .project-name {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}

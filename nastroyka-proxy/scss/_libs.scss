@@ -1,0 +1,20 @@
+@import "../libs/normalize/_normalize.scss";
+@import "../libs/fast-grid/_fast-grid.scss";
+
+// Grid customization
+
+$grid: (
+  breakpoints: (
+    xs: 0px,
+    sm: 320px,
+    smd: 640px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1190px,
+  ),
+  columns: 12,
+  gap: 15px,
+  container: 15px,
+  box-sizing: border-box,
+  mode: flex
+);

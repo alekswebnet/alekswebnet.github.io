@@ -1,0 +1,107 @@
+// Base styles
+
+html
+	box-sizing: border-box
+*, *::before, *::after
+	box-sizing: inherit
+	margin: 0
+	padding: 0
+
+html, body
+	height: 100%
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $primary
+	color: #fff
+input, textarea
+	border: 1px solid #666
+	outline: none
+	&:focus:required:invalid
+		border-color: red		
+	&:required:valid
+		border-color: $primary
+input:valid + .icon-validation
+	content: ''
+	display: block
+	width: 12px
+	height: 12px
+	background-image: url(../img/fa-check-circle.svg)
+	background-size: cover
+	position: absolute
+input:focus:invalid + .icon-validation
+	content: ''
+	display: block
+	width: 12px
+	height: 12px
+	background-size: cover
+	position: absolute
+	background-image: url(../img/fa-times-circle.svg)
+
+.input-req
+	position: relative
+	span
+		width: 12px
+		height: 12px
+		position: relative
+		right: 0
+		top: 54%
+body
+	position: relative
+	min-width: 320px
+	font-family: $default-font
+	font-size: 14px
+	font-weight: 500
+	overflow-x: hidden
+	background-color: #fff
+a
+	text-decoration: none
+	&:hover
+		text-decoration: none
+	&:focus
+		text-decoration: none
+	&:active
+		text-decoration: none
+
+
+// Sticky footer using flexbox
+
+.main-wrapper
+	display: flex
+	flex-direction: column
+	height: 100%
+
+.main-content
+	flex: 1 0 auto
+
+.main-footer
+	flex: 0 0 auto
+
+// Custom classes
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+.no-padd
+	padding-left: 0
+	padding-right: 0
+.hide
+	visibility: hidden
+.hidden-text
+	display: none
+.scale
+	transform: scale(1.4)
+	transition: transform 1s linear
+.rotate
+	transform: rotate(-360deg)
+	transition: transform 1s ease-in
+.visible
+	display: block !important
+.clearfix
+	&:after 
+		content: ''
+		display: table
+		clear: both

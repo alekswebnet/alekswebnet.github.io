@@ -1,0 +1,640 @@
+// Main-screen
+
+.main-screen
+	padding-top: 170px
+	background-image: url(../img/main-bg.png)
+	background-size: cover
+	display: flex
+	justify-content: center
+	align-items: center		
+	&__header
+		font-family: $second-font
+		font-size: 32px
+		font-weight: 400
+		line-height: 1.2
+		color: #fff
+		span
+			color: $accent	
+	&__descrip
+		margin-top: 25px
+		color: #686a73
+		text-transform: uppercase
+.main-buttons
+	width: 385px
+	display: flex
+	margin-top: 42px
+	position: relative
+	justify-content: center
+	align-items: center	
+	border: 1px solid #32353b
+	padding: 12px
+	a
+		width: 165px
+.main-issues
+	margin-top: 24px
+	padding-bottom: 68px
+	display: flex 
+	flex-direction: column
+.main-issue
+	display: flex
+	align-items: center
+	padding-bottom: 24px
+	padding-top: 24px
+	text-decoration: none
+	&__text
+		margin-left: 20px
+		color: #686a73
+		text-transform: uppercase
+	&:first-of-type
+		border-bottom: 1px solid #32353b
+.phones-image
+	display: flex
+	align-items: center
+.messages
+	display: flex
+	position: relative
+	left: 50px
+.arrow_box1
+	width: 270px
+	&:before
+		content: ''
+		width: 22.58px
+		height: 1px
+		background-color: #fff
+		transform: rotate(45deg)
+		position: absolute
+		left: -4px
+		bottom: -9px
+	&:after
+		content: ''
+		width: 22.58px
+		height: 1px
+		background-color: #fff
+		transform: rotate(-45deg)
+		position: absolute
+		left: 11px
+		bottom: -9px
+	div
+		position: absolute
+		bottom: -1px
+		left: 30px
+		width: 238px
+		height: 1px
+		background-color: #fff
+.arrow_box2
+	width: 190px
+	&:before
+		content: ''
+		width: 22.58px
+		height: 1px
+		background-color: #fff
+		transform: rotate(45deg)
+		position: absolute
+		left: -4px
+		bottom: -9px
+	&:after
+		content: ''
+		width: 22.58px
+		height: 1px
+		background-color: #fff
+		transform: rotate(-45deg)
+		position: absolute
+		left: 11px
+		bottom: -9px
+	div
+		position: absolute
+		bottom: -1px
+		left: 30px
+		width: 158px
+		height: 1px
+		background-color: #fff
+	span
+		font-weight: 800
+
+.arrow_box1, .arrow_box2
+	position: relative
+	border: 1px solid #fff
+	border-bottom-color: transparent
+	font-size: 14px
+	line-height: 1.33
+	padding: 10px
+	margin-left: 4px
+	color: #686a73
+.tokensale-wrap
+	display: flex
+.token-sale
+	position: absolute
+	left: 50%
+	bottom: 0
+	padding: 70px 45px
+	background-color: #ececec
+	&__title
+		font-family: $second-font
+		font-size: 20px
+		line-height: 1
+		color: #333
+		text-transform: uppercase
+	&__descrip
+		margin-top: 10px
+		font-size: 14px
+		line-height: 1.12
+		color: #686a73
+		text-transform: uppercase
+	&__countdown
+		margin-top: 17px
+		display: flex
+		align-content: space-between
+		align-items: center
+	&__countdown-item
+		margin-left: 8px
+	&__countdown-item span:last-of-type
+		margin-top: 3px
+		display: block
+		text-align: center
+		font-size: 14px
+		color: #686a73
+		text-transform: uppercase
+	&__countdown-item span:first-of-type
+		display: block
+		padding: 15px
+		font-family: $second-font
+		font-size: 20px
+		font-weight: 800
+		color: #333
+		box-shadow: 0 0 5.6px 0.4px rgba(0, 0, 0, 0.25)
+	&__progressbar
+		margin-top: 21px
+		width: 100%
+		height: 19px
+		background-color: #ececec
+		box-shadow: 0 0 5.6px 0.4px rgba(0, 0, 0, 0.25)
+		.progress
+			width: 50%
+			height: 100%
+			background-color: $accent
+			span
+				position: absolute
+				left: 44.3%
+				font-size: 14px
+	&__card-code
+		margin-top: 11px
+		display: flex
+		justify-content: center
+		align-items: center		
+		input
+			display: block
+			text-align: center
+			font-family: $second-font
+			font-size: 17px
+			color: #333
+			box-shadow: 0 0 5.6px 0.4px rgba(0, 0, 0, 0.25)
+			border: none
+			width: 27px
+			height: 27px
+			margin: 3px
+			&:focus
+			 transform: scale(1.1)
+	&__button
+		margin-top: 16px
+		.btn--green
+			display: block
+
+// Pre-sale
+
+.pre-sale
+	background-color: #14161b
+	&__header
+		padding-top: 99px
+		font-family: $second-font
+		font-size: 32px
+		font-weight: 400
+		color: #676f7c
+		span
+			color: $accent
+	&__descrip
+		padding-top: 28px
+		color: #3c4452
+		padding-right: 76px
+		padding-bottom: 20px
+	&__graph
+		padding-top: 80px
+		padding-bottom: 68px
+		
+
+// Roadmap
+
+.roadmap
+	background-image: url(../img/roadmap-bg.jpg)
+	background-size: cover
+	background-position: 100% 100%
+	&__header
+		font-family: $second-font
+		margin-top: 53px
+		text-align: center
+		font-size: 32px
+		color: #333
+		font-weight: 400
+	&__graph
+		padding-top: 110px
+		position: relative
+		padding-bottom: 200px
+		overflow-y: auto
+		-ms-overflow-style: none
+		&::-webkit-scrollbar
+			display: none
+	.line
+		height: 8px
+		position: relative
+		width: 1050px
+		border-radius: 4px
+		background-color: #949494
+	.line2
+		margin-top: 200px
+	.line2-wrap
+		position: relative
+		left: 7.142%
+	.circle
+		display: flex
+		align-items: center
+		justify-content: center
+		position: absolute
+		top: -10px
+		text-align: center
+		line-height: 28px
+		width: 28px
+		background-color: #aaa
+		color: #fff
+		height: 28px
+		border-radius: 14px
+		transition: transform 1s ease-out
+		&:hover
+			transform: scale(1.2)
+			font-weight: 800
+			background-color: $accent
+			cursor: pointer
+		.circle-bottom
+			padding-top: 40px
+			font-size: 13px
+			line-height: 1.33
+			color: #646464
+			text-transform: uppercase
+			position: absolute
+			left: 13px
+			border-left: 1px solid #aaa
+			padding-left: 13px
+			height: 53px
+			display: flex
+			align-items: center
+			justify-content: center
+		.circle-top
+			padding-bottom: 40px
+			font-size: 13px
+			line-height: 1.33
+			color: #646464
+			text-transform: uppercase
+			position: absolute
+			top: -53px
+			left: 13px
+			border-left: 1px solid #aaa
+			padding-left: 13px
+			height: 53px
+			display: flex
+			align-items: center
+			justify-content: center
+		&:nth-of-type(1)
+			left: 0
+		&:nth-of-type(2)
+			left: 150px
+		&:nth-of-type(3)
+			left: 300px
+		&:nth-of-type(4)
+			left: 450px
+		&:nth-of-type(5)
+			left: 600px
+		&:nth-of-type(6)
+			left: 750px
+		&:nth-of-type(7)
+			left: 900px
+.graph-wrapper
+	max-width: 1100px
+	margin: auto
+.our-bank
+	background-color: #14161b
+	&__heading
+		position: relative
+		top: -40px
+		margin: auto
+		padding: 40px 7.14% 46px 7.14%
+		background-color: #ececec
+		background-repeat: no-repeat
+		background-size: contain
+		background-position: 98% 20%
+	&__header
+		font-family: $second-font
+		text-align: center
+		font-size: 32px
+		color: #333
+	&__descrip
+		margin-top: 28px
+		color: #686a73
+
+.services
+	margin-top: 86px
+	padding-bottom: 48px
+	display: flex
+	flex-wrap: wrap
+	&__item
+		position: relative
+		display: flex
+		flex-direction: column
+		align-items: center
+		&:not(:nth-child(3n)):after
+			content: url(../img/plus.png)
+			position: absolute
+			bottom: 0
+			right: 0
+		&:last-of-type:after
+			display: none
+	&__item-text
+		max-width: 211px
+		text-align: center
+		font-size: 18px
+		line-height: 1.2
+		color: #686a73
+		margin-top: 25px
+		margin-bottom: 42px
+
+// Market
+
+.market
+	background-image: url(../img/market-bg.png)
+	background-size: cover
+	background-position: center top
+	&__header
+		text-align: center
+		margin: auto
+		margin-top: 55px
+		text-align: center
+		font-family: $second-font
+		font-size: 32px
+		font-weight: 400
+		color: #333
+.market-history
+	&__item
+		margin-top: 55px
+		text-align: center
+		display: flex
+		flex-direction: column
+		align-items: center
+	&__icon
+		height: 67px
+	&__year
+		margin-top: 21px
+		font-size: 32px
+		font-weight: 600
+		color: #00b950
+	&__price
+		position: relative
+		margin-top: 17px
+		font-size: 18px
+		font-weight: 500
+		color: #333
+	&__text
+		margin-top: 15px
+		color: #686a73
+		font-size: 16px
+		font-weight: 500
+		line-height: 1.42
+		text-align: center
+		text-transform: uppercase
+		margin-bottom: 52px
+.more-then:after
+	content: 'More then'
+	font-size: 14px
+	text-transform: uppercase
+	text-align: center
+	color: #b5b5b5
+	display: block
+	position: absolute
+	top: -20px
+	left: 32px
+.market-services
+	padding: 50px 0
+	background-color: #181b20
+.market-service
+	display: flex
+	flex-direction: column
+	align-items: center
+	&__icon
+		margin-top: 54px
+		height: 70px
+	&__header
+		margin-top: 39px
+		font-size: 18px
+		text-align: center
+		color: #fff
+		font-weight: 400
+		margin-bottom: 54px
+	&:nth-of-type(1):after
+		content: url(../img/plus.png)
+		position: absolute
+		bottom: 0
+		right: 0
+	&:nth-of-type(2):after
+		content: url(../img/plus.png)
+		position: absolute
+		bottom: 0
+		right: 0
+	&:nth-of-type(3):after
+		content: url(../img/plus.png)
+		position: absolute
+		bottom: 0
+		right: 0
+
+// ICO
+
+.ico
+	&__header
+		font-family: $second-font
+		font-size: 32px
+		text-align: center
+		margin-top: 195px
+	&__descrip
+		margin-top: 19px
+		font-size: 18px
+		line-height: 1.31
+		color: #686a73
+		text-align: center
+	&__subheader
+		margin-top: 31px
+		font-family: $second-font
+		font-size: 18px
+		color: #333
+		text-align: center
+.ico-graph
+	padding-left: 15px
+	padding-right: 15px
+	margin-top: 37px
+	display: block
+	width: 100%
+	height: auto
+.ico-bonus-header
+	margin: auto
+	text-align: center
+	margin-top: 80px
+	font-family: $second-font
+	font-size: 32px
+	color: #333
+.ico-bonuses
+	padding-top: 32px
+	&__item
+		display: flex
+		flex-direction: column
+		align-items: center
+	&__item-icon
+		margin-top: 30px
+	&__item-percent
+		margin-top: 32px
+		font-family: $second-font
+		font-size: 32px
+		font-weight: 800
+		color: #00b950
+	&__item-time
+		margin-top: 13px
+		font-size: 16px
+		line-height: 1.5
+		color: #686a73
+// Bonuses
+
+.bonuses
+	background-color: #e8e8e8
+	&__header
+		padding-top: 48px
+		text-align: center
+		margin-top: 80px
+		font-family: $second-font
+		font-size: 32px
+		color: #333
+	&__descrip
+		margin-top: 21px
+		font-size: 18px
+		line-height: 1.31
+		color: #686a73
+		text-align: center
+	&__item
+		display: flex
+		flex-direction: column
+		align-items: center
+	&__item-icon
+		margin-top: 30px
+	&__item-percent
+		margin-top: 32px
+		font-family: $second-font
+		font-size: 30px
+		font-weight: 800
+		color: #00b950
+	&__item-descrip
+		text-align: center
+		margin-top: 13px
+		font-size: 16px
+		line-height: 1.5
+		color: #686a73
+		max-width: 91px
+		margin-bottom: 76px
+
+// Our team
+
+.our-team
+	background-color: #181b20
+	&__header
+		padding-top: 43px
+		text-align: center
+		font-family: $second-font
+		font-size: 32px
+		font-weight: 400
+		color: #fff
+		span
+			color: #1eb858
+	&__profiles
+		margin-top: 58px
+	&__profile
+		display: flex
+		flex-direction: column
+		align-items: center
+	&__profile-photo
+		max-width: 212px
+	&__profile-name
+		margin-top: 18px
+		font-family: $second-font
+		font-size: 20px
+		color: #fff
+	&__profile-job
+		max-width: 212px
+		margin-top: 12px
+		padding-bottom: 51px
+		font-size: 16px
+		line-height: 1.2
+		color: #646464
+
+// Our partners
+
+.our-partners
+	top: -100px
+	background-color: #e8e8e8
+	padding-bottom: 81px
+	&__header
+		padding-top: 48px
+		text-align: center
+		margin-top: 80px
+		font-family: $second-font
+		font-size: 32px
+		font-weight: 400
+		color: #333
+	&__row
+		margin-top: 96px
+		text-align: center
+		transition: opacity 0.2s
+.partner-icon
+	padding: 40px
+	display: inline-block
+	vertical-align: middle
+.our-partners__row:hover .partner-icon:not(:hover)
+	 opacity: 0.6
+
+// Documents
+
+.documents
+	&__header
+		padding-top: 41px
+		text-align: center
+		font-family: $second-font
+		font-size: 32px
+		font-weight: 400
+		color: #333
+.documents-row
+	padding-bottom: 47px
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-around
+	margin-top: 41px
+	&__item
+		margin-bottom: 30px
+		width: 156px
+		height: 156px
+		text-decoration: none
+		color: #fff
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		text-align: center
+		background-color: #00b950
+		transition: opacity 0.2s
+	&__item-icon
+	&__item-header
+		margin-top: 16px
+		font-size: 14px
+		line-height: 1.33
+		color: #fff
+.documents-row:hover .documents-row__item:not(:hover)
+	 opacity: 0.6

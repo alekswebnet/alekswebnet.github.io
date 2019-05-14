@@ -1,0 +1,114 @@
+// Styling for the navbar
+#mainNav {
+  border-bottom: 1px solid fade-out($gray-900, .2);
+  background-color: $white;
+  padding: .5rem;
+  @include sans-serif-font;
+  @include transition-all;
+  .navbar-brand {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: $primary;
+    @include sans-serif-font;
+    &:focus,
+    &:hover {
+      color: darken($primary, .2);
+    }
+    img{
+      width: 25px;
+      margin: 0 5px;
+      position: relative;
+      top: -4px;
+    }
+  }
+  .navbar-nav {
+    > li.nav-item {
+       > a.nav-link,
+      > a.nav-link:focus {
+        font-size: .92rem;
+        font-weight: 600;
+        text-align: center;
+        position: relative;
+        text-transform: uppercase;
+        color: $gray-700;
+        @media (max-width: 767px) {
+          padding: 1.7rem .2rem;
+        }
+        &:hover {
+          color: $primary;
+        }
+        &.active{
+          color: $primary !important;
+          background-color: transparent;
+          &:before{
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+            display: block;
+            background-color: $primary;
+            width: 15px;
+            z-index: 1;
+            height: 2px;
+            @media (max-width: 767px) {
+              left: calc(50% - 7.5px);
+            }
+          }
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+  @media (min-width: 992px) {
+    border-color: transparent;
+    background-color: transparent;
+    .navbar-brand {
+      color: fade-out($white, .2);
+      &:focus,
+      &:hover {
+        color: $white;
+      }
+    }
+    .navbar-nav > li.nav-item > a.nav-link {
+      padding: 0.5rem 1rem;
+    }
+    .navbar-nav > li.nav-item > a.nav-link,
+    .navbar-nav > li.nav-item > a.nav-link:focus {
+      color: fade-out($white, .3);
+      &:hover {
+        color: $white;
+      }
+    }
+    &.navbar-shrink {
+      border-bottom: 1px solid fade-out($gray-900, .9);
+      background-color: #fafafa;
+      .navbar-brand {
+        color: $gray-900;
+        &:focus,
+        &:hover {
+          color: darken($gray-700, .1);
+        }
+        img{
+          transition: transform .5s;
+          transform: rotate(360deg);
+          margin: 0 5px;
+        }
+      }
+      .navbar-nav > li.nav-item > a.nav-link,
+      .navbar-nav > li.nav-item > a.nav-link:focus {
+        color: $gray-900;
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+.navbar-light .navbar-toggler {
+  border: 2px solid rgba(0,0,0, .5);
+  border-radius: 0;
+  padding: .2rem .6rem;
+}
+

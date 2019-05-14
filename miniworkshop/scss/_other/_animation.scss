@@ -1,0 +1,81 @@
+// Animation
+
+
+@keyframes spin-right {
+	100% {transform: rotate(-360deg);}
+}
+
+.animate-counters{
+	animation: spin-right 6s linear;
+}
+
+
+@keyframes pulse {
+ 0% {
+   	transform: scale(1.05);
+ }
+ 50% {
+   	transform: scale(0.8);
+ }
+ 100% {
+   	transform: scale(1);
+ }
+
+}
+
+.pulse{
+    animation: pulse1 2s linear infinite;
+}
+
+@keyframes shake {
+0% {
+    transform: rotateZ(0deg);
+}
+10% {
+    transform: rotateZ(-30deg);
+}
+20% {
+    transform: rotateZ(15deg);
+}
+30% {
+    transform: rotateZ(-10deg);
+}
+40% {
+    transform: rotateZ(7.5deg);
+}
+50% {
+    transform: rotateZ(-6deg);
+}
+60% {
+    transform: rotateZ(5deg);
+}
+70% {
+    transform: rotateZ(-4.28571deg);
+}
+80% {
+    transform: rotateZ(3.75deg);
+}
+90% {
+    transform: rotateZ(-3.33333deg);
+}
+100% {
+    transform: rotateZ(0deg);
+}
+}
+
+.snake{
+	animation-name: shake;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes fade-in {
+   0% { opacity: 0.1; }   
+   100% { opacity: 1; }   
+}
+ 
+.main-content {
+  animation: fade-in .4s linear;
+}

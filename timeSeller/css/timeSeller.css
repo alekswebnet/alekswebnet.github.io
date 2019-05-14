@@ -1,0 +1,79 @@
+.timeSeller {
+	position: fixed;
+	z-index: 10000;
+	width: 230px;
+	right: 5%;
+	bottom: 5%;
+	opacity: 0;
+	pointer-events: none;
+	-webkit-transition: opacity .7s ease-in-out;
+	-o-transition: opacity .7s ease-in-out;
+	transition: opacity .7s ease-in-out;
+}
+.timeSeller.js-show {
+	opacity: 1;
+	pointer-events: auto;
+}
+.timeSeller-wrap {
+	position: relative;
+	border-radius: 15px;
+	background-color: #fafafa;
+}
+.timeSeller-inner {
+	border-radius: 15px;
+	background-color: #fff;
+	box-shadow: 0 0 15.7px 0.3px rgba(0, 0, 0, 0.07);
+	padding: 15px 15px 10px 15px;
+}
+@media (max-width: 600px) {
+	.timeSeller-inner {
+		padding: 12px 12px 5px 12px;
+	}
+}
+.timeSeller-bg {
+	border-radius: 15px;
+	width: 100%;
+	height: 100%;
+	left: 2px;
+	top: 2px;
+	background-color: #009ce7;
+	box-shadow: 0 0 3.9px 0.1px rgba(0, 0, 0, 0.07);
+	position: absolute;
+	z-index: -1;
+}
+.timeSeller p {
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 1.1;
+	letter-spacing: 0.2px;
+	color: #323232;
+	text-align: right;
+}
+@media (max-width: 600px) {
+	.timeSeller p {
+		font-size: 14px;
+	}
+}
+.timeSeller-name {
+	position: absolute;
+	left: 10%;
+	font-weight: bold;
+	color: #24a8e7;
+}
+.timeSeller-name {
+	font-size: 18px;
+}
+.timeSeller-gain {
+	font-size: 30px;
+	padding-top: 30px;
+	width: 100px;
+	font-weight: bold;
+	letter-spacing: 0.4px;
+	text-align: left;
+	color: #24a8e7;
+}
+@media (max-width: 600px) {
+	.timeSeller-gain {
+		font-size: 28px;
+	}
+}

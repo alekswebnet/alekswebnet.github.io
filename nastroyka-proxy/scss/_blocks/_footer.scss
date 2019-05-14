@@ -1,0 +1,53 @@
+.footer-row {
+	border-top: 1px solid #707070;
+	padding-top: rem(18px);
+	padding-bottom: rem(50px);
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	@media (max-width: grid-width(lg)-1) {
+	  	padding-bottom: rem(30px);
+	}
+	@media (max-width: grid-width(smd)-1) {
+		flex-direction: column;
+		align-items: center;
+	}
+	.pay-info {
+		@media (max-width: grid-width(smd)-1) {
+			margin-bottom: 15px; 
+		}
+	}
+	.copyright {
+		font-size: 14px;
+	  line-height: 2.29;
+	  text-align: center;
+	  color: #c0c0c0;
+	  @media (max-width: grid-width(lg)-1) {
+	  	 line-height: 1.2;
+	  }
+	  @media (max-width: grid-width(smd)-1) {
+			order: 2;
+			margin-bottom: 27px; 
+		}
+	  span {
+	  	display: block;
+	  }
+	  a {
+	  	display: block;
+	  	font-size: 16px;
+		  font-weight: bold;
+		  color: $accent;
+		  text-decoration: none;
+	  }
+	}
+	.footer-soc {
+		display: flex;
+		a {
+			margin-left: 8px;
+		}
+		@media (max-width: grid-width(smd)-1) {
+			order: 0;
+			margin-bottom: 27px; 
+		}
+	}
+}
