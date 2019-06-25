@@ -25,7 +25,7 @@
 		<img class="fig fig9 fig-front fig-small" src="img/Union6.svg" alt="">
 	</div>
 
-	<div id="calc-app" class="page-wrapper page-calc-decor">
+	<div id="calc-app" class="page-wrapper page-calc-menu">
 
 		<div class="soc-widget">
 			<div class="soc-list">
@@ -94,6 +94,7 @@
 								<span class="page-point__marker"></span>
 							</li>
 						</ul>
+						<div class="progressbar-line"></div>
 					</div>
 				</div>
 			</nav>
@@ -106,42 +107,9 @@
 
 					<div class="main-content">
 
-						<section class="decor-sect">
-							<h2 class="h-fs-2">Украшения и развлечения</h2>
-
-							<ul class="decor-sect__list">
-
-								<li class="decor-item comm-panel" rv-each-decor="data.decors">
-									<div class="decor-item__image">
-										<img rv-src="decor.image" alt="">
-									</div>
-									<div class="decor-item__row">
-
-										<div class="decor-item__info">
-											<h3 class="h-fs-3--800 decor-item__header" rv-text="decor.name">Пиньята</h3>
-											<span class="decor-item__price"><span rv-text="decor.price | local"></span>₴<span rv-if="decor.pieces">  - {decor.pieces} шт</span></span>
-										</div>
-										
-										<div class="guest-counter" rv-if="decor.isCount">
-											<button type="button" class="guest-counter__minus" rv-class-active="decor.activeDecDecor" rv-on-click="controller.decDecorCount"></button>
-											<input type="text" rv-value="decor.count" disabled>
-											<button type="button" class="guest-counter__plus" rv-class-active="decor.activeIncDecor" rv-on-click="controller.incDecorCount"></button>
-										</div>
-
-										<div class="decor-item__add" rv-unless="decor.isCount">
-											<button class="btn" rv-on-click="controller.showDecorCheckItemB">Добавить</button>
-										</div>
-
-									</div>
-								</li>
-
-							</ul>
-				
-						</section>
-
 						<div class="calc-nav">
-							<a href="calc-step3.html" class="btn">Назад</a>
-							<a href="calc-step5.html" data-next="true" class="btn">Далее</a>
+							<a href="calc-step4.html" class="btn">Назад</a>
+							<a href="calc-step6.html" data-next="true" class="btn">Далее</a>
 						</div>
 
 					</div>

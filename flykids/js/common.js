@@ -179,7 +179,7 @@ var app = new Vue({
         var price = item.price.toLocaleString()+'₴'
         return price
       });
-    }
+    },
   }
 })
 /*
@@ -290,29 +290,142 @@ if (document.querySelector('.datepicker__btn')) {
 *** Animation
 **/
 (function() {
+
+// Rocket progressbar animation 
+
 if (document.querySelector('#calc-app')) {
-  var rocketForward = true
   var btns = document.querySelectorAll('.calc-nav .btn')
 
   btns.forEach(function(btn, index) {
     btn.addEventListener('click', function(e) {
       e.preventDefault()
-      if (e.target.dataset == true) {
-        console.log(e.target.dataset)
+      if (e.target.dataset.next) {
         localStorage.setItem("rocketForward", true)
       } else {
         localStorage.setItem("rocketForward", false)
       }
+      window.location = e.target.href
     })
   })
-  
-  rocketForward = localStorage.getItem("rocketForward")
-  if (rocketForward) {
 
-  } else if (document.querySelector('.page-calc-place')) {
-    document.querySelector('.page-calc-place').classList.add('step1-r')
+  var points1 = document.querySelector('.page-calc-place .page-points')
+  var points2 = document.querySelector('.page-calc-animation .page-points')
+  var points3 = document.querySelector('.page-calc-show .page-points')
+  var points4 = document.querySelector('.page-calc-decor .page-points')
+  var points5 = document.querySelector('.page-calc-menu .page-points')
+  var points6 = document.querySelector('.page-calc-pay .page-points')
+  var pointsArr = document.querySelectorAll('.page-points .page-point')
+  var isForward
+
+  if (localStorage.getItem("rocketForward")) {
+    var isForward = localStorage.getItem("rocketForward")
+  } else {
+    var isForward = true
+  }
+
+  if (isForward == 'true') {
+    if (document.querySelector('.page-calc-place .page-points')) {
+      points1.classList.remove('step1-r')
+      points1.classList.add('step1')
+      pointsArr[0].classList.add('active')
+    }
+    if (document.querySelector('.page-calc-animation .page-points')) {
+      points2.classList.remove('step2-r')
+      points2.classList.add('step2')
+      pointsArr[0].classList.add('completed')
+      pointsArr[1].classList.add('active')
+    }
+    if (document.querySelector('.page-calc-show .page-points')) {
+      points3.classList.remove('step3-r')
+      points3.classList.add('step3')
+      pointsArr[0].classList.add('checked')
+      pointsArr[1].classList.add('completed')
+      pointsArr[2].classList.add('active')
+    }
+    if (document.querySelector('.page-calc-decor .page-points')) {
+      points4.classList.remove('step4-r')
+      points4.classList.add('step4')
+      pointsArr[0].classList.add('checked')
+      pointsArr[1].classList.add('checked')
+      pointsArr[2].classList.add('completed')
+      pointsArr[3].classList.add('active')
+    }
+    if (document.querySelector('.page-calc-menu .page-points')) {
+      points5.classList.remove('step5-r')
+      points5.classList.add('step5')
+      pointsArr[0].classList.add('checked')
+      pointsArr[1].classList.add('checked')
+      pointsArr[2].classList.add('checked')
+      pointsArr[3].classList.add('completed')
+      pointsArr[4].classList.add('active')
+    }
+    if (document.querySelector('.page-calc-pay .page-points')) {
+      points6.classList.remove('step6-r')
+      points6.classList.add('step6')
+      pointsArr[0].classList.add('checked')
+      pointsArr[1].classList.add('checked')
+      pointsArr[2].classList.add('checked')
+      pointsArr[3].classList.add('checked')
+      pointsArr[4].classList.add('completed')
+      pointsArr[5].classList.add('active')
+    }
+  } else {
+    if (document.querySelector('.page-calc-place .page-points')) {
+      points1.classList.remove('step1')
+      points1.classList.add('step1-r')
+      pointsArr[0].classList.add('checked')
+      pointsArr[1].classList.add('active')
+    }
+    if (document.querySelector('.page-calc-animation .page-points')) {
+      points2.classList.remove('step2')
+      points2.classList.add('step2-r')
+      pointsArr[0].classList.add('checked')
+      pointsArr[1].classList.add('checked')
+      pointsArr[2].classList.add('active')
+    }
+    if (document.querySelector('.page-calc-show .page-points')) {
+      points3.classList.remove('step3')
+      points3.classList.add('step3-r')
+      pointsArr[0].classList.add('checked')
+      pointsArr[1].classList.add('checked')
+      pointsArr[2].classList.add('checked')
+      pointsArr[3].classList.add('active')
+    }
+    if (document.querySelector('.page-calc-decor .page-points')) {
+      points4.classList.remove('step4')
+      points4.classList.add('step4-r')
+      pointsArr[0].classList.add('checked')
+      pointsArr[1].classList.add('checked')
+      pointsArr[2].classList.add('checked')
+      pointsArr[3].classList.add('checked')
+      pointsArr[4].classList.add('active')
+    }
+    if (document.querySelector('.page-calc-menu .page-points')) {
+      points5.classList.remove('step5')
+      points5.classList.add('step5-r')
+      pointsArr[0].classList.add('checked')
+      pointsArr[1].classList.add('checked')
+      pointsArr[2].classList.add('checked')
+      pointsArr[3].classList.add('checked')
+      pointsArr[4].classList.add('checked')
+      pointsArr[5].classList.add('active')
+    }
+    if (document.querySelector('.page-calc-pay .page-points')) {
+      points6.classList.remove('step6')
+      points6.classList.add('step6-r')
+      pointsArr[0].classList.add('checked')
+      pointsArr[1].classList.add('checked')
+      pointsArr[2].classList.add('checked')
+      pointsArr[3].classList.add('checked')
+      pointsArr[4].classList.add('checked')
+      pointsArr[5].classList.add('checked')
+      pointsArr[6].classList.add('active')
+    }
   }
 }
+
+//  Flying elements animation
+
 if (document.querySelector('.fig')) {
 
   var figsBig = document.querySelectorAll('.fig-big')
