@@ -119,13 +119,13 @@
 
 									<ul class="show-sect__list">
 
-										<li class="comm-panel show-item" rv-each-show="data.shows">
+										<li class="comm-panel show-item show-item--show" v-for="(item, index) in shows">
 											<div class="show-item__image">
-												<img rv-src="show.image" alt="">
+												<img :src="item.image" alt="">
 											</div>
 											<div class="show-item__row accordion">
 												<div class="show-item__left">
-													<h3 class="h-fs-2--800 show-item__header" rv-text="show.name"></h3>
+													<h3 class="h-fs-2--800 show-item__header">{{ item.name }}</h3>
 													<div class="show-item__info">
 														<div>
 															<span>Время</span>
@@ -133,16 +133,16 @@
 															<span></span>
 														</div>
 														<div>
-															<span rv-text="show.time"></span>
-															<span><span rv-text="show.price">1 200</span>₴</span>
+															<span>{{ item.time }}</span>
+															<span>{{ item.price | localPrice }}</span>
 															<span><a href="#" class="show-item__more">Подробнее</a></span>
 														</div>
 													</div>
 												</div>
 												<div class="show-item__rigth">
-													<button class="btn" rv-on-click="controller.setShow">Выбрать</button>
+													<button class="btn" @click="setShow(event, index)">Выбрать</button>
 												</div>
-												<div class="show-item__desc" rv-html="show.desc"></div>
+												<div class="show-item__desc" v-html="item.desc"></div>
 											</div>
 										</li>
 
@@ -154,13 +154,13 @@
 
 									<ul class="show-sect__list">
 
-										<li class="comm-panel show-item" rv-each-masterclass="data.masterclasses">
+										<li class="comm-panel show-item show-item--masterclass" v-for="(item, index) in masterclasses">
 											<div class="show-item__image">
-												<img rv-src="masterclass.image" alt="">
+												<img :src="item.image" alt="">
 											</div>
 											<div class="show-item__row accordion">
 												<div class="show-item__left">
-													<h3 class="h-fs-2--800 show-item__header" rv-text="masterclass.name"></h3>
+													<h3 class="h-fs-2--800 show-item__header">{{ item.name }}</h3>
 													<div class="show-item__info">
 														<div>
 															<span>Время</span>
@@ -168,16 +168,16 @@
 															<span></span>
 														</div>
 														<div>
-															<span rv-text="masterclass.time"></span>
-															<span><span rv-text="masterclass.tariff">50</span>₴/чел</span>
+															<span>{{ item.time }}</span>
+															<span><span>{{ item.tariff }}</span>₴/чел</span>
 															<span><a href="#" class="show-item__more">Подробнее</a></span>
 														</div>
 													</div>
 												</div>
 												<div class="show-item__rigth">
-													<button class="btn" rv-on-click="controller.setMasterclass">Выбрать</button>
+													<button class="btn" @click="setMasterclass(event, index)">Выбрать</button>
 												</div>
-												<div class="show-item__desc" rv-html="masterclass.desc"></div>
+												<div class="show-item__desc" v-html="item.desc"></div>
 											</div>
 										</li>
 
@@ -290,46 +290,48 @@
 													</div>
 												</div>
 	
-												<div class="busket-item" style="display: none">
-													<div class="busket-item__label">
-														<span>Шоу</span>
-														<div class="tooltip-wrapper">
-															<button class="busket-item__delete"></button>
-															<div class="tooltip">
-																<div class="tooltip-content">Удалить</div>
+												<div class="busket-item" v-for="(item, index) in shows" v-show="item.active">
+													<div class="busket-item__wrapper" >
+														<div class="busket-item__label">
+															<span>Шоу</span>
+															<div class="tooltip-wrapper">
+																<button class="busket-item__delete" @click="removeShow(event, index)"></button>
+																<div class="tooltip">
+																	<div class="tooltip-content">Удалить</div>
+																</div>
 															</div>
 														</div>
-													</div>
-													<div class="busket-item__show-block">
-														<h3 class="h-fs-3--800 busket-item__header"></h3>
-														<span class="busket-item__show-time"></span>
-														<span class="busket-item__show-price"><span></span>₴</span></span>
+														<div class="busket-item__show-block">
+															<h3 class="h-fs-3--800 busket-item__header">{{ item.name }}</h3>
+															<span class="busket-item__show-time"></span>
+															<span class="busket-item__show-price"><span>{{ item.price | localPrice }}</span>
+														</div>
 													</div>
 												</div>
 	
-												<div class="busket-item" style="display: none">
+												<div class="busket-item" v-for="(item, index) in masterclasses" v-show="item.active">
 													<div class="busket-item__label">
 														<span>Мастер-класс</span>
 														<div class="tooltip-wrapper">
-															<button class="busket-item__delete"></button>
+															<button class="busket-item__delete" @click="removeMasterclass(event, index)"></button>
 															<div class="tooltip">
 																<div class="tooltip-content">Удалить</div>
 															</div>
 														</div>
 													</div>
 													<div class="busket-item__mc-block">
-														<h3 class="h-fs-3--800 busket-item__header"></h3>
+														<h3 class="h-fs-3--800 busket-item__header">{{ item.name }}</h3>
 														<div class="busket-item__mc-row">
 															<div class="busket-item__mc-count">
 																<span class="busket-item__counter-label">К-во детей</span>
 																<div class="busket-counter">
-																	<button type="button" class="busket-counter__minus"></button>
-																	<input type="text" disabled>
-																	<button type="button" class="busket-counter__plus"></button>
+																	<button type="button" @click="decCountMc(index)" class="busket-counter__minus"></button>
+																	<input type="text" v-model="item.count" disabled>
+																	<button type="button" @click="incCountMc(index)" class="busket-counter__plus"></button>
 																</div>
 															</div>
-															<span class="busket-item__mc-tar">х <span></span>₴ / чел.</span>
-															<span class="busket-item__mc-price"><span></span>₴</span>
+															<span class="busket-item__mc-tar">х <span>{{ item.tariff }}</span>₴ / чел.</span>
+															<span class="busket-item__mc-price">{{ masterclassPrice[index] }}</span>
 														</div>
 													</div>
 												</div>

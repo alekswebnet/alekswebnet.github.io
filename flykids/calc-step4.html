@@ -111,24 +111,24 @@
 
 							<ul class="decor-sect__list">
 
-								<li class="decor-item comm-panel" rv-each-decor="data.decors">
+								<li class="decor-item comm-panel" v-for="(item, index) in decors">
 									<div class="decor-item__image">
-										<img rv-src="decor.image" alt="">
+										<img :src="item.image" alt="">
 									</div>
 									<div class="decor-item__row">
 
 										<div class="decor-item__info">
-											<h3 class="h-fs-3--800 decor-item__header" rv-text="decor.name">Пиньята</h3>
-											<span class="decor-item__price"><span rv-text="decor.price | local"></span>₴<span rv-if="decor.pieces">  - {decor.pieces} шт</span></span>
+											<h3 class="h-fs-3--800 decor-item__header">{{ item.name }}</h3>
+											<span class="decor-item__price"><span>{{ item.price | localPrice }}</span><span v-if="item.pieces">  - {{ item.pieces }} шт</span></span>
 										</div>
 										
-										<div class="guest-counter" rv-if="decor.isCount">
-											<button type="button" class="guest-counter__minus" rv-class-active="decor.activeDecDecor" rv-on-click="controller.decDecorCount"></button>
-											<input type="text" rv-value="decor.count" disabled>
-											<button type="button" class="guest-counter__plus" rv-class-active="decor.activeIncDecor" rv-on-click="controller.incDecorCount"></button>
+										<div class="guest-counter" v-if="item.isCount">
+											<button type="button" @click="decCountDecor(index)" :disabled="item.isDecDisabled" class="guest-counter__minus"></button>
+											<input type="text" v-model="item.count" disabled>
+											<button type="button" @click="incCountDecor(index)" :disabled="item.isInkDisabled" class="guest-counter__plus"></button>
 										</div>
 
-										<div class="decor-item__add" rv-unless="decor.isCount">
+										<div class="decor-item__add" v-else="item.isCount">
 											<button class="btn" rv-on-click="controller.showDecorCheckItemB">Добавить</button>
 										</div>
 

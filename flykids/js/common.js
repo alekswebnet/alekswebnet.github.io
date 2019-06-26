@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function() {
 /*
 ** Vue.js init
 */
@@ -45,6 +45,20 @@ var app = new Vue({
     ],
     guests: [
       {
+        group: 'Именинник',
+        label: 'Именинники',
+        icon: './img/birthday-boy.svg',
+        count: 0,
+        maxCount: 50,
+        isDecDisabled: true,
+        isSingle: true,
+        isInkDisabled: false,
+        pricePer: 0,
+        onWorks: 'Бесплатно',
+        onWeeks: '0₴',
+        price: 0
+      },
+      {
         group: 'Дети до 1 года',
         label: 'Дети до 1 г.',
         icon: './img/baby.svg',
@@ -84,6 +98,281 @@ var app = new Vue({
         price: 0
       }
     ],
+    animations: [
+      {
+        name: 'Миньоны',
+        image: 'img/Screenshot_2.jpg',
+        type: '',
+        active: false,
+        tariffs: [
+          {
+            time: '30 мин',
+            price: 600
+          },
+          {
+            time: '1 час',
+            price: 800
+          },
+          {
+            time: '1 час 30 мин',
+            price: 900
+          }
+        ],
+        curTime: '',
+        curTariff: '',
+        curTariffIndex: 1,
+        price: 0,
+      },
+      {
+        name: 'Трансформеры',
+        image: 'img/Screenshot_1.jpg',
+        type: '',
+        active: false,
+        tariffs: [
+          {
+            time: '30 мин',
+            price: 600
+          },
+          {
+            time: '1 час',
+            price: 800
+          },
+          {
+            time: '1 час 30 мин',
+            price: 900
+          }
+        ],
+        curTime: '',
+        curTariff: '',
+        curTariffIndex: 1,
+        price: 0,
+      },
+      {
+        name: 'Мстители',
+        image: 'img/Screenshot_3.jpg',
+        type: '',
+        active: false,
+        tariffs: [
+          {
+            time: '30 мин',
+            price: 600
+          },
+          {
+            time: '1 час',
+            price: 800
+          },
+          {
+            time: '1 час 30 мин',
+            price: 900
+          }
+        ],
+        curTime: '',
+        curTariff: '',
+        curTariffIndex: 1,
+        price: 0,
+      }
+    ],
+    shows: [
+      {
+        name: 'Мыльные пузыри',
+        image: './img/A7292BE4-CA5E-E251-102D-01E5D21A11DF.jpg',
+        time: '45 мин',
+        price: 1200,
+        desc: 'Если Вы хотите удивить своих гостей, тогда это отличный выбор! В отдельной комнате, со световой иллюминацией, активной музыкой и яркими ведущими вы почувствуете себя в сказке, а ваши гости и дети незамедлительно начнут прыгать под потоки летящей серебренной бумаги, которая раздувается мощными воздушными пушками!<br>Атмосфера будет что надо!',
+        active: false,
+      },
+      {
+        name: 'Серебряное шоу',
+        image: './img/222682F7-AF14-6598-3836-DBCD421625AD.jpg',
+        time: '45 мин',
+        price: 1200,
+        desc: 'Если Вы хотите удивить своих гостей, тогда это отличный выбор! В отдельной комнате, со световой иллюминацией, активной музыкой и яркими ведущими вы почувствуете себя в сказке, а ваши гости и дети незамедлительно начнут прыгать под потоки летящей серебренной бумаги, которая раздувается мощными воздушными пушками!<br>Атмосфера будет что надо!',
+        active: false,
+      },
+      {
+        name: 'Химическое шоу',
+        image: './img/7584AF9B-2E91-D25B-B67D-8B804F902AC9.jpg',
+        time: '45 мин',
+        price: 1200,
+        desc: 'Если Вы хотите удивить своих гостей, тогда это отличный выбор! В отдельной комнате, со световой иллюминацией, активной музыкой и яркими ведущими вы почувствуете себя в сказке, а ваши гости и дети незамедлительно начнут прыгать под потоки летящей серебренной бумаги, которая раздувается мощными воздушными пушками!<br>Атмосфера будет что надо!',
+        active: false,
+      },
+    ],
+    masterclasses: [
+      {
+        name: 'Пицца-суши',
+        image: './img/13edbadedcacc4d15e75b9c9ecc8146e.jpg',
+        time: '45 мин',
+        tariff: 50,
+        count: 0,
+        maxCount: 50,
+        price: 0,
+        desc: 'Если Вы хотите удивить своих гостей, тогда это отличный выбор! В отдельной комнате, со световой иллюминацией, активной музыкой и яркими ведущими вы почувствуете себя в сказке, а ваши гости и дети незамедлительно начнут прыгать под потоки летящей серебренной бумаги, которая раздувается мощными воздушными пушками!<br>Атмосфера будет что надо!',
+        active: false,
+      },
+      {
+        name: 'Пряники',
+        image: './img/331791264_331791264.jpg',
+        time: '45 мин',
+        tariff: 50,
+        count: 0,
+        maxCount: 50,
+        price: 0,
+        desc: 'Если Вы хотите удивить своих гостей, тогда это отличный выбор! В отдельной комнате, со световой иллюминацией, активной музыкой и яркими ведущими вы почувствуете себя в сказке, а ваши гости и дети незамедлительно начнут прыгать под потоки летящей серебренной бумаги, которая раздувается мощными воздушными пушками!<br>Атмосфера будет что надо!',
+        active: false,
+      },
+      {
+        name: 'Коктейли',
+        image: './img/Ymb9OdtUdqc.jpg',
+        time: '45 мин',
+        tariff: 50,
+        count: 0,
+        maxCount: 50,
+        price: 0,
+        desc: 'Если Вы хотите удивить своих гостей, тогда это отличный выбор! В отдельной комнате, со световой иллюминацией, активной музыкой и яркими ведущими вы почувствуете себя в сказке, а ваши гости и дети незамедлительно начнут прыгать под потоки летящей серебренной бумаги, которая раздувается мощными воздушными пушками!<br>Атмосфера будет что надо!',
+        active: false,
+      },
+    ],
+    decors: [
+      {
+        name: 'Пиньята',
+        image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
+        price: 300,
+        isCount: true,
+        count: 0,
+        isDecDisabled: true,
+        isInkDisabled: false,
+        isCheckActive: false,
+        summ: 0,
+      },
+      {
+        name: 'Канекалоны',
+        image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
+        price: 170,
+        isCount: true,
+        count: 0,
+        isDecDisabled: true,
+        isInkDisabled: false,
+        isCheckActive: false,
+        summ: 0,
+      },
+      {
+        name: 'Аквагрим малюнок',
+        image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
+        price: 40,
+        isCount: true,
+        count: 0,
+        isDecDisabled: true,
+        isInkDisabled: false,
+        isCheckActive: false,
+        summ: 0,
+      },
+      {
+        name: 'Аквагрим маска',
+        image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
+        price: 80,
+        isCount: true,
+        count: 0,
+        isDecDisabled: true,
+        isInkDisabled: false,
+        isCheckActive: false,
+        summ: 0,
+      },
+      {
+        name: 'Шар-сюрприз',
+        image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
+        price: 250,
+        isCount: true,
+        count: 0,
+        isDecDisabled: true,
+        isInkDisabled: false,
+        isCheckActive: false,
+        summ: 0,
+      },
+      {
+        name: 'Шар двойной сюрприз',
+        image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
+        price: 350,
+        isCount: true,
+        count: 0,
+        isDecDisabled: true,
+        isInkDisabled: false,
+        isCheckActive: false,
+        summ: 0,
+      },
+      {
+        name: 'Шар на палочке',
+        image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
+        price: 10,
+        isCount: true,
+        count: 0,
+        isDecDisabled: true,
+        isInkDisabled: false,
+        isCheckActive: false,
+        summ: 0,
+      },
+      {
+        name: 'Шар гелиевый',
+        image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
+        price: 30,
+        isCount: true,
+        count: 0,
+        isDecDisabled: true,
+        isInkDisabled: false,
+        isCheckActive: false,
+        summ: 0,
+      },
+      {
+        name: 'Шар фольгированный',
+        image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
+        price: 100,
+        isCount: true,
+        count: 0,
+        isDecDisabled: true,
+        isInkDisabled: false,
+        isCheckActive: false,
+        summ: 0,
+      },
+      {
+        name: 'Цифра фольгированный гелиевый шарик',
+        image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
+        price: 350,
+        isCount: true,
+        count: 0,
+        isDecDisabled: true,
+        isInkDisabled: false,
+        isCheckActive: false,
+        summ: 0,
+      },
+      {
+        name: 'Арка из шариков на вход в банкетный зал',
+        image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
+        price: 360,
+        isCount: false,
+        isCheckActive: false,
+        summ: 0,
+      },
+      {
+        name: 'Шарик с конфетти',
+        image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
+        price: 30,
+        isCount: true,
+        count: 0,
+        isDecDisabled: true,
+        isInkDisabled: false,
+        isCheckActive: false,
+        summ: 0,
+      },
+      {
+        name: 'Шарики на пол',
+        image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
+        price: 150,
+        pieces: 50,
+        isCount: false,
+        isCheckActive: false,
+        summ: 0,
+      },
+    ],
   },
   methods: {
     incCount: function(index) {
@@ -110,6 +399,86 @@ var app = new Vue({
         item.isDecDisabled = true
       }
     },
+    incCountAnim: function(index) {
+      var item = this.animations[index]
+      var tabs = document.querySelectorAll('.animation-wrapper .tabs__tab-list')[index].querySelectorAll('.tabs__trigger')
+
+      if (item.curTariffIndex < (item.tariffs.length-1)) {
+        item.curTariffIndex++
+        for (var i = 0; i < tabs.length; i++) {
+          tabs[i].classList.remove('is-selected')
+        }
+        tabs[item.curTariffIndex].classList.add('is-selected')
+        tabs[index].parentNode.classList.remove('w-33-1', 'w-33-2', 'w-33-3')
+        tabs[index].parentNode.classList.add('w-33-'+(item.curTariffIndex+1)+'')
+        item.curTime = item.tariffs[item.curTariffIndex].time
+        item.curTariff = item.tariffs[item.curTariffIndex].price
+      } 
+    },
+    decCountAnim: function(index) {
+      var item = this.animations[index]
+      var tabs = document.querySelectorAll('.animation-wrapper .tabs__tab-list')[index].querySelectorAll('.tabs__trigger')
+
+      if (item.curTariffIndex > 0) {
+        item.curTariffIndex--
+        for (var i = 0; i < tabs.length; i++) {
+          tabs[i].classList.remove('is-selected')
+        }
+        tabs[item.curTariffIndex].classList.add('is-selected')
+        tabs[index].parentNode.classList.remove('w-33-1', 'w-33-2', 'w-33-3')
+        tabs[index].parentNode.classList.add('w-33-'+(item.curTariffIndex+1)+'')
+        item.curTime = item.tariffs[item.curTariffIndex].time
+        item.curTariff = item.tariffs[item.curTariffIndex].price
+      } 
+    },
+    incCountMc: function(index) {
+      var item = this.masterclasses[index]
+
+      if (item.count >= 0) {
+        item.isDecDisabled = false
+      }
+      if (item.count < item.maxCount) {
+        item.count++
+      } 
+      if (item.count == item.maxCount) {
+        item.isInkDisabled = true
+      }
+    },
+    decCountMc: function(index) {
+      var item = this.masterclasses[index]
+
+      if (item.count > 0) {
+        item.count--
+        item.isInkDisabled = false
+      }
+      if (item.count == 0) {
+        item.isDecDisabled = true
+      }
+    },
+    incCountDecor: function(index) {
+      var item = this.decors[index]
+
+      if (item.count >= 0) {
+        item.isDecDisabled = false
+      }
+      if (item.count < item.maxCount) {
+        item.count++
+      } 
+      if (item.count == item.maxCount) {
+        item.isInkDisabled = true
+      }
+    },
+    decCountDecor: function(index) {
+      var item = this.decors[index]
+
+      if (item.count > 0) {
+        item.count--
+        item.isInkDisabled = false
+      }
+      if (item.count == 0) {
+        item.isDecDisabled = true
+      }
+    },
     setActiveTab: function(e) {
       var target = e.target
       var parent = target.parentNode
@@ -122,6 +491,10 @@ var app = new Vue({
           if (parent.dataset.part == '50') {
             parent.classList.remove('w-50-1', 'w-50-2')
             parent.classList.add('w-50-'+(index+1)+'')
+          }
+          if (parent.dataset.part == '33') {
+            parent.classList.remove('w-33-1', 'w-33-2', 'w-33-3')
+            parent.classList.add('w-33-'+(index+1)+'')
           }
           tabs[index].classList.add('is-selected')
         }
@@ -136,7 +509,6 @@ var app = new Vue({
       buttons[index].classList.add('btn--active')
       this.curRoomName = item.name
       this.curRoomMinSumm = item.minSumm
-
     },
     setPlace: function(e) {
       this.setActiveTab(e)
@@ -162,13 +534,84 @@ var app = new Vue({
         this.curHours = '16:00 - 21:00'
       }
     },
+    filterAnimAge: function(e) {
+      this.setActiveTab(e)
+    },
+    setAnimTime: function(event, index) {
+      this.setActiveTab(event)
+      var item = this.animations[index]
+      item.curTariffIndex = event.target.dataset.index
+      item.curTime = item.tariffs[item.curTariffIndex].time
+      item.curTariff = item.tariffs[item.curTariffIndex].price
+    },
+    setAnimType: function(event, index) {
+      document.querySelectorAll('.animation-item__type .btn').forEach(function(item){
+        item.classList.remove('btn--active')
+      })
+      var item = this.animations[index]
+      document.querySelectorAll('.animation-wrapper .tabs__tab-list')[index].classList.remove('tabs__tab-list--disabled')
+      event.target.classList.add('btn--active')
+      item.type = event.target.dataset.type
+      item.active = true
+      item.curTime = item.tariffs[item.curTariffIndex].time
+      item.curTariff = item.tariffs[item.curTariffIndex].price
+    },
+    removeAnim: function(index) {
+      var item = this.animations[index]
+      item.active = false
+      document.querySelectorAll('.animation-item__type')[index].querySelectorAll('.btn').forEach(function(item){
+        item.classList.remove('btn--active')
+      })
+      document.querySelectorAll('.animation-wrapper .tabs__tab-list')[index].classList.add('tabs__tab-list--disabled')
+      item.price = 0
+    },
+    setShow: function(event, index) {
+      var btn = event.target
+      var isActive = this.shows[index].active
+
+      if (isActive) {
+        this.shows[index].active = false
+        btn.classList.remove('btn--active')
+        btn.innerText = 'Выбрать'
+      } else {
+        this.shows[index].active = true
+        btn.classList.add('btn--active')
+        btn.innerText = 'Выбрано'
+      } 
+    },
+    setMasterclass: function(event, index) {
+      var btn = event.target
+      var isActive = this.masterclasses[index].active
+
+      if (isActive) {
+        this.masterclasses[index].active = false
+        btn.classList.remove('btn--active')
+        btn.innerText = 'Выбрать'
+      } else {
+        this.masterclasses[index].active = true
+        btn.classList.add('btn--active')
+        btn.innerText = 'Выбрано'
+      } 
+    },
+    removeShow: function(event, index) {
+      var btns = document.querySelectorAll('.show-item--show .btn')
+      btns[index].classList.remove('btn--active')
+      btns[index].innerText = 'Выбрать'
+      this.shows[index].active = false
+    },
+    removeMasterclass: function(event, index) {
+      var btns = document.querySelectorAll('.show-item--masterclass .btn')
+      btns[index].classList.remove('btn--active')
+      btns[index].innerText = 'Выбрать'
+      this.masterclasses[index].active = false
+    },
   },
   computed: {
     summ: function() {
-      var array = this.guests
+      var guests = this.guests
       var total = 0
-      for (var i = 0; i < array.length; i++) {
-        total += array[i].price
+      for (var i = 0; i < guests.length; i++) {
+        total += guests[i].price
       }
       total = total.toLocaleString()+'₴'
       return total
@@ -176,6 +619,13 @@ var app = new Vue({
     guestsPrice: function() {
       return this.guests.map(function(item) {
         item.price = item.count*item.pricePer
+        var price = item.price.toLocaleString()+'₴'
+        return price
+      });
+    },
+    masterclassPrice: function() {
+      return this.masterclasses.map(function(item) {
+        item.price = item.count*item.tariff
         var price = item.price.toLocaleString()+'₴'
         return price
       });
@@ -234,6 +684,7 @@ baron({
     track: '.baron__track',
 });
 function checkScrollDown() {
+  console.log('scrolldown')
   var busketItems = document.querySelector('.baron__scroller')
   if (document.querySelector('.baron__scroller')) {
     document.querySelector('.baron__scroller').scrollTop = busketItems.scrollHeight;

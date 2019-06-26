@@ -111,56 +111,66 @@
 
 							<div class="animations-sect__content">
 								<p>Сюжетно игровую программу проводят два аниматора, в отдельной концертной комнате "Party Room". Количество детей не ограниченно. Концертная комната оснащена музыкально-световым сопровождением, дискотечным шаром и установкой мыльных пузырей, которые вы можете дополнительно заказать за отдельную плату.</p>
-
-								<ul class="tabs__tab-list tabs__tab-list--transp">
-									<button role="tab" class="tabs__trigger tabs__trigger--anim" rv-on-click="controller.setAnimTime30m">30 мин - 600 грн</button>
-									<button role="tab" class="tabs__trigger tabs__trigger--anim" rv-on-click="controller.setAnimTime1h">1 час - 800 грн</button>
-									<button role="tab" class="tabs__trigger tabs__trigger--anim" rv-on-click="controller.setAnimTime1h30m">1 час 30 мин - 900 грн</button>
-								</ul>	
-
-								<small>Цена анимации до 15 детей. При количестве детей от 16 человек, сумма тарифа удваивается.</small>
-
+									
 								<div class="animations-sect__block">
-									<h2 class="h-fs-2">Выбор анимации</h2>
+									<h2 class="h-fs-2">Возраст детей</h2>
 
-									<ul class="animations-sect__list">
+									<div class="tabs__tab-list tabs__tab-list--disabled w-33-2" data-part="33">
+										<button class="tabs__trigger" @click="filterAnimAge(event)">3 - 7 лет</button>
+										<button class="tabs__trigge is-selected" @click="filterAnimAge(event)">7 - 10 лет</button>
+										<button class="tabs__trigger" @click="filterAnimAge(event)">10 - 13 лет</button>
+									</div>
 
-										<li class="comm-panel animation-item" rv-each-animation="data.animations">
-											<div class="animation-item__image">
-												<img rv-src="animation.image" alt="">
-											</div>
-											<div class="animation-item__row">
-												<div class="animation-item__info">
-													<h3 class="h-fs-2--800 animation-item__header" rv-text="animation.name"></h3>
-													<div class="animation-item__age">
-														<span>Возраст</span>
-														<span>5 - 9 лет</span>
-													</div>
+									<small>Выберите возрастные рамки, чтобы мы могли удачно подобрать анимацию именно для Вас</small>
+
+									<div class="animations-sect__list">
+
+										<div class="animation-wrapper" v-for="(item, index) in animations">
+
+											<div class="comm-panel animation-item" >
+												<div class="animation-item__image">
+													<img :src="item.image" alt="">
 												</div>
-												<div class="animation-item__type">
-													<div>
-														<button class="btn btn--transp" rv-on-click="controller.setPartyRoom">Party Room</button>
-														<div class="tooltip-wrapper">
-															<div class="info-btn"></div>
-															<div class="tooltip">
-																<div class="tooltip-content">Информация,&nbsp;что касается&nbsp;“PARTY&nbsp;ROOM”</div>
+												<div class="animation-item__row">
+													<div class="animation-item__info">
+														<h3 class="h-fs-2--800 animation-item__header">{{ item.name }}</h3>
+														<div class="animation-item__age">
+															<span>Возраст</span>
+															<span>5 - 9 лет</span>
+														</div>
+													</div>
+													<div class="animation-item__type">
+														<div>
+															<button class="btn" @click="setAnimType(event, index)" data-type="Party Room">Party Room</button>
+															<div class="tooltip-wrapper">
+																<div class="info-btn"></div>
+																<div class="tooltip">
+																	<div class="tooltip-content">Информация,&nbsp;что касается&nbsp;“PARTY&nbsp;ROOM”</div>
+																</div>
+															</div>
+														</div>
+														<div>
+															<button class="btn" @click="setAnimType(event, index)" data-type="Квест" >Квест</button>
+															<div class="tooltip-wrapper">
+																<div class="info-btn"></div>
+																<div class="tooltip">
+																	<div class="tooltip-content">Информация,&nbsp;что касается&nbsp;“Квест”</div>
+																</div>
 															</div>
 														</div>
 													</div>
-													<div>
-														<button class="btn btn--transp" rv-on-click="controller.setQuest">Квест</button>
-														<div class="tooltip-wrapper">
-															<div class="info-btn"></div>
-															<div class="tooltip">
-																<div class="tooltip-content">Информация,&nbsp;что касается&nbsp;“Квест”</div>
-															</div>
-														</div>
-													</div>
 												</div>
 											</div>
-										</li>
 
-									</ul>
+											<div class="tabs__tab-list tabs__tab-list--disabled w-33-2" data-part="33">
+												<button class="tabs__trigger" data-index='0' @click="setAnimTime(event, index)">30 мин - 600₴</button>
+												<button class="tabs__trigger is-selected" data-index='1' @click="setAnimTime(event, index)">1 час - 800₴</button>
+												<button class="tabs__trigger" data-index='2' @click="setAnimTime(event, index)">1 час 30 мин - 900₴</button>
+											</div>
+											<small>Цена анимации до 15 детей. При количестве детей от 16 человек, сумма тарифа удваивается.</small>
+										</div>
+
+									</div>
 								</div>
 
 							</div>
@@ -245,26 +255,26 @@
 	
 												</div>
 	
-												<div class="busket-item" style="display: none">
+												<div class="busket-item" v-for="(item, index) in animations" v-if="item.active">
 													<div class="busket-item__label">
 														<span>Анимация</span>
 														<div class="tooltip-wrapper">
-															<button class="busket-item__delete"></button>
+															<button class="busket-item__delete" @click="removeAnim(index)"></button>
 															<div class="tooltip">
 																<div class="tooltip-content">Удалить</div>
 															</div>
 														</div>
 													</div>
 													<div class="busket-item__comm-block">
-														<h3 class="h-fs-3--800 busket-item__header">Миньоны</h3>
+														<h3 class="h-fs-3--800 busket-item__header">{{ item.name }}</h3>
 														<div class="busket-item__comm-info">
-															<span class="busket-item__comm-name">Party Room</span>
+															<span class="busket-item__comm-name">{{ item.type }}</span>
 															<div class="busket-counter">
-																<button type="button" class="busket-counter__minus"></button>
-																<input type="text" disabled>
-																<button type="button" class="busket-counter__plus"></button>
+																<button type="button" @click="decCountAnim(index)" class="busket-counter__minus"></button>
+																<input type="text" v-model='item.curTime' disabled>
+																<button type="button" @click="incCountAnim(index)" class="busket-counter__plus"></button>
 															</div>
-															<span class="busket-item__comm-price"><span></span>₴</span></span>
+															<span class="busket-item__comm-price">{{ item.curTariff | localPrice }}</span>
 														</div>
 													</div>
 												</div>
