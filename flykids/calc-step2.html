@@ -279,46 +279,48 @@
 													</div>
 												</div>
 	
-												<div class="busket-item" style="display: none">
-													<div class="busket-item__label">
-														<span>Шоу</span>
-														<div class="tooltip-wrapper">
-															<button class="busket-item__delete"></button>
-															<div class="tooltip">
-																<div class="tooltip-content">Удалить</div>
+												<div class="busket-item" v-for="(item, index) in shows" v-show="item.active">
+													<div class="busket-item__wrapper" >
+														<div class="busket-item__label">
+															<span>Шоу</span>
+															<div class="tooltip-wrapper">
+																<button class="busket-item__delete" @click="removeShow(event, index)"></button>
+																<div class="tooltip">
+																	<div class="tooltip-content">Удалить</div>
+																</div>
 															</div>
 														</div>
-													</div>
-													<div class="busket-item__show-block">
-														<h3 class="h-fs-3--800 busket-item__header"></h3>
-														<span class="busket-item__show-time"></span>
-														<span class="busket-item__show-price"><span></span>₴</span></span>
+														<div class="busket-item__show-block">
+															<h3 class="h-fs-3--800 busket-item__header">{{ item.name }}</h3>
+															<span class="busket-item__show-time"></span>
+															<span class="busket-item__show-price"><span>{{ item.price | localPrice }}</span>
+														</div>
 													</div>
 												</div>
-	
-												<div class="busket-item" style="display: none">
+		
+												<div class="busket-item" v-for="(item, index) in masterclasses" v-show="item.active">
 													<div class="busket-item__label">
 														<span>Мастер-класс</span>
 														<div class="tooltip-wrapper">
-															<button class="busket-item__delete"></button>
+															<button class="busket-item__delete" @click="removeMasterclass(event, index)"></button>
 															<div class="tooltip">
 																<div class="tooltip-content">Удалить</div>
 															</div>
 														</div>
 													</div>
 													<div class="busket-item__mc-block">
-														<h3 class="h-fs-3--800 busket-item__header"></h3>
+														<h3 class="h-fs-3--800 busket-item__header">{{ item.name }}</h3>
 														<div class="busket-item__mc-row">
 															<div class="busket-item__mc-count">
 																<span class="busket-item__counter-label">К-во детей</span>
 																<div class="busket-counter">
-																	<button type="button" class="busket-counter__minus"></button>
-																	<input type="text" disabled>
-																	<button type="button" class="busket-counter__plus"></button>
+																	<button type="button" @click="decCountMc(index)" class="busket-counter__minus"></button>
+																	<input type="text" v-model="item.count" disabled>
+																	<button type="button" @click="incCountMc(index)" class="busket-counter__plus"></button>
 																</div>
 															</div>
-															<span class="busket-item__mc-tar">х <span></span>₴ / чел.</span>
-															<span class="busket-item__mc-price"><span></span>₴</span>
+															<span class="busket-item__mc-tar">х <span>{{ item.tariff }}</span>₴ / чел.</span>
+															<span class="busket-item__mc-price">{{ masterclassPrice[index] }}</span>
 														</div>
 													</div>
 												</div>
@@ -334,7 +336,7 @@
 											</div>
 	
 											<div class="busket-comm">
-												<span class="busket-min" v-if="curRoomMinSumm !== ''"><span>Минимальный заказ</span><span>{{ curRoomMinSumm | localPrice }}</span></span>
+												<span class="busket-min" v-if="curRoomMinSumm !== ''"><span>Депозит</span><span>{{ curRoomMinSumm | localPrice }}</span></span>
 												<div class="busket-bottom">
 													<span class="busket-bottom__label">Сумма к оплате</span>
 													<span class="h-fs-2--800 busket-summ">{{ summ }}</span>

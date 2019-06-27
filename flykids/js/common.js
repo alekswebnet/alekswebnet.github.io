@@ -16,6 +16,9 @@ var app = new Vue({
     curPlace: 'room',
     curRoomName: '',
     curRoomMinSumm: '',
+    curTableName: '',
+    decorsCheckActive: false,
+
     rooms: [
       {
         name: 'Миньоны',
@@ -48,7 +51,7 @@ var app = new Vue({
         group: 'Именинник',
         label: 'Именинники',
         icon: './img/birthday-boy.svg',
-        count: 0,
+        count: 1,
         maxCount: 50,
         isDecDisabled: true,
         isSingle: true,
@@ -64,6 +67,7 @@ var app = new Vue({
         icon: './img/baby.svg',
         count: 0,
         maxCount: 50,
+        isCount: true,
         isDecDisabled: true,
         isInkDisabled: false,
         pricePer: 0,
@@ -77,6 +81,7 @@ var app = new Vue({
         icon: './img/girl.svg',
         count: 0,
         maxCount: 50,
+        isCount: true,
         isDecDisabled: true,
         isInkDisabled: false,
         pricePer: 200,
@@ -90,6 +95,7 @@ var app = new Vue({
         icon: './img/woman.svg',
         count: 0,
         maxCount: 50,
+        isCount: true,
         isDecDisabled: true,
         isInkDisabled: false,
         pricePer: 200,
@@ -119,9 +125,8 @@ var app = new Vue({
           }
         ],
         curTime: '',
-        curTariff: '',
+        curTariff: 0,
         curTariffIndex: 1,
-        price: 0,
       },
       {
         name: 'Трансформеры',
@@ -143,9 +148,8 @@ var app = new Vue({
           }
         ],
         curTime: '',
-        curTariff: '',
+        curTariff: 0,
         curTariffIndex: 1,
-        price: 0,
       },
       {
         name: 'Мстители',
@@ -167,9 +171,8 @@ var app = new Vue({
           }
         ],
         curTime: '',
-        curTariff: '',
+        curTariff: 0,
         curTariffIndex: 1,
-        price: 0,
       }
     ],
     shows: [
@@ -237,144 +240,168 @@ var app = new Vue({
       {
         name: 'Пиньята',
         image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
-        price: 300,
+        tariff: 300,
         isCount: true,
         count: 0,
+        maxCount: 50,
         isDecDisabled: true,
         isInkDisabled: false,
-        isCheckActive: false,
+        isActive: false,
         summ: 0,
       },
       {
         name: 'Канекалоны',
         image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
-        price: 170,
+        tariff: 170,
         isCount: true,
         count: 0,
+        maxCount: 50,
         isDecDisabled: true,
         isInkDisabled: false,
-        isCheckActive: false,
+        isActive: false,
         summ: 0,
       },
       {
         name: 'Аквагрим малюнок',
         image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
-        price: 40,
+        tariff: 40,
         isCount: true,
         count: 0,
+        maxCount: 50,
         isDecDisabled: true,
         isInkDisabled: false,
-        isCheckActive: false,
+        isActive: false,
         summ: 0,
       },
       {
         name: 'Аквагрим маска',
         image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
-        price: 80,
+        tariff: 80,
         isCount: true,
         count: 0,
+        maxCount: 50,
         isDecDisabled: true,
         isInkDisabled: false,
-        isCheckActive: false,
+        isActive: false,
         summ: 0,
       },
       {
         name: 'Шар-сюрприз',
         image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
-        price: 250,
+        tariff: 250,
         isCount: true,
         count: 0,
+        maxCount: 50,
         isDecDisabled: true,
         isInkDisabled: false,
-        isCheckActive: false,
+        isActive: false,
         summ: 0,
       },
       {
         name: 'Шар двойной сюрприз',
         image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
-        price: 350,
+        tariff: 350,
         isCount: true,
         count: 0,
+        maxCount: 50,
         isDecDisabled: true,
         isInkDisabled: false,
-        isCheckActive: false,
+        isActive: false,
         summ: 0,
       },
       {
         name: 'Шар на палочке',
         image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
-        price: 10,
+        tariff: 10,
         isCount: true,
         count: 0,
+        maxCount: 50,
         isDecDisabled: true,
         isInkDisabled: false,
-        isCheckActive: false,
+        isActive: false,
         summ: 0,
       },
       {
         name: 'Шар гелиевый',
         image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
-        price: 30,
+        tariff: 30,
         isCount: true,
         count: 0,
+        maxCount: 50,
         isDecDisabled: true,
         isInkDisabled: false,
-        isCheckActive: false,
+        isActive: false,
         summ: 0,
       },
       {
         name: 'Шар фольгированный',
         image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
-        price: 100,
+        tariff: 100,
         isCount: true,
         count: 0,
+        maxCount: 50,
         isDecDisabled: true,
         isInkDisabled: false,
-        isCheckActive: false,
+        isActive: false,
         summ: 0,
       },
       {
         name: 'Цифра фольгированный гелиевый шарик',
         image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
-        price: 350,
+        tariff: 350,
         isCount: true,
         count: 0,
+        maxCount: 50,
         isDecDisabled: true,
         isInkDisabled: false,
-        isCheckActive: false,
+        isActive: false,
         summ: 0,
       },
       {
         name: 'Арка из шариков на вход в банкетный зал',
         image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
-        price: 360,
+        tariff: 360,
         isCount: false,
-        isCheckActive: false,
+        isActive: false,
         summ: 0,
       },
       {
         name: 'Шарик с конфетти',
         image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
-        price: 30,
+        tariff: 30,
         isCount: true,
         count: 0,
+        maxCount: 50,
         isDecDisabled: true,
         isInkDisabled: false,
-        isCheckActive: false,
+        isActive: false,
         summ: 0,
       },
       {
         name: 'Шарики на пол',
         image: 'img/F08A7A5A-4A15-8ED6-65FE-7680E0621DBD.jpg',
-        price: 150,
+        tariff: 150,
         pieces: 50,
         isCount: false,
-        isCheckActive: false,
+        isActive: false,
         summ: 0,
-      },
+      }
     ],
   },
   methods: {
+    addBirthdayBoy: function () {
+      if (this.guests[0].count < this.guests[0].maxCount) {
+        this.guests[0].count++
+      }
+      /*var newItem = this.guests.slice(0, 1)
+      console.log(newItem)
+      this.guests.splice(1, 0, newItem[0]);*/
+    },
+    removeBirthdayBoy: function () {
+      if (this.guests[0].count > 0) {
+        this.guests[0].count--
+      }
+    },
     incCount: function(index) {
       var item = this.guests[index]
 
@@ -467,6 +494,15 @@ var app = new Vue({
       if (item.count == item.maxCount) {
         item.isInkDisabled = true
       }
+      if (this.decorsCheckActive == false) {
+        this.decorsCheckActive = true
+      }
+      if (this.decors[index].isActive == false) {
+        this.decors[index].isActive = true
+        this.$nextTick(function () {
+          checkScrollDown()
+        })
+      }
     },
     decCountDecor: function(index) {
       var item = this.decors[index]
@@ -479,8 +515,8 @@ var app = new Vue({
         item.isDecDisabled = true
       }
     },
-    setActiveTab: function(e) {
-      var target = e.target
+    setActiveTab: function(event) {
+      var target = event.target
       var parent = target.parentNode
       var tabs = parent.querySelectorAll('.tabs__trigger')
 
@@ -510,42 +546,49 @@ var app = new Vue({
       this.curRoomName = item.name
       this.curRoomMinSumm = item.minSumm
     },
-    setPlace: function(e) {
-      this.setActiveTab(e)
-      this.setCurPlace(e)
+    setPlace: function(event) {
+      this.setActiveTab(event)
+      this.setCurPlace(event)
     },
-    setCurPlace: function(e) {
-      if (e.target.dataset.place == 'room') {
+    setCurPlace: function(event) {
+      if (event.target.dataset.place == 'room') {
         this.curPlace = 'room'
-        initRoomsCarousel() 
-        
+        initRoomsCarousel()
       } else {
         this.curPlace = 'table'
+        this.curRoomMinSumm = ''
+        this.curRoomName = ''
+        var buttons = document.querySelectorAll('.rooms-cell .btn')
+        buttons.forEach(function(item){
+          item.classList.remove('btn--active')
+        })
       }
     },
-    setHours: function(e) {
-      this.setActiveTab(e)
-      this.setCurHours(e)
+    setHours: function(event) {
+      this.setActiveTab(event)
+      this.setCurHours(event)
     },
-    setCurHours: function(e) {
-      if (e.target.dataset.hours == '10:00 - 15:00') {
+    setCurHours: function(event) {
+      if (event.target.dataset.hours == '10:00 - 15:00') {
         this.curHours = '10:00 - 15:00'
       } else {
         this.curHours = '16:00 - 21:00'
       }
     },
-    filterAnimAge: function(e) {
-      this.setActiveTab(e)
+    filterAnimAge: function(event) {
+      this.setActiveTab(event)
     },
     setAnimTime: function(event, index) {
       this.setActiveTab(event)
       var item = this.animations[index]
       item.curTariffIndex = event.target.dataset.index
       item.curTime = item.tariffs[item.curTariffIndex].time
-      item.curTariff = item.tariffs[item.curTariffIndex].price
+      if (item.active) {
+        item.curTariff = item.tariffs[item.curTariffIndex].price
+      }
     },
     setAnimType: function(event, index) {
-      document.querySelectorAll('.animation-item__type .btn').forEach(function(item){
+      document.querySelectorAll('.animation-item__type')[index].querySelectorAll('.btn').forEach(function(item){
         item.classList.remove('btn--active')
       })
       var item = this.animations[index]
@@ -555,6 +598,9 @@ var app = new Vue({
       item.active = true
       item.curTime = item.tariffs[item.curTariffIndex].time
       item.curTariff = item.tariffs[item.curTariffIndex].price
+      this.$nextTick(function () {
+        checkScrollDown()
+      })
     },
     removeAnim: function(index) {
       var item = this.animations[index]
@@ -563,7 +609,7 @@ var app = new Vue({
         item.classList.remove('btn--active')
       })
       document.querySelectorAll('.animation-wrapper .tabs__tab-list')[index].classList.add('tabs__tab-list--disabled')
-      item.price = 0
+      item.curTariff = 0
     },
     setShow: function(event, index) {
       var btn = event.target
@@ -578,6 +624,9 @@ var app = new Vue({
         btn.classList.add('btn--active')
         btn.innerText = 'Выбрано'
       } 
+      this.$nextTick(function () {
+        checkScrollDown()
+      })
     },
     setMasterclass: function(event, index) {
       var btn = event.target
@@ -591,7 +640,10 @@ var app = new Vue({
         this.masterclasses[index].active = true
         btn.classList.add('btn--active')
         btn.innerText = 'Выбрано'
-      } 
+      }
+      this.$nextTick(function () {
+        checkScrollDown()
+      }) 
     },
     removeShow: function(event, index) {
       var btns = document.querySelectorAll('.show-item--show .btn')
@@ -605,14 +657,57 @@ var app = new Vue({
       btns[index].innerText = 'Выбрать'
       this.masterclasses[index].active = false
     },
+    addDecorCheck: function(index) {
+      if (this.decorsCheckActive == false) {
+        this.decorsCheckActive = true
+      }
+      if (this.decors[index].isActive == false) {
+        this.decors[index].isActive = true
+      }
+      this.$nextTick(function () {
+        checkScrollDown()
+      })
+    },
+    removeDecorCheck: function(index) {
+      this.decors[index].isActive = false
+      this.decors[index].count = 0
+      this.decors[index].isDecDisabled = true
+      var arr = this.decors.map(function(item) {
+        return item.isActive;
+      });
+      function isFalse(value) {
+        return value == false
+      }
+      if (arr.every(isFalse)) {
+        this.decorsCheckActive = false
+      }
+    },
   },
   computed: {
     summ: function() {
       var guests = this.guests
+      var animations = this.animations
+      var shows = this.shows
+      var masterclasses = this.masterclasses
       var total = 0
+
       for (var i = 0; i < guests.length; i++) {
         total += guests[i].price
       }
+      for (var i = 0; i < animations.length; i++) {
+        total += animations[i].curTariff
+      }
+      for (var i = 0; i < shows.length; i++) {
+        if (shows[i].active) {
+          total += shows[i].price
+        } 
+      }
+      for (var i = 0; i < masterclasses.length; i++) {
+        if (masterclasses[i].active) {
+          total += masterclasses[i].price
+        }
+      }
+
       total = total.toLocaleString()+'₴'
       return total
     },
@@ -627,6 +722,19 @@ var app = new Vue({
       return this.masterclasses.map(function(item) {
         item.price = item.count*item.tariff
         var price = item.price.toLocaleString()+'₴'
+        return price
+      });
+    },
+    decorPrice: function() {
+      return this.decors.map(function(item) {
+        if (item.isCount) {
+          item.summ = item.count*item.tariff
+        } else {
+          item.summ = item.tariff
+        }
+        console.log(item.summ)
+       
+        var price = item.summ.toLocaleString()+'₴'
         return price
       });
     },
@@ -684,7 +792,6 @@ baron({
     track: '.baron__track',
 });
 function checkScrollDown() {
-  console.log('scrolldown')
   var busketItems = document.querySelector('.baron__scroller')
   if (document.querySelector('.baron__scroller')) {
     document.querySelector('.baron__scroller').scrollTop = busketItems.scrollHeight;

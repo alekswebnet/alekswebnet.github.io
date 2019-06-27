@@ -142,7 +142,7 @@
 															<span>Комната</span>
 														</div>
 														<div class="card__col card__col--right">
-															<span>Сумма заказа для этой комнаты</span>
+															<span>Депозит на ресторан для этой комнаты</span>
 														</div>
 													</div>
 
@@ -182,8 +182,8 @@
 
 								<div class="tabs__panel" v-show="curPlace == 'table'">
 
-									Столик в ресторане
-
+									<p>Столик в ресторане для празднования Дня Рождения! Мы учли современные тенденции и желание детей. Красочные мультяшные герои на обоях ресторана, удобные стулья и столы.</p>
+									<p>У столика есть минимальная сумма заказа. Столик станет доступен к бронированию при достижении минимальной суммы.</p>
 									<div class="time-interval">
 										<h2 class="h-fs-2">Время</h2>
 
@@ -202,7 +202,8 @@
 
 							<ul class="guests-list">
 
-								<li class="guests-item comm-panel"  v-for="(item, index) in guests">
+								<li class="guests-item comm-panel" v-for="(item, index) in guests">
+									<button v-show="!item.isCount" @click="addBirthdayBoy" class="guests-item__add"></button>
 									<div class="guests-item__header">
 										<img :src="item.icon" alt="">
 										<h3 class="h-fs-3--800">{{ item.group }}</h3>
@@ -211,11 +212,12 @@
 										<span>{{ item.onWorks }}</span>
 										<span>{{ item.onWeeks }}</span>
 									</div>
-									<div class="guest-counter">
+									<div class="guest-counter" v-if="item.isCount">
 										<button type="button" @click="decCount(index)" :disabled="item.isDecDisabled" class="guest-counter__minus"></button>
 										<input type="text" v-model="item.count" disabled>
 										<button type="button" @click="incCount(index)" :disabled="item.isInkDisabled" class="guest-counter__plus"></button>
 									</div>
+									<div v-else="item.isCount" class="guests-item__check"></div>
 								</li>
 								
 							</ul>
@@ -241,7 +243,7 @@
 										<div class="busket-info">
 											<div class="busket-info__addr">
 												<span class="busket-info__place">ТРЦ "Арсен"</span>
-												<span class="busket-info__city">г.Львов</span>
+												<span class="busket-info__city">г. Киев</span>
 											</div>
 											<div class="busket-info__time">
 												<span class="busket-info__date">
@@ -262,9 +264,13 @@
 											<div class="busket-item">
 												<span class="busket-item__label">Тематическая комната</span>
 												<div class="busket-item__block">
-													<h3 class="h-fs-3--800 busket-item__header">
+													<h3 class="h-fs-3--800 busket-item__header" v-if="curPlace == 'room'">
 														{{ curRoomName }}
 														<span v-if="curRoomName == ''">Выберите комнату</span>
+													</h3>
+													<h3 class="h-fs-3--800 busket-item__header" v-if="curPlace == 'table'">
+														{{ curTableName }}
+														<span v-if="curTableName == ''">Столик в ресторане</span>
 													</h3>
 													<span class="busket-item__price">{{ curRoomMinSumm | localPrice }}</span>
 												</div>
@@ -299,70 +305,72 @@
 
 											</div>
 
-											<div class="busket-item" style="display: none">
+											<div class="busket-item" v-for="(item, index) in animations" v-if="item.active">
 												<div class="busket-item__label">
 													<span>Анимация</span>
 													<div class="tooltip-wrapper">
-														<button class="busket-item__delete"></button>
+														<button class="busket-item__delete" @click="removeAnim(index)"></button>
 														<div class="tooltip">
 															<div class="tooltip-content">Удалить</div>
 														</div>
 													</div>
 												</div>
 												<div class="busket-item__comm-block">
-													<h3 class="h-fs-3--800 busket-item__header">Миньоны</h3>
+													<h3 class="h-fs-3--800 busket-item__header">{{ item.name }}</h3>
 													<div class="busket-item__comm-info">
-														<span class="busket-item__comm-name">Party Room</span>
+														<span class="busket-item__comm-name">{{ item.type }}</span>
 														<div class="busket-counter">
-															<button type="button" class="busket-counter__minus"></button>
-															<input type="text" disabled>
-															<button type="button" class="busket-counter__plus"></button>
+															<button type="button" @click="decCountAnim(index)" class="busket-counter__minus"></button>
+															<input type="text" v-model='item.curTime' disabled>
+															<button type="button" @click="incCountAnim(index)" class="busket-counter__plus"></button>
 														</div>
-														<span class="busket-item__comm-price"><span></span>₴</span></span>
+														<span class="busket-item__comm-price">{{ item.curTariff | localPrice }}</span>
 													</div>
 												</div>
 											</div>
 
-											<div class="busket-item" style="display: none">
-												<div class="busket-item__label">
-													<span>Шоу</span>
-													<div class="tooltip-wrapper">
-														<button class="busket-item__delete"></button>
-														<div class="tooltip">
-															<div class="tooltip-content">Удалить</div>
+											<div class="busket-item" v-for="(item, index) in shows" v-show="item.active">
+												<div class="busket-item__wrapper" >
+													<div class="busket-item__label">
+														<span>Шоу</span>
+														<div class="tooltip-wrapper">
+															<button class="busket-item__delete" @click="removeShow(event, index)"></button>
+															<div class="tooltip">
+																<div class="tooltip-content">Удалить</div>
+															</div>
 														</div>
 													</div>
-												</div>
-												<div class="busket-item__show-block">
-													<h3 class="h-fs-3--800 busket-item__header"></h3>
-													<span class="busket-item__show-time"></span>
-													<span class="busket-item__show-price"><span></span>₴</span></span>
+													<div class="busket-item__show-block">
+														<h3 class="h-fs-3--800 busket-item__header">{{ item.name }}</h3>
+														<span class="busket-item__show-time"></span>
+														<span class="busket-item__show-price"><span>{{ item.price | localPrice }}</span>
+													</div>
 												</div>
 											</div>
-
-											<div class="busket-item" style="display: none">
+	
+											<div class="busket-item" v-for="(item, index) in masterclasses" v-show="item.active">
 												<div class="busket-item__label">
 													<span>Мастер-класс</span>
 													<div class="tooltip-wrapper">
-														<button class="busket-item__delete"></button>
+														<button class="busket-item__delete" @click="removeMasterclass(event, index)"></button>
 														<div class="tooltip">
 															<div class="tooltip-content">Удалить</div>
 														</div>
 													</div>
 												</div>
 												<div class="busket-item__mc-block">
-													<h3 class="h-fs-3--800 busket-item__header"></h3>
+													<h3 class="h-fs-3--800 busket-item__header">{{ item.name }}</h3>
 													<div class="busket-item__mc-row">
 														<div class="busket-item__mc-count">
 															<span class="busket-item__counter-label">К-во детей</span>
 															<div class="busket-counter">
-																<button type="button" class="busket-counter__minus"></button>
-																<input type="text" disabled>
-																<button type="button" class="busket-counter__plus"></button>
+																<button type="button" @click="decCountMc(index)" class="busket-counter__minus"></button>
+																<input type="text" v-model="item.count" disabled>
+																<button type="button" @click="incCountMc(index)" class="busket-counter__plus"></button>
 															</div>
 														</div>
-														<span class="busket-item__mc-tar">х <span></span>₴ / чел.</span>
-														<span class="busket-item__mc-price"><span></span>₴</span>
+														<span class="busket-item__mc-tar">х <span>{{ item.tariff }}</span>₴ / чел.</span>
+														<span class="busket-item__mc-price">{{ masterclassPrice[index] }}</span>
 													</div>
 												</div>
 											</div>
@@ -378,7 +386,7 @@
 										</div>
 
 										<div class="busket-comm">
-											<span class="busket-min" v-if="curRoomMinSumm !== ''"><span>Минимальный заказ</span><span>{{ curRoomMinSumm | localPrice }}</span></span>
+											<span class="busket-min" v-if="curRoomMinSumm !== ''"><span>Депозит</span><span>{{ curRoomMinSumm | localPrice }}</span></span>
 											<div class="busket-bottom">
 												<span class="busket-bottom__label">Сумма к оплате</span>
 												<span class="h-fs-2--800 busket-summ">{{ summ }}</span>
