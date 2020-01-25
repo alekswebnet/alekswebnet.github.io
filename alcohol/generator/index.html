@@ -13,7 +13,7 @@
 <body>
   <div id="app" class="app flex min-h-screen justify-center flex-col bg-gray-100 items-center pt-20 pb-20">
     <div v-if="!choosed">
-       <h1 class="font-semibold text-xl text-center">Введите желаемые профессии</h1>
+      <h1 class="font-semibold text-xl text-center">Введите опции для выбора</h1>
       <h2 class="font-light text-indigo-500 mb-5">Генератор сделает за вас всю работу. Начнем?</h2>
       <div class="flex mb-3">
         <input class="shadow appearance-none border rounded py-2 px-3 text-grey-darker" v-model="inputText">
@@ -60,7 +60,7 @@
     </div>
       
       <div v-if="choosed&&!loader">
-         <h1 class="font-semibold text-center mb-2">Поздравляем! Выбранная профессия:</h1>
+         <h1 class="font-semibold text-center mb-2">Поздравляем! Выбранная опция:</h1>
       <h2 class="font-light text-xl text-center text-indigo-500 mb-5">{{choosedOption}}</h2>
         <div class="flex justify-center">
            <button
@@ -100,7 +100,7 @@
       this.choosedOption = this.list[Math.floor(Math.random()*self.list.length)];
       setTimeout(function() {
         self.loader = false
-      }, 5000)
+      }, 3000)
     },
     clearApp() {
       this.choosed = false
