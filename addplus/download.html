@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>Download page</title>
+	<meta name="description" content="Page description">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+
+<body>
+
+	<div class="page-wrapper page-wrapper--download">
+		
+		<header class="page-header">
+
+			<div class="topbar">
+          <div class="container topbar-inner topbar-inner--centered">
+
+          	<a href="#" class="back-link"><span>Назад</span></a>
+
+            <a href="index.html" class="logo">
+            	<img src="img/logo.png" width="231" height="35" alt="ANDROIDP1">
+            </a>
+            
+          </div>
+      </div>
+
+		</header>
+
+		<main class="page-content">
+			<article class="download-block">
+				<div class="container">
+
+					<h1 class="download-block__header">Скачать Critical Ops MOD радар врагов на мини карте/бесконечные патроны v1.4.1.f479.apk</h1>
+
+					<div class="download-block__image">
+						<img src="img/d-img.png" height="130" width="130" alt="Critical Ops MOD">
+					</div>
+
+					<div class="download-block__info">
+						<span class="download-block__version">Android 4.1+</span>
+					</div>
+
+					<div class="adv-block">
+						<picture>
+						  <img class="img-fluid" src="img/adv3.jpg" alt="">
+						</picture>
+					</div>
+
+					<div class="counter">
+						<span class="counter__header">Для загрузки apk файла подождите:</span>
+						<div class="counter__body">
+							<div class="counter__bg"></div>
+							<div id="countdown" class="counter__score">5</div>
+						</div>
+					</div>
+
+					<a href="#" class="download-block__link"><span>СКАЧАТЬ APK</span></a>
+					
+				</div>
+			</article>
+		</main>
+
+	</div>
+
+	<!--Page navigation widget -->
+
+	<div class="aleksweb-nav">
+		<div class="aleksweb-nav__wrap">
+			<button class="aleksweb-nav__toggle">×</button>
+			<div class="aleksweb-nav__content">
+				<span class="aleksweb-nav__header">Навигация по страницам</span>		
+				<ul class="aleksweb-nav__list">
+					<li><a href="index.html">Главная</a></li>
+					<li><a href="catalog.html">Страница каталога</a></li>
+					<li><a href="news.html">Страница новостей</a></li>
+					<li><a href="apps-post.html">Страница приложения</a></li>
+					<li><a href="news-post.html">Страница новости</a></li>
+					<li><a href="download.html">Страница загрузки</a></li>
+					<li><a href="search.html">Страница поиска</a></li>
+				</ul>
+			</div>		
+		</div>
+	</div>
+	<style>.aleksweb-nav{position:fixed;top:30%;left:0;width:100%;max-width:250px;z-index:1001;transition:.15s ease-in-out;min-height:40px}.aleksweb-nav.collapsed{left:-215px}.aleksweb-nav.collapsed .aleksweb-nav__content{display:none}.aleksweb-nav__wrap{position:relative;padding:20px;background-color:#fff;box-shadow:0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);transition:.2s}.aleksweb-nav__header{font-size:15px;font-weight:400;color:#221b2e}.aleksweb-nav__toggle{display:block;margin: 0;background-color: transparent;border-color:transparent;outline:0;position:absolute;right:5px;top:5px;font-size:30px;line-height:1;width:30px;opacity:.5}.aleksweb-nav__toggle:hover{opacity:1}.aleksweb-nav__list{list-style:none}.aleksweb-nav__list li a{color:#019540;text-decoration:underline}</style>
+	<script>(function(){var AWNav=document.querySelector('.aleksweb-nav');var AWToggler=document.querySelector('.aleksweb-nav__toggle');var isCollapsed=!1;AWToggler.addEventListener("click",AWToggleNav);function AWToggleNav(){if(!isCollapsed){isCollapsed=!0;AWToggler.innerText='⤍'}else{AWToggler.innerText='×';isCollapsed=!1}AWNav.classList.toggle('collapsed')}}())</script>
+		
+	<!--Page navigation widget end-->
+
+	<script src="js/scripts.min.js"></script>
+	<script>
+	counterDown()
+	function counterDown () {
+	  var timeleft = 5;
+	    var downloadTimer = setInterval(function(){
+	    	document.querySelector(".counter__bg").classList.add('rotate360')
+	      document.getElementById("countdown").innerHTML = timeleft
+	      timeleft -= 1
+	      if(timeleft < 0){
+	        clearInterval(downloadTimer);
+	        document.querySelector(".download-block__link").classList.add('bounce-in');
+	      }
+	  }, 1000);
+	}
+	</script>
+</body>
+
+</html>

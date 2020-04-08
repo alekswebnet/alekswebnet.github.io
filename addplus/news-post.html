@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+	<meta charset="utf-8">
+	<title>News-post page</title>
+	<meta name="description" content="Page description">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<link rel="stylesheet" href="css/main.min.css">
+
+</head>
+
+<body>
+
+	<div class="page-wrapper page-wrapper--bg">
+		
+		<header class="page-header">
+
+			<div class="topbar">
+          <div class="container topbar-inner">
+
+            <button class="main-menu__toggler hidden-lg-up js-menu-toggle" type="button" aria-label="Menu" aria-controls="topnav">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+
+            <a href="index.html" class="logo">
+            	<img src="img/logo.png" width="300" height="45" alt="ANDROIDP1">
+            </a>
+
+            <nav id="topnav" class="topnav">
+            	<div class="topnav-inner">
+
+								<ul class="main-menu">
+	            
+	                <li class="main-menu__item">
+	                	<div class="menu-icon menu-icon--home"></div>
+	                	<a href="#" class="main-menu__link">Главная</a>
+	                </li>
+
+	                <li class="main-menu__item">
+	                	<div class="menu-icon menu-icon--game"></div>
+	                	<a href="" class="main-menu__link">Игры</a>
+
+	                	<div class="dropdown-caret accordion"></div>
+	                	<div class="menu-dropdown">
+		                	<ul class="menu-dropdown__list">
+		                		<li class="menu-dropdown__item">
+		                			<a href="#" class="menu-dropdown__link">Программы</a>
+		                		</li>
+		                		<li class="menu-dropdown__item">
+		                			<a href="#" class="menu-dropdown__link">Мультимедиа</a>
+		                		</li>
+		                		<li class="menu-dropdown__item">
+		                			<a href="#" class="menu-dropdown__link">Персонализация</a>
+		                		</li>
+		                		<li class="menu-dropdown__item">
+		                			<a href="#" class="menu-dropdown__link">Офисные</a>
+		                		</li>
+		                		<li class="menu-dropdown__item">
+		                			<a href="#" class="menu-dropdown__link">Фото</a>
+		                		</li>
+		                		<li class="menu-dropdown__item">
+		                			<a href="#" class="menu-dropdown__link">Связь</a>
+		                		</li>
+		                		<li class="menu-dropdown__item">
+		                			<a href="#" class="menu-dropdown__link">Инструменты</a>
+		                		</li>
+		                		<li class="menu-dropdown__item">
+		                			<a href="#" class="menu-dropdown__link">Эмуляторы</a>
+		                		</li>
+		                	</ul>
+	                	</div>
+	                </li>
+
+	                <li class="main-menu__item">
+	                	<div class="menu-icon menu-icon--app"></div>
+	                	<a href="#" class="main-menu__link">Программы</a>
+
+	                	<div class="dropdown-caret accordion"></div>
+
+	                	<div class="menu-dropdown">
+		                	<ul class="menu-dropdown__list">
+		                		<li class="menu-dropdown__item">
+		                			<a href="#" class="menu-dropdown__link">Программы</a>
+		                		</li>
+		                		<li class="menu-dropdown__item">
+		                			<a href="#" class="menu-dropdown__link">Мультимедиа</a>
+		                		</li>
+		                		<li class="menu-dropdown__item">
+		                			<a href="#" class="menu-dropdown__link">Персонализация</a>
+		                		</li>
+		                		<li class="menu-dropdown__item">
+		                			<a href="#" class="menu-dropdown__link">Офисные</a>
+		                		</li>
+		                		<li class="menu-dropdown__item">
+		                			<a href="#" class="menu-dropdown__link">Фото</a>
+		                		</li>
+		                		<li class="menu-dropdown__item">
+		                			<a href="#" class="menu-dropdown__link">Связь</a>
+		                		</li>
+		                		<li class="menu-dropdown__item">
+		                			<a href="#" class="menu-dropdown__link">Инструменты</a>
+		                		</li>
+		                		<li class="menu-dropdown__item">
+		                			<a href="#" class="menu-dropdown__link">Эмуляторы</a>
+		                		</li>
+		                	</ul>
+	                	</div>
+	                </li>
+
+	                <li class="main-menu__item">
+	                	<div class="menu-icon menu-icon--news"></div>
+	                	<a href="#" class="main-menu__link">Новости</a>
+	                </li>
+
+	              </ul>
+
+	              <div class="lang">
+		            	<a href="#" class="lang__link lang__link--usa"></a>
+		            	<a href="#" class="lang__link lang__link--ru active"></a>
+		            </div>
+
+            	</div>   
+            </nav>
+
+            <button class="search__toggler hidden-lg-up js-search-toggle" type="button" aria-label="Search" aria-controls="search-block">
+              <span></span>
+            </button>
+
+            <div id="search-block" class="search-block">
+	            <div class="search">
+	            	<label>
+	            		<input class="search__input" type="search" placeholder="Введите фразу для поиска ...">
+	            	</label>
+	            	<button class="search__submit" type="submit"><span>Поиск</span></button>
+	            </div>
+	            <button class="search__close hidden-lg-up js-search-toggle" type="button"></button>
+            </div>  
+            
+          </div>
+      </div>
+
+		</header>
+
+		<main class="page-content">
+
+			<div class="container">
+				<div class="adv-block">
+					<picture>
+						<source media="(max-width: 360px)" srcset="img/adv1-m2.jpg">
+					  <source media="(max-width: 599px)" srcset="img/adv1-m.jpg">
+					  <source media="(min-width: 600px)" srcset="img/adv1.jpg">
+					  <img class="img-fluid" src="img/adv1.jpg" alt="">
+					</picture>
+				</div>
+			</div>
+
+			<div class="page-nav">
+				<div class="container">
+
+					<nav class="breadcrumb-nav" aria-label="breadcrumb">
+					  <ul class="breadcrumb">
+					    <li class="breadcrumb__item"><a href="#">ANDROID PLUS 1</a></li>
+					    <li class="breadcrumb__item"><a href="#">Новости</a></li>
+					    <li class="breadcrumb__item active" aria-current="page">Срочно удалите эти приложения с вашего Android-смартфона</li>
+					  </ul>
+					</nav>
+
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="post-row">
+
+					<div class="post-col">
+						<article class="post">
+							<h1 class="post__header">Срочно удалите эти приложения с вашего Android-смартфона</h1>
+							<div class="post__image">
+								<img src="img/Layer800.jpg" alt="">
+								<span class="post__timestamp">24.01.2019, 22:32</span>
+							</div>
+							<div class="post__content">
+								<p>Со временем ваш смартфон все больше заполняется самыми разными данными. Это фото, видеоролики и конечно же, различные приложения. Взгляните на свой смартфон. Наверняка у вас установлены программы, которыми вы не пользовались уже довольно давно. Нужны ли они вам, если вы запускали их от силы пару раз? Скорее всего, нет. Однако среди вороха программ могут быть не только те, что занимают лишнее место, но и такие, которые попросту представляют опасность.</p>
+								<p>Даже если какие-либо из приложений, о которых речь пойдет ниже, не установлены на вашем смартфоне, провести ревизию лишним не будет. Ведь свободное пространство внутренней памяти устройства лишним не бывает.</p>
+							</div>
+							<div class="adv-block">
+								<picture>
+								  <img class="img-fluid" src="img/Layer799.jpg" alt="">
+								</picture>
+							</div>
+						</article>
+					</div>
+
+					<div class="post-col">
+						<aside class="post__sidebar">
+
+							<div class="section-header news-sidebar__header">
+								<div class="section-header__image"></div>
+								<div class="section-header__title">
+									<span>Рекомендуем посмотреть</span>
+									<h2>Другие новости</h2>
+								</div>
+							</div>
+
+							<div class="news-block">
+
+								<ul class="news-list">
+
+									<li class="news-item">
+										<a href="#" class="news-item__link">
+											<div class="news-item__image">
+												<img src="img/news1.png" alt="">
+												<span class="news-item__timestamp">24.01.2019, 22:32</span>
+											</div>
+											<h3 class="news-item__header">Samsung Galaxy S10 по минимальной цене в $880</h3>
+										</a>
+									</li>
+
+									<li class="news-item">
+										<a href="#" class="news-item__link">
+											<div class="news-item__image">
+												<img src="img/news5.png" alt="">
+												<span class="news-item__timestamp">22.01.2019, 13:11</span>
+											</div>
+											<h3 class="news-item__header">Samsung подготовила сюрприз для всех покупателей Galaxy Fold</h3>
+										</a>
+									</li>
+
+									<li class="news-item">
+										<a href="#" class="news-item__link">
+											<div class="news-item__image">
+												<img src="img/news9.png" alt="">
+												<span class="news-item__timestamp">21.01.2019, 07:16</span>
+											</div>
+											<h3 class="news-item__header">Как сделать скриншот на Galaxy S10</h3>
+										</a>
+									</li>
+									
+								</ul>
+
+							</div>
+
+						</aside>
+					</div>
+
+				</div>
+			</div>
+			
+
+		</main>
+
+		<footer class="page-footer">
+			<div class="container">
+
+				<div class="page-footer__top">
+					<h2 class="page-footer__header"><span>ANDROID</span> <span>PLUS</span> <span>1</span></h2>
+					<p class="page-footer__desc">Последние новости, игры, программы. Здесь вы сможете скачать совершенно бесплатно и без регистрации, полные версии любых игр и программ на ваше android устройство, а так же MOD игр. Все они абсолютно безопасны, так как проверены на вирусы и на работоспособность. Не забудьте поставить вашу оценку, это поможет нам узнать ваши предпочтения.</p>
+				</div>
+
+				<div class="page-footer__bottom">
+					<div class="page-footer__logo"></div>
+					<p class="page-footer__copyright"><span>Copyright&nbsp;©&nbsp;2016-2019 - <b>ANDROID&nbsp;PLUS&nbsp;1</b> - Копирование материалов сайта строго запрещено</span><a href="" class="page-footer__devs hidden-md-up"></a></p>
+					<div class="page-footer__links">
+
+						<div class="page-footer__common-links">
+							<a href="">Обратная связь</a>
+							<a href="">Правообладателям</a>    
+						</div>
+
+						<div class="page-footer__social">
+							<a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+							<a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
+							<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+							<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+							<a href="#" class="page-footer__devs hidden-md-down"></a>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</footer>
+
+	</div>
+
+	<!--Page navigation widget -->
+
+	<div class="aleksweb-nav">
+		<div class="aleksweb-nav__wrap">
+			<button class="aleksweb-nav__toggle">×</button>
+			<div class="aleksweb-nav__content">
+				<span class="aleksweb-nav__header">Навигация по страницам</span>		
+				<ul class="aleksweb-nav__list">
+					<li><a href="index.html">Главная</a></li>
+					<li><a href="catalog.html">Страница каталога</a></li>
+					<li><a href="news.html">Страница новостей</a></li>
+					<li><a href="apps-post.html">Страница приложения</a></li>
+					<li><a href="news-post.html">Страница новости</a></li>
+					<li><a href="download.html">Страница загрузки</a></li>
+					<li><a href="search.html">Страница поиска</a></li>
+				</ul>
+			</div>		
+		</div>
+	</div>
+	<style>.aleksweb-nav{position:fixed;top:30%;left:0;width:100%;max-width:250px;z-index:1001;transition:.15s ease-in-out;min-height:40px}.aleksweb-nav.collapsed{left:-215px}.aleksweb-nav.collapsed .aleksweb-nav__content{display:none}.aleksweb-nav__wrap{position:relative;padding:20px;background-color:#fff;box-shadow:0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);transition:.2s}.aleksweb-nav__header{font-size:15px;font-weight:400;color:#221b2e}.aleksweb-nav__toggle{display:block;margin: 0;background-color: transparent;border-color:transparent;outline:0;position:absolute;right:5px;top:5px;font-size:30px;line-height:1;width:30px;opacity:.5}.aleksweb-nav__toggle:hover{opacity:1}.aleksweb-nav__list{list-style:none}.aleksweb-nav__list li a{color:#019540;text-decoration:underline}</style>
+	<script>(function(){var AWNav=document.querySelector('.aleksweb-nav');var AWToggler=document.querySelector('.aleksweb-nav__toggle');var isCollapsed=!1;AWToggler.addEventListener("click",AWToggleNav);function AWToggleNav(){if(!isCollapsed){isCollapsed=!0;AWToggler.innerText='⤍'}else{AWToggler.innerText='×';isCollapsed=!1}AWNav.classList.toggle('collapsed')}}())</script>
+		
+	<!--Page navigation widget end-->
+
+	<script src="js/scripts.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+@import "internal";
+
+@mixin _grid-col-internal($box-sizing, $span, $spanCur, $columns, $gap, $gapLocal) {
+  @if $span == 'auto' {
+    width: auto;
+  } @else if $span != null or ($box-sizing == content-box and unit($gap) != '%') {
+    width: 100% * $spanCur / $columns - if($box-sizing == content-box and unit($gap) == '%', $gap * 2, 0);
+    @if $box-sizing == content-box and unit($gap) != '%' {
+      box-sizing: border-box;
+    }
+  }
+  padding-left: $gapLocal;
+  padding-right: $gapLocal;
+}
+
+@mixin grid-col($spans, $settings: null) {
+  $settings: if($settings != null, map-merge($grid, $settings), $grid);
+  $gap: map-get($settings, gap);
+  $box-sizing: map-get($settings, box-sizing);
+  $mode: map-get($settings, mode);
+  $map: map-get($settings, breakpoints);
+  $spans: fastGridNormalizeSpans($spans, $settings);
+  $columns: nth($spans, 2);
+  $spans: nth($spans, 1);
+
+  @if ($mode == float) {
+    float: left;
+  }
+
+  $gapCur: 0;
+  $spanCur: null;
+  @if type-of($gap) == number {
+    @if unit($gap) == '%' {
+      $gap: $gap * (100% / (100% + $gap * 2));
+      $gapCur: $gap;
+    }
+    padding-left: $gap;
+    padding-right: $gap;
+  } @else {
+    @if (type-of($gap) == list) {
+      $gap: fastGridListToMap($gap, $settings);
+    }
+  }
+
+  @each $breakpoint, $minWidth in $map {
+    $span: map-get($spans, $breakpoint);
+    $columnsLocal: null;
+    @if type-of($span) == list and nth($span, 2) == 'of' {
+      $columnsLocal: nth($span, 3);
+      $span: nth($span, 1);
+    }
+    $columnsLocal: $columns !default;
+    $spanCur: if($span != null, $span, $spanCur);
+
+    $gapLocal: null;
+    @if type-of($gap) == map {
+      $gapLocal: map-get($gap, $breakpoint);
+      @if $gapLocal != null and unit($gapLocal) == '%' {
+        $gapLocal: $gapLocal * (100% / (100% + $gapLocal * 2));
+      }
+    }
+    $gapCur: if($gapLocal != null, $gapLocal, $gapCur);
+
+    @if $minWidth > 0 {
+      @media (min-width: $minWidth) {
+        @include _grid-col-internal($box-sizing, $span, $spanCur, $columnsLocal, $gapCur, $gapLocal);
+      }
+    } @else {
+      @include _grid-col-internal($box-sizing, $span, $spanCur, $columnsLocal, $gapCur, $gapLocal);
+    }
+
+    @if $box-sizing == content-box and unit($gapCur) != '%' {
+      $box-sizing: border-box;
+    }
+  }
+}
