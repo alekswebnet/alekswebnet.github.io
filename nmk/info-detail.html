@@ -223,7 +223,38 @@
     </div>
    </div>
   </div>
-</div>        </div>
+</div>
+</div>
+
+<!--Page navigation widget -->
+
+<div class="aleksweb-nav">
+	<div class="aleksweb-nav__wrap">
+		<button class="aleksweb-nav__toggle">×</button>
+		<div class="aleksweb-nav__content">
+			<span class="aleksweb-nav__header">Навигация по страницам</span>		
+			<ul class="aleksweb-nav__list">
+				<li><a href="index.html">Главная</a></li>
+				<li><a href="products.html">Каталог продуктов</a></li>
+				<li><a href="products-group.html">Группа каталога продуктов</a></li>
+				<li><a href="products-list.html">Подгруппа каталога продуктов</a></li>
+				<li><a href="products-detail.html">Продукт каталога</a></li>
+				<li><a href="info.html">О нас</a></li>
+				<li><a href="info-gallery.html">Галерея</a></li>
+				<li><a href="info-detail.html">Новость компании</a></li>
+				<li><a href="spec-offers.html">Специальные предложения</a></li>
+				<li><a href="spec-offers-detail.html">Спец. предложение</a></li>
+				<li><a href="contacts.html">Контакты</a></li>
+				<li><a href="search.html">Поиск</a></li>
+				<li><a href="404.html">404</a></li>
+			</ul>
+		</div>		
+	</div>
+</div>
+<style>.aleksweb-nav{position:fixed;top:30%;left:0;width:100%;max-width:250px;z-index:1001;transition:.15s ease-in-out;min-height:40px}.aleksweb-nav.collapsed{left:-215px}.aleksweb-nav.collapsed .aleksweb-nav__content{display:none}.aleksweb-nav__wrap{position:relative;padding:20px;background-color:#fff;box-shadow:0 10px 20px rgba(0,0,0,.19),0 6px 6px rgba(0,0,0,.23);transition:.2s}.aleksweb-nav__header{font-size:15px;font-weight:400;color:#221b2e}.aleksweb-nav__toggle{display:block;margin: 0;background-color: transparent;border-color:transparent;outline:0;position:absolute;right:10px;top:0px;font-size:30px;line-height:1;width:30px;opacity:.5}.aleksweb-nav__toggle:hover{opacity:1}.aleksweb-nav__list{padding-left:0;margin-bottom: 0;margin-top: 10px;list-style:none}.aleksweb-nav__list li a{color:#019540;text-decoration:underline}</style>
+<script>(function(){var AWNav=document.querySelector('.aleksweb-nav');var AWToggler=document.querySelector('.aleksweb-nav__toggle');var isCollapsed=!1;AWToggler.addEventListener("click",AWToggleNav);function AWToggleNav(){if(!isCollapsed){isCollapsed=!0;AWToggler.innerText='⤍'}else{AWToggler.innerText='×';isCollapsed=!1}AWNav.classList.toggle('collapsed')}}())</script>
+	
+<!--Page navigation widget end-->
         <script src="public/js/jquery-2.2.3.min.js"></script>
 <script src="public/libs/bootstrap/js/bootstrap.min.js"></script>
 <script src="public/libs/slick/slick.min.js"></script>
