@@ -17,8 +17,8 @@
     <header class="main-header">
       <div class="container">
         <div class="header-nav">
-          <a href="/" class="d-block">
-            <img class="block" src="img/Logo.png" width="340" alt="Wireless match">
+          <a href="/" class="d-block header-nav__logo">
+            <img class="d-block" src="img/Logo.png" width="340" alt="Wireless match">
           </a>
     
           <button class="header-call">
@@ -35,7 +35,11 @@
 
       <section class="home-hero">
         <div class="container">
-          <h1 class="h-fs-1 section-header text-center">Cell Phones Made Simple</h1>
+
+          <div class="section-header__wrap">
+            <h1 class="h-fs-1 section-header text-center">Cell Phones Made Simple<span></span></h1>
+          </div>
+          
           <p class="section-desc home-hero__desc mx-auto">We built Wireless Match to transform an outdated, and confusing industry.</p>
 
           <div class="carier-block">
@@ -57,7 +61,10 @@
       <section class="home-saves">
         <div class="container">
           <div class="saves-block">
-            <h2 class="h-fs-1 section-header section-header--double mx-0"><span>Our Average User</span> <br> <span>Saves $100 per month.</span></h2>
+            <div class="section-header__wrap">
+              <h2 class="h-fs-1 section-header section-header--double mx-0"><span>Our Average User</span> <br>Saves $100 per month.</h2>
+            </div>
+            
             <p class="section-desc saves-block__desc">We search through thousands of deals to find the best one, <b>just for you</b>.</p>
 
             <div class="a-block">
@@ -67,12 +74,17 @@
               <img class="lazyload" src="img/Blank.gif" data-src="img/logos/nyc-gray.png" width="208" alt="NYC">
             </div>
           </div>
+
+          <img src="img/mob-graphic.png" class="home-saves__image"></div>
         </div>
       </section>
 
       <section class="home-how">
         <div class="container text-center">
-          <h2 class="h-fs-1 section-header section-header--inverse home-how__header">How it works</h2>
+
+          <div class="section-header__wrap">
+            <h2 class="h-fs-1 section-header section-header--inverse home-how__header">How it works<span></span></h2>
+          </div>
 
           <ul class="home-how__list">
             <li class="list-item">
@@ -103,8 +115,10 @@
 
       <section class="home-phones">
         <div class="container text-center">
-          <h2 class="h-fs-1 text-center section-header home-phones__header">Americans pay more for cell phones than any other country.</h2>
-
+          <div class="section-header__wrap">
+            <h2 class="h-fs-1 text-center section-header home-phones__header" style="max-width: 1200px;">Americans pay more for cell phones than any other country.<span></span></h2>
+          </div>
+          
           <p class="hw-text section-label home-phones__label">We’re here to change that</p>
 
           <div class="home-phones__block">
@@ -196,6 +210,34 @@
                   </div>
                 </div>
 
+                <div class="swiper-slide">
+                  <div class="saver-item">
+                    <div class="saver-item__top">
+                      <div class="saver-item__brand saver-item__brand--tmobile">
+                        <img width="108" src="img/logos/TMobile-white.png" alt="TMobile">
+                      </div>
+                      <div class="saver-item__brand saver-item__brand--verizon">
+                        <img width="110" src="img/logos/Verizon-white.png" alt="Verizon">
+                      </div>
+                      <div class="saver-item__arrow"></div>
+                    </div>
+
+                    <div class="saver-item__cont">
+                      <div class="saver-item__info">
+                        <div>
+                          <p class="saver-item__label">Saved $862/yr</p>
+                        </div>
+                        <div>
+                          <img class="lazyload" src="img/Blank.gif" width="30" data-src="img/icons/AppleIcon.png" alt="Apple">
+                        </div>
+                      </div>
+                      <h3 class="saver-item__header">Margaret Wilson</h3>
+                      <p class="saver-item__desc">John switched from T-Mobile to Verizon for a savings of $862/yr, and 2 new iPhone 11 Pro.</p>
+                      <span class="saver-item__time">2 minute ago</span>
+                    </div>
+                  </div>
+                </div>
+
               </div>          
             </div>
     
@@ -221,7 +263,10 @@
 
       <section class="home-features">
         <div class="container text-center">
-          <h2 class="home-features__header h-fs-1 section-header">Worry Less, Save More</h2>
+
+          <div class="section-header__wrap">
+            <h2 class="home-features__header h-fs-1 section-header">Worry Less, Save More<span></span></h2>
+          </div>
 
           <ul class="home-features__list">
             <li>
@@ -253,7 +298,10 @@
 
       <section class="home-questions">
         <div class="container text-center">
-          <h2 class="home-questions__header h-fs-1 section-header">Something for Everyone</h2>
+
+          <div class="section-header__wrap">
+            <h2 class="home-questions__header h-fs-1 section-header">Something for Everyone<span></span></h2>
+          </div>
 
           <div class="home-questions__block">
             <div class="swiper-container home-questions__carousel">
@@ -498,7 +546,10 @@
 
       <section class="home-answers">
         <div class="container container--q text-center">
-          <h2 class="home-answers__header h-fs-1 section-header section-header--inverse">Questions? We have answers!</h2>
+
+          <div class="section-header__wrap">
+            <h2 class="home-answers__header h-fs-1 section-header section-header--inverse">Questions? We have answers!</h2>
+          </div>
 
           <ul class="panel-block">
             <li>
@@ -525,7 +576,9 @@
 
           <p class="hw-text section-label section-label--inverse home-answers__label">Don’t feel like talking? Check these out:</p>
 
-          <h2 class="home-answers__header h-fs-1 section-header section-header--inverse">Frequently Asked Questions</h2>
+          <div class="section-header__wrap">
+            <h2 class="home-answers__header h-fs-1 section-header section-header--inverse">Frequently Asked Questions<span></span></h2>
+          </div>
 
           <div class="faq">
             <div class="faq__block collapse">
@@ -580,7 +633,10 @@
 
       <section class="home-reviews">
         <div class="container text-center">
-          <h2 class="home-reviews__header h-fs-1 section-header">Still not Convinced?</h2>
+
+          <div class="section-header__wrap">
+            <h2 class="home-reviews__header h-fs-1 section-header">Still not Convinced?<span></span></h2>
+          </div>
 
           <p class="section-desc home-reviews__desc">See why over 300,000 users love Wireless Match</p>
 
@@ -676,7 +732,10 @@
 
       <section class="home-start">
         <div class="container text-center">
-          <h2 class="home-start__header h-fs-1 section-header">Getting started is easy</h2>
+
+          <div class="section-header__wrap">
+            <h2 class="home-start__header h-fs-1 section-header">Getting started is easy<span></span></h2>
+          </div>
 
           <p class="section-desc home-start__desc">We built Wireless Match to transform an outdated, and confusing industry.</p>
 
