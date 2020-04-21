@@ -33,9 +33,230 @@
 
 		<main class="page-content">
 
-      <section class="enter-sect">
+      <section class="enter-sect" id="app">
         <div class="container">
+          <h1 class="enter-sect__header">Question <span style="display: inline-block; width: 1ch;">{{count}}</span> of 7</h1>
 
+          <div class="form-bar">
+            <div 
+              class="form-bar__inner" 
+              :class="{'accepted': count > 4}"
+              :style="{ transform: 'translateX(-' + (1 - progress)*100 + '%)'}"></div>
+          </div>
+          
+          <div class="enter-sect__desc">
+            In order for us to find you the best deals we need to ask you a few questions. <i>This will only take 30 seconds.</i>
+          </div>
+
+          <div class="enter-sect__info">
+            <img src="img/logos/BBB.png" alt="BBB">
+            <p><span>1 min ago:</span><i>&nbsp;&nbsp;&nbsp;Sandy just saved $218 and got new iPhones!</i></p>
+          </div>
+
+          <form class="enter-sect__block">
+            <div class="swiper-container form-carousel">
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                  <div class="form-step">
+                    <div class="form-step__inner">
+                      <h3 class="form-step__label">How many lines do you have?</h3>
+
+                      <select 
+                        ref="formSelect" 
+                        name="lines" 
+                        v-model="steps[0].value"
+                        class="select-css">
+
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                      </select>
+
+                      <div class="form-step__message">
+                        <div class="icon icon-info"></div>
+                        <p>Please include all lines that you are currently paying for. (Phones, Tablets, etc..)</p>
+                      </div>
+
+                      <button 
+                        type="button" 
+                        @click="Vue.prototype.formCarousel.slideNext(300)" 
+                        class="btn btn-md">
+                        <span>Next</span>
+                        <span class="icon icon-arr-r-white"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="form-step">
+                    <div class="form-step__inner">
+                      <h3 class="form-step__label">How many lines do you have?</h3>
+
+                      <select 
+                        ref="formSelect" 
+                        name="lines" 
+                        v-model="steps[0].value"
+                        class="select-css">
+
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                      </select>
+
+                      <div class="form-step__message">
+                        <div class="icon icon-info"></div>
+                        <p>Please include all lines that you are currently paying for. (Phones, Tablets, etc..)</p>
+                      </div>
+
+                      <button class="btn btn-md"><span>Next</span><span class="icon icon-arr-r-white"></span></button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="form-step">
+                    <div class="form-step__inner">
+                      <h3 class="form-step__label">How many lines do you have?</h3>
+
+                      <select 
+                        ref="formSelect" 
+                        name="lines" 
+                        v-model="steps[0].value"
+                        class="select-css">
+
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                      </select>
+
+                      <div class="form-step__message">
+                        <div class="icon icon-info"></div>
+                        <p>Please include all lines that you are currently paying for. (Phones, Tablets, etc..)</p>
+                      </div>
+
+                      <button class="btn btn-md">Next</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="form-step">
+                    <div class="form-step__inner">
+                      <h3 class="form-step__label">How many lines do you have?</h3>
+
+                      <select 
+                        ref="formSelect" 
+                        name="lines" 
+                        v-model="steps[0].value"
+                        class="select-css">
+
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                      </select>
+
+                      <div class="form-step__message">
+                        <div class="icon icon-info"></div>
+                        <p>Please include all lines that you are currently paying for. (Phones, Tablets, etc..)</p>
+                      </div>
+
+                      <button class="btn btn-md">Next</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="form-step">
+                    <div class="form-step__inner">
+                      <h3 class="form-step__label">How many lines do you have?</h3>
+
+                      <select 
+                        ref="formSelect" 
+                        name="lines" 
+                        v-model="steps[0].value"
+                        class="select-css">
+
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                      </select>
+
+                      <div class="form-step__message">
+                        <div class="icon icon-info"></div>
+                        <p>Please include all lines that you are currently paying for. (Phones, Tablets, etc..)</p>
+                      </div>
+
+                      <button class="btn btn-md">Next</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="form-step">
+                    <div class="form-step__inner">
+                      <h3 class="form-step__label">How many lines do you have?</h3>
+
+                      <select 
+                        ref="formSelect" 
+                        name="lines" 
+                        v-model="steps[0].value"
+                        class="select-css">
+
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                      </select>
+
+                      <div class="form-step__message">
+                        <div class="icon icon-info"></div>
+                        <p>Please include all lines that you are currently paying for. (Phones, Tablets, etc..)</p>
+                      </div>
+
+                      <button class="btn btn-md">Next</button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide">
+                  <div class="form-step">
+                    <div class="form-step__inner">
+                      <h3 class="form-step__label">How many lines do you have?</h3>
+
+                      <select 
+                        ref="formSelect" 
+                        name="lines" 
+                        v-model="steps[0].value"
+                        class="select-css">
+
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                      </select>
+
+                      <div class="form-step__message">
+                        <div class="icon icon-info"></div>
+                        <p>Please include all lines that you are currently paying for. (Phones, Tablets, etc..)</p>
+                      </div>
+
+                      <button class="btn btn-md">Next</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </form>
         </div>
       </section>
 
@@ -200,6 +421,48 @@
   </div>
 
   <script src="js/scripts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script>
+    
+    const app = new Vue({
+      el: '#app',
+      data() {
+        return {
+          progress: 1/7,
+          steps: [
+            {
+              value: '1',
+            }
+          ]
+        }
+      },
+      methods: {
+
+      },
+      computed: {
+        count() {
+          return (this.progress*7).toFixed()
+        }
+      },
+      mounted() {
+        var self = this
+
+        Vue.prototype.formCarousel = new Swiper ('.form-carousel', {
+          slidesPerView: 1,
+          loop: false,
+          navigation: {
+            nextEl: '.enter-sect__block .swiper-button-next',
+            prevEl: '.enter-sect__block .swiper-button-prev',
+          },
+          on: {
+            slideChange: function() {
+              self.progress = this.progress*6/7+1/7
+            }
+          }
+        })
+      }
+    })
+  </script>
 </body>
 
 </html>
