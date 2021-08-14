@@ -16,7 +16,7 @@
     <meta name="thspe-color" content="#fafafa">
     <meta name='freelancehunt' content='9ec33e388b8bb0d'>
 
-    <title>Сайт web-разработчика Alekswebnet</title>
+    <title>Aleksandr Shevchuk - frontend developer & interface creator</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -29,22 +29,32 @@
       <div class="container flex-fill">
         <div class="row">
           <div class="col col-12 col-lg-6">
-            <img src="img/ava.jpg" style="object-fit: cover" class="rounded-circle mb-3" width="200px" height="200px" alt="Aleksandr Shevchuk">
+            <img 
+              src="img/ava.jpg" 
+              style="object-fit: cover" 
+              class="rounded-circle d-block mb-5 border border-secondary mx-auto mx-lg-0" 
+              width="180px" 
+              height="180px" 
+              alt="Aleksandr Shevchuk
+            ">
             <h1 class="lead">👋 Hi! My name is Alex.</h1>
             <p class="lead">
-              I'm an experienced frontend developer and interface designer.
+              I'm an experienced frontend developer and interface creator.
               If you are looking for somebody to make your app more responsive, please, contact me!
             </p>
+
+            <hr class="border-white w-100">
             
             <p class="lead">
-              Customer reviews on 
-              <a class="link-secondary" 
+              Reviews on freelance websites:
+              <br> 
+              <a class="link-info" 
                 target="_blank"
                 href="https://www.weblancer.net/users/alekswebnet/reviews/?account_type=freelancer">
                 weblancer.net
               </a>
-              ,
-              <a class="link-secondary" 
+              <br>
+              <a class="link-info" 
                 target="_blank"
                 href="https://freelancehunt.com/freelancer/redrobot753.html#reviews">
                 freelancehunt.com
@@ -74,6 +84,19 @@
         </div>
       </div>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0.0/dist/bubbly-bg.js"></script>
+    <script>
+      bubbly({
+        colorStart: "#212529",
+        colorStop: "#212529",
+        blur: 7, // default is 4
+        bubbleFunc: () => `hsla(${Math.random() * 360}, 100%, 50%, ${Math.random() * 0.25})`,
+        radiusFunc: () => 2 + Math.random() * 6, // default is 4 + Math.random() * width / 25
+        bubbles: 10, // default is Math.floor((canvas.width + canvas.height) * 0.02);
+        compose: "lighter"
+    });
+    </script>
 
   </body>
 
