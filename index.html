@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
   </head>
 
-  <body class="bg-dark text-white d-flex flex-column justify-content-center pt-5 pb-0 pb-md-5" style="min-height: 99vh;">
+  <body class="w-100 bg-dark text-white d-flex flex-column justify-content-center pt-5 pb-0 pb-md-5" style="min-height: 99vh;">
     <main class="flex-lg-fill">
       <div class="container">
         <div class="row">
@@ -60,9 +60,7 @@
           </div>
 
           <div class="col col-12 col-lg-6">
-            <div class="m-auto" id="chart" style="max-width: 500px; max-height: 100%">
-
-            </div>
+            <div class="m-auto" id="chart" style="max-width: 100%; width: 500px; max-height: 100%"></div>
           </div>
         </div>
       </div>
@@ -126,9 +124,9 @@
       const size = 500;
 
       const svg = d3.select('#chart').append('svg')
+        .attr('style', 'max-width: 100%')
         .attr('viewBox',`0 0 ${size} ${size}`)
-        .attr('width', size)
-        .attr('height', size);
+        .attr('width', size);
 
       const bubble = d3.pack()
         .size([size, size])
