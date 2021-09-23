@@ -20,9 +20,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
   </head>
 
-  <body class="bg-dark text-white" style="min-height: 99vh;">
-    <main class="d-flex flex-column pt-5 pb-0 pb-md-5">
-      <div class="container flex-lg-fill">
+  <body class="bg-dark text-white d-flex flex-column justify-content-center pt-5 pb-0 pb-md-5" style="min-height: 99vh;">
+    <main class="flex-lg-fill">
+      <div class="container">
         <div class="row">
           <div class="col col-12 col-lg-6">
             <img 
@@ -58,6 +58,12 @@
               </a>
             </p>
           </div>
+
+          <div class="col col-12 col-lg-6">
+            <div class="m-auto" id="chart" style="max-width: 500px; max-height: 100%">
+
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -86,6 +92,9 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bubbly-bg@1.0.0/dist/bubbly-bg.js"></script>
+    <script src="https://d3js.org/d3-selection.v2.js"></script>
+    <script src="https://d3js.org/d3-hierarchy.v2.min.js"></script>
+
     <script>
       bubbly({
         colorStart: "#212529",
@@ -96,6 +105,61 @@
         bubbles: 10, // default is Math.floor((canvas.width + canvas.height) * 0.02);
         compose: "lighter"
     });
+    </script>
+
+    <script>
+      const data = {
+        children: [
+          {id: 'bootstrap', value: 44, icon: '<i style="color: #7952b3" class="d-flex justify-content-center fab fa-bootstrap"></i>'},
+          {id: 'css3', value: 70, icon: '<i style="color: #1572b6" class="d-flex justify-content-center fab fa-css3-alt"></i>'},
+          {id: 'html5', value: 60, icon: '<i style="color: #f06529" class="d-flex justify-content-center fab fa-html5"></i>'},
+          {id: 'vuejs', value: 150, icon: '<i style="color: #42b983" class="d-flex justify-content-center fab fa-vuejs"></i>'},
+          {id: 'docker', value: 10, icon: '<i style="color: #0db7ed" class="d-flex justify-content-center fab fa-docker"></i>'},
+          {id: 'git', value: 17, icon: '<i style="color: #f1502f" class="d-flex justify-content-center fab fa-git-alt"></i>'},
+          {id: 'npm', value: 14, icon: '<i style="color: #cc3534" class="d-flex justify-content-center fab fa-npm"></i>'},
+          {id: 'js', value: 90, icon: '<i style="color: #f0db4f" class="d-flex justify-content-center fab fa-js"></i>'},
+          {id: 'wordpress', value: 25, icon: '<i style="color: #00749C" class="d-flex justify-content-center fab fa-wordpress"></i>'},
+          {id: 'sass', value: 25, icon: '<i style="color: #cc6699" class="d-flex justify-content-center fab fa-sass"></i>'},
+        ]
+      };
+
+      const size = 500;
+
+      const svg = d3.select('#chart').append('svg')
+        .attr('viewBox',`0 0 ${size} ${size}`)
+        .attr('width', size)
+        .attr('height', size);
+
+      const bubble = d3.pack()
+        .size([size, size])
+        .padding(10);
+
+      const root = d3.hierarchy(data)
+        .sum((d) => d.value)
+        .sort((a, b) => b.value - a.value);
+
+      bubble(root);
+
+      const node = svg.selectAll('.node')
+        .data(root.children)
+        .enter()
+        .append('g').attr('class', 'node')
+        .attr('transform', (d) => `translate(${d.x} ${d.y})`)
+        .append('g');
+
+      node.append('circle')
+        .attr('r', (d) => d.r)
+        .style('fill', 'transparent');
+
+      node.append('svg:foreignObject')
+        .attr('x', (d) => - d.r)
+        .attr('y', (d) => - d.r)
+        .attr('height', (d) => 2 * d.r)
+        .attr('width', (d) => 2 * d.r)
+        .attr('font-size', (d) => 2 * d.r - 20)
+        .attr('class', 'd-flex align-items-center justify-content-center')
+        .attr('style', 'padding-top: 10px')
+        .html((d) => d.data.icon);
     </script>
   </body>
 </html>
