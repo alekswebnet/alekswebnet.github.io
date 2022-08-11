@@ -24,19 +24,18 @@
     <main class="flex-lg-fill">
       <div class="container">
         <div class="row">
-          <div class="col col-12 col-lg-6">
+          <div class="col col-12 col-lg-5">
             <img 
               src="img/ava.jpg" 
               style="object-fit: cover" 
               class="rounded-circle d-block mb-5 border border-3 border-gray-300 mx-auto mx-lg-0" 
               width="180px" 
               height="180px" 
-              alt="Aleksandr Shevchuk
+              alt="Oleksandr Shevchuk
             ">
             <h1 class="lead">👋 About me: </h1>
             <p class="lead">
-              Hi! My name is Alex, I'm an experienced front-end developer and interface maker.
-              Really 💖 component approach and create a great user experience. <br>
+              Hi! My name is Alex, I am an UI developer with experience in creating clean, readable and scalable code, productive interacting with a team and clients, leading a small frontend team. <br>
               If you are looking for someone to take your project to the next level, please, write to me!
             </p>
 
@@ -59,8 +58,8 @@
             </p>
           </div>
 
-          <div class="col col-12 col-lg-6 d-flex align-items-center">
-            <div class="m-auto" id="chart" style="max-width: 100%; width: 420px; max-height: 100%"></div>
+          <div class="col col-12 col-lg-7 d-flex align-items-center">
+            <div class="m-auto" id="chart" style="max-width: 100%; width: 600px; max-height: 100%"></div>
           </div>
         </div>
       </div>
@@ -74,7 +73,7 @@
           </div>
 
           <div class="col col-12 col-md-6">
-            <div class="text-secondary py-3 py-md-0 text-center text-md-start">&copy; <em id="date"></em>Aleksandr Shevchuk</div>
+            <div class="text-secondary py-3 py-md-0 text-center text-md-start">&copy; <em id="date"></em>Oleksandr Shevchuk</div>
           </div>
 
           <div class="col col-12 col-md-6">
@@ -215,20 +214,23 @@
     <script>
       const data = {
         children: [
-          {id: 'bootstrap', value: 44, icon: '<i style="color: #7952b3" class="d-flex justify-content-center fab fa-bootstrap"></i>'},
-          {id: 'css3', value: 100, icon: '<i style="color: #1572b6" class="d-flex justify-content-center fab fa-css3-alt"></i>'},
-          {id: 'html5', value: 60, icon: '<i style="color: #f06529" class="d-flex justify-content-center fab fa-html5"></i>'},
-          {id: 'vuejs', value: 80, icon: '<i style="color: #42b983" class="d-flex justify-content-center fab fa-vuejs"></i>'},
+          {id: 'bootstrap', value: 40, icon: '<i style="color: #7952b3" class="d-flex justify-content-center fab fa-bootstrap"></i>'},
+          {id: 'css3', value: 120, icon: '<i style="color: #1572b6" class="d-flex justify-content-center fab fa-css3-alt"></i>'},
+          {id: 'html5', value: 110, icon: '<i style="color: #f06529" class="d-flex justify-content-center fab fa-html5"></i>'},
+          {id: 'vuejs', value: 90, icon: '<i style="color: #42b983" class="d-flex justify-content-center fab fa-vuejs"></i>'},
           {id: 'docker', value: 10, icon: '<i style="color: #0db7ed" class="d-flex justify-content-center fab fa-docker"></i>'},
-          {id: 'git', value: 17, icon: '<i style="color: #f1502f" class="d-flex justify-content-center fab fa-git-alt"></i>'},
-          {id: 'npm', value: 14, icon: '<i style="color: #cc3534" class="d-flex justify-content-center fab fa-npm"></i>'},
-          {id: 'js', value: 150, icon: '<i style="color: #f0db4f" class="d-flex justify-content-center fab fa-js"></i>'},
+          {id: 'git', value: 20, icon: '<i style="color: #f1502f" class="d-flex justify-content-center fab fa-git-alt"></i>'},
+          {id: 'github', value: 20, icon: '<i style="color: #fff" class="d-flex justify-content-center fab fa-github"></i>'},
+          {id: 'npm', value: 15, icon: '<i style="color: #cc3534" class="d-flex justify-content-center fab fa-npm"></i>'},
+          {id: 'js', value: 120, icon: '<i style="color: #f0db4f" class="d-flex justify-content-center fab fa-js"></i>'},
           {id: 'wordpress', value: 25, icon: '<i style="color: #00749C" class="d-flex justify-content-center fab fa-wordpress"></i>'},
+          {id: 'drupal', value: 10, icon: '<i style="color: #25AAE1" class="d-flex justify-content-center fab fa-drupal"></i>'},
           {id: 'sass', value: 25, icon: '<i style="color: #cc6699" class="d-flex justify-content-center fab fa-sass"></i>'},
+          {id: 'figma', value: 15, icon: '<i style="color: #fff" class="d-flex justify-content-center fab fa-figma"></i>'},
         ]
       };
 
-      const size = 500;
+      const size = 600;
 
       const svg = d3.select('#chart').append('svg')
         .attr('style', 'max-width: 100%')
@@ -263,7 +265,7 @@
         .attr('width', (d) => 2 * d.r)
         .attr('font-size', (d) => 2 * d.r - 20)
         .attr('class', 'd-flex align-items-center justify-content-center flicker-in-glow')
-        .attr('style', (d) => `padding-top: 10px; animation-delay: ${d.r/50}s`)
+        .attr('style', (d) => `padding-top: 10px; animation-delay: ${d.r/70}s`)
         .html((d) => d.data.icon);
     </script>
   </body>
