@@ -21,22 +21,22 @@
   </head>
 
   <body class="w-100 bg-dark text-white d-flex flex-column justify-content-center pt-5 pb-0 pb-md-5" style="min-height: 99vh;">
-    <main class="flex-lg-fill">
-      <div class="container">
+    <main class="d-lg-flex flex-lg-fill">
+      <div class="container flex-lg-fill d-lg-flex align-items-center">
         <div class="row">
-          <div class="col col-12 col-lg-5">
+          <div class="col col-12 col-lg-6">
             <img 
               src="img/ava.jpg" 
               style="object-fit: cover" 
-              class="rounded-circle d-block mb-5 border border-3 border-gray-300 mx-auto mx-lg-0" 
-              width="180px" 
-              height="180px" 
+              class="rounded-circle d-block mb-4 border border-3 border-gray-300 mx-auto mx-lg-0" 
+              width="150px" 
+              height="150px" 
               alt="Oleksandr Shevchuk
             ">
             <h1 class="lead">👋 About me: </h1>
-            <p class="lead">
-              Hi! My name is Alex, I am an UI developer with experience in creating clean, readable and scalable code, productive interacting with a team and clients, leading a small frontend team. <br>
-              If you are looking for someone to take your project to the next level, please, write to me!
+            <p class="lead text-white-50">
+              Hi! My name is Oleksandr, I am an expirienced frontend developer with passion to code and design.
+              I have been developing a web applications for edtech, entertainment industry and really enjoyed it.
             </p>
 
             <hr class="border-white w-100">
@@ -58,8 +58,8 @@
             </p>
           </div>
 
-          <div class="col col-12 col-lg-7 d-flex align-items-center">
-            <div class="m-auto" id="chart" style="max-width: 100%; width: 600px; max-height: 100%"></div>
+          <div class="col col-12 col-lg-5 d-flex align-items-center">
+            <div class="m-auto" id="chart" style="max-width: 100%; width: 400px; max-height: 100%"></div>
           </div>
         </div>
       </div>
@@ -73,12 +73,12 @@
           </div>
 
           <div class="col col-12 col-md-6">
-            <div class="text-secondary py-3 py-md-0 text-center text-md-start">&copy; <em id="date"></em>Oleksandr Shevchuk</div>
+            <div class="text-secondary py-3 py-md-0 text-center text-md-start fs-6">&copy; <em id="date"></em>Oleksandr Shevchuk</div>
           </div>
 
           <div class="col col-12 col-md-6">
             <div class="d-flex align-items-center justify-content-center pb-5 pb-md-0 justify-content-md-end">
-              <p class="d-none d-md-block text-muted mb-0 me-3">Send a message</p>
+              <p class="d-none d-md-block text-muted mb-0 me-3 fs-6">Send a message</p>
               <a href="viber://chat?number=%2B380973096810" target="_blank" class="link-secondary me-3"><i class="fab fa-viber"></i></a>
               <a href="https://t.me/alekswebnet" target="_blank" class="link-secondary me-3"><i class="fab fa-telegram-plane"></i></a>
               <a href="skype:schamp789?chat" target="_blank" class="link-secondary me-3"><i class="fab fa-skype"></i></a>
@@ -94,45 +94,19 @@
 
     <style>
       .flicker-in-glow {
-        animation: flicker-in-glow 4s linear both;
+        animation: flicker-in-glow infinite linear both;
       }
       @keyframes flicker-in-glow {
-        0% {
-          opacity: 0;
-        }
-        10% {
-          opacity: 0;
-          text-shadow: none;
-        }
-        10.1% {
-          opacity: 1;
-          text-shadow: none;
-        }
-        10.2% {
-          opacity: 0;
-          text-shadow: none;
-        }
-        20% {
-          opacity: 0;
-          text-shadow: none;
-        }
-        20.1% {
-          opacity: 1;
-        }
-        20.6% {
-          opacity: 0;
-          text-shadow: none;
-        }
-        30% {
-          opacity: 0;
-          text-shadow: none;
-        }
-        30.1% {
-          opacity: 1;
-        }
-        30.5% {
-          opacity: 1;
-        }
+        0% { opacity: 0; }
+        10% { opacity: 0; text-shadow: none; }
+        10.1% { opacity: 1; text-shadow: none; }
+        10.2% { opacity: 0; text-shadow: none; }
+        20% { opacity: 0; text-shadow: none;}
+        20.1% { opacity: 1; }
+        20.6% { opacity: 0; text-shadow: none; }
+        30% { opacity: 0; text-shadow: none; }
+        30.1% { opacity: 1; }
+        30.5% { opacity: 1; }
         30.6% {
           opacity: 0;
         }
@@ -204,33 +178,27 @@
         colorStart: "#212529",
         colorStop: "#212529",
         blur: 7, // default is 4
-        bubbleFunc: () => `hsla(${Math.random() * 360}, 100%, 50%, ${Math.random() * 0.25})`,
-        radiusFunc: () => 2 + Math.random() * 6, // default is 4 + Math.random() * width / 25
+        bubbleFunc: () => `hsla(${Math.random() * 360}, 100%, 50%, ${Math.random() * 0.35})`,
+        radiusFunc: () => 2 + Math.random() * 7, // default is 4 + Math.random() * width / 25
         bubbles: 10, // default is Math.floor((canvas.width + canvas.height) * 0.02);
         compose: "lighter"
-    });
+      });
     </script>
 
     <script>
       const data = {
         children: [
-          {id: 'bootstrap', value: 40, icon: '<i style="color: #7952b3" class="d-flex justify-content-center fab fa-bootstrap"></i>'},
-          {id: 'css3', value: 120, icon: '<i style="color: #1572b6" class="d-flex justify-content-center fab fa-css3-alt"></i>'},
-          {id: 'html5', value: 110, icon: '<i style="color: #f06529" class="d-flex justify-content-center fab fa-html5"></i>'},
-          {id: 'vuejs', value: 90, icon: '<i style="color: #42b983" class="d-flex justify-content-center fab fa-vuejs"></i>'},
-          {id: 'docker', value: 10, icon: '<i style="color: #0db7ed" class="d-flex justify-content-center fab fa-docker"></i>'},
-          {id: 'git', value: 20, icon: '<i style="color: #f1502f" class="d-flex justify-content-center fab fa-git-alt"></i>'},
+          {id: 'slack', value: 10, icon: '<i style="color: #fff" class="d-flex justify-content-center fab fa-slack"></i>'},
           {id: 'github', value: 20, icon: '<i style="color: #fff" class="d-flex justify-content-center fab fa-github"></i>'},
-          {id: 'npm', value: 15, icon: '<i style="color: #cc3534" class="d-flex justify-content-center fab fa-npm"></i>'},
-          {id: 'js', value: 120, icon: '<i style="color: #f0db4f" class="d-flex justify-content-center fab fa-js"></i>'},
-          {id: 'wordpress', value: 25, icon: '<i style="color: #00749C" class="d-flex justify-content-center fab fa-wordpress"></i>'},
-          {id: 'drupal', value: 10, icon: '<i style="color: #25AAE1" class="d-flex justify-content-center fab fa-drupal"></i>'},
-          {id: 'sass', value: 25, icon: '<i style="color: #cc6699" class="d-flex justify-content-center fab fa-sass"></i>'},
-          {id: 'figma', value: 15, icon: '<i style="color: #fff" class="d-flex justify-content-center fab fa-figma"></i>'},
+          {id: 'codepen', value: 30, icon: '<i style="color: #fff" class="d-flex justify-content-center fab fa-codepen"></i>'},
+          {id: 'stack-overflow', value: 35, icon: '<i style="color: #F48024" class="d-flex justify-content-center fab fa-stack-overflow"></i>'},
+          {id: 'gitlab', value: 40, icon: '<i style="color: #e24329" class="d-flex justify-content-center fab fa-gitlab"></i>'},
+          {id: 'medium', value: 70, icon: '<i style="color: #fff" class="d-flex justify-content-center fab fa-medium"></i>'},
+          {id: 'youtube', value: 100, icon: '<i style="color: #FF0000" class="d-flex justify-content-center fab fa-youtube"></i>'},
         ]
       };
 
-      const size = 600;
+      const size = 400;
 
       const svg = d3.select('#chart').append('svg')
         .attr('style', 'max-width: 100%')
