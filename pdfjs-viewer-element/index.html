@@ -4,12 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
-    <script src="pdfjs-viewer-element.umd.cjs"></script>
+    <script type="module" src="https://cdn.skypack.dev/pdfjs-viewer-element"></script>
+    <style>
+      html, body {
+        margin: 0;
+        display: block;
+      }
+      .viewer {
+        height: 100vh;
+	      height: 100dvh;
+      }
+    </style>
   </head>
   <body>
-    <pdfjs-viewer-element 
+    <pdfjs-viewer-element
+      class="viewer"
       src="/pdfjs-3.4.120-dist/web/compressed.tracemonkey-pldi-09.pdf"
-      style="height: 99vh">
+      viewer-path="/pdfjs-3.4.120-dist">
     </pdfjs-viewer-element>
   </body>
 </html>
