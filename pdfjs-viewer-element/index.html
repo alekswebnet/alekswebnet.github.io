@@ -21,7 +21,7 @@
     </style>
   </head>
   <body class="bg-light">
-    <div class="d-flex" v-scope="{ tab: window.location.href.includes('/api') ? 'api' : 'start' , src: '/example.pdf', viewerPath: '/pdfjs', page: null, locale: null, locales: window.locales, zoom: 'auto', pagemode: 'none', search: null, phrase: true}">
+    <div class="d-flex" v-scope="{ tab: window.location.href.includes('#api') ? 'api' : 'start' , src: '/example.pdf', viewerPath: '/pdfjs', page: null, locale: null, locales: window.locales, zoom: 'auto', pagemode: 'none', search: null, phrase: true}">
       <div class="container-fluid flex-fill p-0 ps-lg-2 overflow-hidden">
         <div class="row h-100">
           <div class="col-lg-6 px-4 pt-4 pb-4 overflow-auto content-col">
@@ -58,7 +58,7 @@
                   :style="{ 'border-bottom-color': tab === 'api' ? 'var(--bs-light)' : '#dee2e6' }" 
                   type="button" 
                   role="tab"
-                  @click="window.history.pushState({}, '', `${window.location.origin}/pdfjs-viewer-element/api`), tab = 'api'"
+                  @click="window.history.pushState({}, '', `${window.location.origin}/pdfjs-viewer-element#api`), tab = 'api'"
                   aria-controls="api">⚙️ API</button>
               </li>
             </ul>
