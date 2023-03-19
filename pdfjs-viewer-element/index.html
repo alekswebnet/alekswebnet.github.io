@@ -48,7 +48,7 @@
                   :style="{ 'border-bottom-color': tab === 'start' ? 'var(--bs-light)' : '#dee2e6' }" 
                   type="button" 
                   role="tab"
-                  @click="window.history.pushState({}, '', `${window.location.origin}`), tab = 'start'"
+                  @click="window.history.pushState({}, '', `${window.location.origin}/pdfjs-viewer-element`), tab = 'start'"
                   aria-controls="start">📦 Getting Started</button>
               </li>
               <li class="nav-item bg-light" role="presentation">
@@ -58,7 +58,7 @@
                   :style="{ 'border-bottom-color': tab === 'api' ? 'var(--bs-light)' : '#dee2e6' }" 
                   type="button" 
                   role="tab"
-                  @click="window.history.pushState({}, '', `${window.location.origin}/api`), tab = 'api'"
+                  @click="window.history.pushState({}, '', `${window.location.origin}/pdfjs-viewer-element/api`), tab = 'api'"
                   aria-controls="api">⚙️ API</button>
               </li>
             </ul>
