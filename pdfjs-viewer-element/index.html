@@ -8,7 +8,7 @@
     <title>pdfjs-viewer-element</title>
     <meta name="description" content="A web component for viewing pdf files in the browser, based on PDF.js">
     <script src="https://unpkg.com/petite-vue" defer init></script>
-    <script type="module" src="https://cdn.skypack.dev/pdfjs-viewer-element"></script>
+    <script type="module" src="./pdfjs-viewer-element.js"></script>
     <script>var locales=["ach","af","an","ar","ast","az","be","bg","bn","bo","br","brx","bs","ca","cak","ckb","cs","cy","da","de","dsb","el","en-CA","en-GB","en-US","eo","es-AR","es-CL","es-ES","es-MX","et","eu","fa","ff","fi","fr","fur","fy-NL","ga-IE","gd","gl","gn","gu-IN","he","hi-IN","hr","hsb","hu","hy-AM","hye","ia","id","is","it","ja","ka","kab","kk","km","kn","ko","lij","lo","lt","ltg","lv","meh","mk","mr","ms","my","nb-NO","ne-NP","nl","nn-NO","oc","pa-IN","pl","pt-BR","pt-PT","rm","ro","ru","sat","sc","scn","sco","si","sk","skr","sl","son","sq","sr","sv-SE","szl","ta","te","tg","th","tl","tr","trs","uk","ur","uz","vi","wo","xh","zh-CN","zh-TW"];</script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
     <style>
@@ -48,7 +48,7 @@
                   :style="{ 'border-bottom-color': tab === 'start' ? 'var(--bs-light)' : '#dee2e6' }" 
                   type="button" 
                   role="tab"
-                  @click="window.history.pushState({}, '', `${window.location.origin}/pdfjs-viewer-element`), tab = 'start'"
+                  @click="window.history.pushState({}, '', `${window.location.origin}/pdfjs-viewer-element/`), tab = 'start'"
                   aria-controls="start">📦 Getting Started</button>
               </li>
               <li class="nav-item bg-light" role="presentation">
@@ -58,7 +58,7 @@
                   :style="{ 'border-bottom-color': tab === 'api' ? 'var(--bs-light)' : '#dee2e6' }" 
                   type="button" 
                   role="tab"
-                  @click="window.history.pushState({}, '', `${window.location.origin}/pdfjs-viewer-element#api`), tab = 'api'"
+                  @click="window.history.pushState({}, '', `${window.location.origin}/pdfjs-viewer-element/#api`), tab = 'api'"
                   aria-controls="api">⚙️ API</button>
               </li>
             </ul>
