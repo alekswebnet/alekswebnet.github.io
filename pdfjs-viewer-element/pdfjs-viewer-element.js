@@ -1,36 +1,67 @@
-const w = (s, e) => new Promise((r, n) => {
-  let i = e.querySelector(s);
-  if (i) {
-    r(i);
+const g = (l, e) => new Promise((t, n) => {
+  let r = e.querySelector(l);
+  if (r) {
+    t(r);
     return;
   }
-  new MutationObserver((c, o) => {
-    Array.from(e.querySelectorAll(s)).forEach((a) => {
-      r(a), o.disconnect();
+  new MutationObserver((h, o) => {
+    Array.from(e.querySelectorAll(l)).forEach((s) => {
+      t(s), o.disconnect();
     });
   }).observe(e, {
     childList: !0,
     subtree: !0
   });
-}), t = {
+}), b = {
+  trailing: !0
+};
+function y(l, e = 25, t = {}) {
+  if (t = { ...b, ...t }, !Number.isFinite(e))
+    throw new TypeError("Expected `wait` to be a finite number");
+  let n, r, h = [], o, s;
+  const d = (a, c) => (o = A(l, a, c), o.finally(() => {
+    if (o = null, t.trailing && s && !r) {
+      const u = d(a, s);
+      return s = null, u;
+    }
+  }), o);
+  return function(...a) {
+    return o ? (t.trailing && (s = a), o) : new Promise((c) => {
+      const u = !r && t.leading;
+      clearTimeout(r), r = setTimeout(() => {
+        r = null;
+        const w = t.leading ? n : d(this, a);
+        for (const p of h)
+          p(w);
+        h = [];
+      }, e), u ? (n = d(this, a), c(n)) : h.push(c);
+    });
+  };
+}
+async function A(l, e, t) {
+  return await l.apply(e, t);
+}
+const i = {
   viewerPath: "/pdfjs",
   viewerEntry: "/web/viewer.html",
   src: "",
   page: "",
   search: "",
   phrase: "",
-  zoom: "",
-  pagemode: "",
+  zoom: "auto",
+  pagemode: "none",
   locale: "",
   textLayer: ""
-}, m = document.createElement("template");
-m.innerHTML = `
+}, f = document.createElement("template");
+f.innerHTML = `
   <iframe frameborder="0" width="100%"></iframe>
   <style>:host{width:100%;display:block;overflow:hidden}:host iframe{height:100%}</style>
 `;
-class d extends HTMLElement {
+class m extends HTMLElement {
   constructor() {
-    super(), this.attachShadow({ mode: "open" }).appendChild(m.content.cloneNode(!0));
+    super(), this.debouncedRenderIframe = y(async () => {
+      await g("iframe", this.shadowRoot), this.renderViewer(this.getIframeSrc());
+    }, 0, { leading: !0 }), this.attachShadow({ mode: "open" }).appendChild(f.content.cloneNode(!0));
   }
   static get observedAttributes() {
     return ["src", "viewer-path", "locale", "page", "search", "phrase", "zoom", "pagemode", "text-layer"];
@@ -39,26 +70,27 @@ class d extends HTMLElement {
     this.iframe = this.shadowRoot.querySelector("iframe"), this.setEventListeners();
   }
   attributeChangedCallback() {
-    w("iframe", this.shadowRoot).then(() => this.setProps());
+    this.debouncedRenderIframe();
   }
-  setProps() {
-    const e = this.getFullPath(this.getAttribute("src") || t.src), r = this.getFullPath(this.getAttribute("viewer-path") || t.viewerPath), n = this.getAttribute("page") || t.page, i = this.getAttribute("search") || t.search, c = this.getAttribute("phrase") || t.phrase, o = this.getAttribute("zoom") || t.zoom, a = this.getAttribute("pagemode") || t.pagemode, h = this.getAttribute("locale") || t.locale, p = this.getAttribute("text-layer") || t.textLayer, l = `${r}${t.viewerEntry}?file=${e}#page=${n}&zoom=${o}&pagemode=${a}&search=${i}&phrase=${c}&textLayer=${p}${h ? "&locale=" + h : ""}`;
-    l !== this.iframe.getAttribute("src") && this.rerenderIframe(l);
+  getIframeSrc() {
+    const e = this.getFullPath(this.getAttribute("src") || i.src), t = this.getFullPath(this.getAttribute("viewer-path") || i.viewerPath), n = this.getAttribute("page") || i.page, r = this.getAttribute("search") || i.search, h = this.getAttribute("phrase") || i.phrase, o = this.getAttribute("zoom") || i.zoom, s = this.getAttribute("pagemode") || i.pagemode, d = this.getAttribute("locale") || i.locale, a = this.getAttribute("text-layer") || i.textLayer, c = `${t}${i.viewerEntry}?file=${e}#page=${n}&zoom=${o}&pagemode=${s}&search=${r}&phrase=${h}&textLayer=${a}${d ? "&locale=" + d : ""}`;
+    return c !== this.iframe.getAttribute("src") ? c : "";
   }
-  rerenderIframe(e) {
-    this.shadowRoot.replaceChild(this.iframe.cloneNode(), this.iframe), this.iframe = this.shadowRoot.querySelector("iframe"), this.iframe.contentWindow.location.href = e;
+  renderViewer(e) {
+    e && (this.shadowRoot.replaceChild(this.iframe.cloneNode(), this.iframe), this.iframe = this.shadowRoot.querySelector("iframe"), this.iframe.contentWindow.location.href = e);
   }
   setEventListeners() {
     document.addEventListener("webviewerloaded", () => {
-      this.getAttribute("src") !== t.src && this.iframe.contentWindow.PDFViewerApplicationOptions.set("defaultUrl", ""), this.iframe.contentWindow.PDFViewerApplicationOptions.set("disablePreferences", !0), this.iframe.contentWindow.PDFViewerApplicationOptions.set("pdfBugEnabled", !0);
+      var e, t, n, r;
+      this.getAttribute("src") !== i.src && ((e = this.iframe.contentWindow.PDFViewerApplicationOptions) == null || e.set("defaultUrl", "")), (t = this.iframe.contentWindow.PDFViewerApplicationOptions) == null || t.set("disablePreferences", !0), (n = this.iframe.contentWindow.PDFViewerApplicationOptions) == null || n.set("pdfBugEnabled", !0), (r = this.iframe.contentWindow.PDFViewerApplicationOptions) == null || r.set("eventBusDispatchToDOM", !0);
     });
   }
   getFullPath(e) {
     return e.startsWith("/") ? `${window.location.origin}${e}` : e;
   }
 }
-window.customElements.get("pdfjs-viewer-element") || (window.PdfjsViewerElement = d, window.customElements.define("pdfjs-viewer-element", d));
+window.customElements.get("pdfjs-viewer-element") || (window.PdfjsViewerElement = m, window.customElements.define("pdfjs-viewer-element", m));
 export {
-  d as PdfjsViewerElement,
-  d as default
+  m as PdfjsViewerElement,
+  m as default
 };
