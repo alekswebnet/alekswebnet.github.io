@@ -94,6 +94,16 @@
               <pre class="d-flex bg-white border rounded language-markup">
                 <code>&lt;pdfjs-viewer-element src="/file.pdf" viewer-path="/pdfjs"&gt;&lt;/pdfjs-viewer-element&gt;</code>
               </pre>
+              <p class="fs-6 mb-0">Use <code style="color: #905">initialize</code> method to access viewer PDF.js Viewer Application:</p>
+              <pre class="d-flex flex-column bg-white border rounded language-js">
+<code>document.addEventListener('DOMContentLoaded', async () => {
+  const viewer = document.querySelector('pdfjs-viewer-element')
+  // Wait for the viewer initialization, receive PDFViewerApplication
+  const viewerApp = await viewer.initialize()
+  // Open PDF file data using Uint8Array instead of URL
+  viewerApp.open(pdfData)
+})</code>
+              </pre>
               <p class="fs-6">If you need more information, look at <a href @click.prevent="window.history.pushState({}, '', `${window.location.origin}/pdfjs-viewer-element/#demo`), tab = 'demo'">live examples</a>.</p>
             </div>
             <form style="display: none" class="pt-4" :class="{ 'd-block': tab === 'api' }">
