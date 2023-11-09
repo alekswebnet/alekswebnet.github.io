@@ -21,7 +21,7 @@
     </style>
   </head>
   <body class="bg-light">
-    <div class="d-flex" v-scope="{ tab: window.location.href.includes('#api') ? 'api' : window.location.href.includes('#demo') ? 'demo' : 'start', src: '/sample-pdf-file.pdf', viewerPath: '/pdfjs', page: null, locale: null, locales: window.locales, zoom: 'auto', pagemode: 'none', search: null, phrase: true, textLayer: null, viewerCssTheme: 'AUTOMATIC', viewerExtraStyles: '', viewerExtraStylesInput: '', extraStylesModal: false}">
+    <div class="d-flex" v-scope="{ tab: window.location.href.includes('#api') ? 'api' : window.location.href.includes('#demo') ? 'demo' : 'start', src: '/sample-pdf-file.pdf', viewerPath: '/pdfjs-4.0.189-dist', page: null, locale: null, locales: window.locales, zoom: 'auto', pagemode: 'none', search: null, phrase: true, textLayer: null, viewerCssTheme: 'AUTOMATIC', viewerExtraStyles: '', viewerExtraStylesInput: '', extraStylesModal: false}">
       <div class="container-fluid flex-fill p-0 ps-lg-2 overflow-hidden">
         <div class="row h-100">
           <div class="col-lg-8 px-4 pt-4 pb-4 overflow-auto content-col">
@@ -40,6 +40,7 @@
               A web component for viewing pdf files in the browser, based on 
               <a href="https://github.com/mozilla/pdf.js" target="_blank">PDF.js</a> viewer.
             </p>
+
             <ul class="nav nav-tabs" role="tablist" style="display: none" :class="{ 'd-flex': !!tab }">
               <li class="nav-item bg-light" role="presentation">
                 <button 
@@ -73,7 +74,7 @@
               </li>
             </ul>
 
-            <div v-if="tab === 'start'" style="display: none" class="pt-4 small" :class="{ 'd-block': tab === 'start' }">
+            <div style="display: none" class="pt-4 small" :class="{ 'd-block': tab === 'start' }">
               <p class="fs-6">Download and place the 
                 <a href="http://mozilla.github.io/pdf.js/getting_started" target="_blank">PDF.js prebuilt</a> 
                 files to some directory of your project. Specify the path to this directory with <code style="color: #905">viewer-path</code> property (<code style="color: #07a">/pdfjs</code> by default). </p>
@@ -132,7 +133,7 @@
               <p class="fs-6">If you need more information, look at <a href @click.prevent="window.history.pushState({}, '', `${window.location.origin}/pdfjs-viewer-element/#demo`), tab = 'demo'">live examples</a>.</p>
             </div>
             
-            <form v-if="tab === 'api'" style="display: none" class="pt-4" :class="{ 'd-block': tab === 'api' }">
+            <form style="display: none" class="pt-4" :class="{ 'd-block': tab === 'api' }">
               <p class="fs-6 mb-2">Properties overview:</p>
               <div class="row">
                 <div class="col-5 col-md-3"><label for="src" class="col-form-label"><code style="color: #905">src</code></label></div>
@@ -150,7 +151,12 @@
                 <div class="col-5 col-md-3"><label for="viewerPath" class="col-form-label"><code style="color: #905">viewer-path</code></label></div>
                 <div class="col-7 col-md-5 col-form-label text-muted d-flex"><span class="ms-auto ms-sm-0 small">Path to PDF.js prebuilt</span></div>
                 <div class="col-sm-4 d-flex align-items-center">
-                  <input id="viewerPath" v-model="viewerPath" class="form-control form-control-sm" type="text" aria-label="Viewer path" />
+                  <select id="viewerPath" v-model="viewerPath" class="form-select form-select-sm" aria-label="Viewer path">
+                    <option value="">Empty</option>
+                    <option selected value="/pdfjs-4.0.189-dist">/pdfjs-4.0.189-dist</option>
+                    <option value="/pdfjs-3.11.174-dist">/pdfjs-3.11.174-dist</option>
+                    <option value="/pdfjs-3.10.111-dist">/pdfjs-3.10.111-dist</option>
+                  </select>
                 </div>
               </div>
               <div class="row">
@@ -263,7 +269,7 @@
               </div>
             </form>
 
-            <div v-if="tab === 'demo'" style="display: none" class="pt-4 small" :class="{ 'd-block': tab === 'demo' }">
+            <div style="display: none" class="pt-4 small" :class="{ 'd-block': tab === 'demo' }">
               <p class="fs-6 pb-3">You can use <code style="color: #905">pdfjs-viewer-element</code> with different frameworks or without them. There are a few examples: </p>
               <h2 class="fs-6 mb-3">🌐 HTML </h2>
               <iframe
