@@ -22,7 +22,7 @@
     </style>
   </head>
   <body class="bg-light">
-    <div class="d-flex" v-scope="{ tab: window.location.href.includes('#api') ? 'api' : window.location.href.includes('#demo') ? 'demo' : 'start', src: '/sample-pdf-file.pdf', viewerPath: '/pdfjs-4.0.379-dist', page: null, locale: null, locales: window.locales, zoom: null, pagemode: 'none', search: null, phrase: true, textLayer: null, viewerCssTheme: 'AUTOMATIC', viewerExtraStyles: '', viewerExtraStylesInput: '', extraStylesModal: false}">
+    <div class="d-flex" v-scope="{ tab: window.location.href.includes('#api') ? 'api' : window.location.href.includes('#demo') ? 'demo' : 'start', src: '/sample-pdf-file.pdf', viewerPath: '/pdfjs-4.0.379-dist', page: null, locale: null, locales: window.locales, zoom: '', pagemode: 'none', search: null, phrase: true, textLayer: null, viewerCssTheme: 'AUTOMATIC', viewerExtraStyles: '', viewerExtraStylesInput: '', extraStylesModal: false}">
       <div class="container-fluid flex-fill p-0 ps-lg-2 overflow-hidden">
         <div class="row h-100">
           <div class="col-lg-8 px-4 pt-4 pb-4 overflow-auto content-col">
@@ -215,7 +215,7 @@
                 <div class="col-7 col-md-5 col-form-label text-muted d-flex"><span class="ms-auto ms-sm-0 small">Zoom level</span></div>
                 <div class="col-sm-4 d-flex align-items-center">
                   <select id="zoom" v-model="zoom" class="form-select form-select-sm" aria-label="Zoom">
-                    <option selected :value="null">null</option>
+                    <option selected value=""></option>
                     <option value="auto">auto</option>
                     <option value="page-width">page-width</option>
                     <option value="page-height">page-height</option>
