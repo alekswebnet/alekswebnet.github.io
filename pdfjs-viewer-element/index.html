@@ -22,7 +22,7 @@
     </style>
   </head>
   <body class="bg-light">
-    <div class="d-flex" v-scope="{ tab: window.location.href.includes('#api') ? 'api' : window.location.href.includes('#demo') ? 'demo' : 'start', src: '/sample-pdf-file.pdf', viewerPath: '/pdfjs-4.0.189-dist', page: null, locale: null, locales: window.locales, zoom: 'auto', pagemode: 'none', search: null, phrase: true, textLayer: null, viewerCssTheme: 'AUTOMATIC', viewerExtraStyles: '', viewerExtraStylesInput: '', extraStylesModal: false}">
+    <div class="d-flex" v-scope="{ tab: window.location.href.includes('#api') ? 'api' : window.location.href.includes('#demo') ? 'demo' : 'start', src: '/sample-pdf-file.pdf', viewerPath: '/pdfjs-4.0.379-dist', page: null, locale: null, locales: window.locales, zoom: null, pagemode: 'none', search: null, phrase: true, textLayer: null, viewerCssTheme: 'AUTOMATIC', viewerExtraStyles: '', viewerExtraStylesInput: '', extraStylesModal: false}">
       <div class="container-fluid flex-fill p-0 ps-lg-2 overflow-hidden">
         <div class="row h-100">
           <div class="col-lg-8 px-4 pt-4 pb-4 overflow-auto content-col">
@@ -100,14 +100,14 @@
               </pre>
               <p class="fs-6 mb-0">Usage: </p>
               <pre class="d-flex bg-white border rounded language-markup">
-                <code>&lt;pdfjs-viewer-element src="/file.pdf" viewer-path="/pdfjs"&gt;&lt;/pdfjs-viewer-element&gt;</code>
+                <code>&lt;pdfjs-viewer-element src="/file.pdf" viewer-path="/pdfjs-4.0.379-dist"&gt;&lt;/pdfjs-viewer-element&gt;</code>
               </pre>
               <hr>
               <p class="fs-6 mb-0">Change viewer CSS theme:</p>
               <pre class="d-flex bg-white border rounded language-markup">
 <code>&lt;pdfjs-viewer-element 
   src="/file.pdf"
-  viewer-path="/pdfjs"
+  viewer-path="/pdfjs-4.0.379-dist"
   viewer-css-theme="DARK"&gt;
 &lt;/pdfjs-viewer-element&gt;
 </code>
@@ -117,7 +117,7 @@
               <pre class="d-flex bg-white border rounded language-markup">
 <code>&lt;pdfjs-viewer-element 
   src="/file.pdf"
-  viewer-path="/pdfjs"
+  viewer-path="/pdfjs-4.0.379-dist"
   viewer-extra-styles="#openFile { display: none }"&gt;
 &lt;/pdfjs-viewer-element&gt;
 </code>
@@ -158,10 +158,10 @@
                 <div class="col-7 col-md-5 col-form-label text-muted d-flex"><span class="ms-auto ms-sm-0 small">Path to PDF.js prebuilt</span></div>
                 <div class="col-sm-4 d-flex align-items-center">
                   <select id="viewerPath" v-model="viewerPath" class="form-select form-select-sm" aria-label="Viewer path">
-                    <option value="">Empty</option>
-                    <option selected value="/pdfjs-4.0.189-dist">/pdfjs-4.0.189-dist</option>
-                    <option value="/pdfjs-3.11.174-dist">/pdfjs-3.11.174-dist</option>
-                    <option value="/pdfjs-3.10.111-dist">/pdfjs-3.10.111-dist</option>
+                    <option :value="null">null</option>
+                    <option selected value="/pdfjs-4.0.379-dist">/pdfjs-4.0.379-dist</option>
+                    <option value="/pdfjs-4.0.269-dist">/pdfjs-4.0.269-dist</option>
+                    <option value="/pdfjs-4.0.189-dist">/pdfjs-4.0.189-dist</option>
                   </select>
                 </div>
               </div>
@@ -170,7 +170,7 @@
                 <div class="col-7 col-md-5 col-form-label text-muted d-flex"><span class="ms-auto ms-sm-0 small">Interface language, see <a href="https://github.com/mozilla/pdf.js/tree/master/l10n" target="_blank">all l10n files</a></span></div>
                 <div class="col-sm-4 d-flex align-items-center">
                   <select id="locale" v-model="locale" class="form-select form-select-sm" aria-label="Language localization">
-                    <option selected :value="null">None (from browser)</option>
+                    <option selected :value="null">null</option>
                     <option v-for="loc in locales" :value="loc" v-html="loc"></option>
                   </select>
                 </div>
@@ -180,7 +180,7 @@
                 <div class="col-7 col-md-5 col-form-label text-muted d-flex"><span class="ms-auto ms-sm-0 small">Text layer, used for text selection</span></div>
                 <div class="col-sm-4 d-flex align-items-center">
                   <select id="text-layer" v-model="textLayer" class="form-select form-select-sm" aria-label="Text layer">
-                    <option selected value="null">None</option>
+                    <option selected :value="null">null</option>
                     <option value="off">off</option>
                     <option value="visible">visible</option>
                     <option value="shadow">shadow</option>
@@ -215,7 +215,8 @@
                 <div class="col-7 col-md-5 col-form-label text-muted d-flex"><span class="ms-auto ms-sm-0 small">Zoom level</span></div>
                 <div class="col-sm-4 d-flex align-items-center">
                   <select id="zoom" v-model="zoom" class="form-select form-select-sm" aria-label="Zoom">
-                    <option selected value="auto">auto</option>
+                    <option selected :value="null">null</option>
+                    <option value="auto">auto</option>
                     <option value="page-width">page-width</option>
                     <option value="page-height">page-height</option>
                     <option value="page-fit">page-fit</option>
@@ -278,7 +279,7 @@
             <div style="display: none" class="pt-4 small" :class="{ 'd-block': tab === 'demo' }">
               <p class="fs-6 pb-3">You can use <code style="color: #905">pdfjs-viewer-element</code> with different frameworks or without them. There are a few examples: </p>
               <hr>
-              <h2 class="fs-6 mb-3">🌐 HTML </h2>
+              <h2 class="fs-6 mb-3">HTML </h2>
               <hr>
               <iframe
                 class="mb-4"
@@ -287,7 +288,7 @@
                 src="https://replit.com/@alekswebnet/HTML-pdfjs-viewer-element?embed=true"
               ></iframe>
               <hr>
-              <h2 class="fs-6 mb-3">🖖 Vue </h2>
+              <h2 class="fs-6 mb-3">Vue </h2>
               <hr>
               <iframe
                 class="mb-4"
@@ -296,7 +297,7 @@
                 src="https://replit.com/@alekswebnet/EmbarrassedGainsboroCore?embed=true&src/App.vue"
               ></iframe>
               <hr>
-              <h2 class="fs-6 mb-3">🔹 React </h2>
+              <h2 class="fs-6 mb-3">React </h2>
               <hr>
               <iframe
                 class="mb-4"
@@ -305,7 +306,7 @@
                 src="https://replit.com/@alekswebnet/React-TypeScript-pdfjs-viewer-element?embed=true"
               ></iframe>
               <hr>
-              <h2 class="fs-6 mb-3">📍 Svelte </h2>
+              <h2 class="fs-6 mb-3">Svelte </h2>
               <hr>
               <iframe
                 class="mb-4"
