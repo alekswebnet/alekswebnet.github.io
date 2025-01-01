@@ -16,7 +16,7 @@
       const data = { 
         tab: window.location.href.includes('#api') ? 'api' : window.location.href.includes('#demo') ? 'demo' : 'start', 
         src: '/sample-pdf-file.pdf', 
-        viewerPath: '/pdfjs-4.3.136-dist', 
+        viewerPath: '/pdfjs-4.10.38-dist', 
         page: null,
         locale: null, 
         locales: window.locales, 
@@ -122,14 +122,14 @@
               </pre>
               <p class="fs-6 mb-0">Usage: </p>
               <pre class="d-flex bg-white border rounded language-markup">
-                <code>&lt;pdfjs-viewer-element src="/file.pdf" viewer-path="pdfjs-4.3.136-dist"&gt;&lt;/pdfjs-viewer-element&gt;</code>
+                <code>&lt;pdfjs-viewer-element src="/file.pdf" viewer-path="pdfjs-4.10.38-dist"&gt;&lt;/pdfjs-viewer-element&gt;</code>
               </pre>
               <hr>
               <p class="fs-6 mb-0">Change viewer CSS theme:</p>
               <pre class="d-flex bg-white border rounded language-markup">
 <code>&lt;pdfjs-viewer-element 
   src="/file.pdf"
-  viewer-path="pdfjs-4.3.136-dist"
+  viewer-path="pdfjs-4.10.38-dist"
   viewer-css-theme="DARK"&gt;
 &lt;/pdfjs-viewer-element&gt;
 </code>
@@ -139,7 +139,7 @@
               <pre class="d-flex bg-white border rounded language-markup">
 <code>&lt;pdfjs-viewer-element 
   src="/file.pdf"
-  viewer-path="pdfjs-4.3.136-dist"
+  viewer-path="pdfjs-4.10.38-dist"
   viewer-extra-styles="#openFile { display: none }"
   viewer-extra-styles-urls="['/viewer-custom-theme.css']"&gt;
 &lt;/pdfjs-viewer-element&gt;
@@ -206,7 +206,7 @@
                 <div class="col-sm-4 d-flex align-items-center">
                   <select id="viewerPath" v-model="viewerPath" class="form-select form-select-sm" aria-label="Viewer path">
                     <option :value="null">null</option>
-                    <option selected value="pdfjs-4.3.136-dist">pdfjs-4.3.136-dist</option>
+                    <option selected value="pdfjs-4.10.38-dist">pdfjs-4.10.38-dist</option>
                     <option value="/pdfjs-4.0.269-dist">/pdfjs-4.0.269-dist</option>
                     <option value="/pdfjs-4.0.189-dist">/pdfjs-4.0.189-dist</option>
                   </select>
