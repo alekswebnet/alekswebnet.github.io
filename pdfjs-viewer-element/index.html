@@ -9,7 +9,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <meta name="description" content="A web component for viewing pdf files in the browser, based on PDF.js">
     <script src="https://unpkg.com/petite-vue@0.2.2/dist/petite-vue.iife.js" defer init></script>
-    <script type="module" src="https://cdn.skypack.dev/pdfjs-viewer-element"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/pdfjs-viewer-element/dist/pdfjs-viewer-element.js"></script>
     <script>var locales=["ach","af","an","ar","ast","az","be","bg","bn","bo","br","brx","bs","ca","cak","ckb","cs","cy","da","de","dsb","el","en-CA","en-GB","en-US","eo","es-AR","es-CL","es-ES","es-MX","et","eu","fa","ff","fi","fr","fur","fy-NL","ga-IE","gd","gl","gn","gu-IN","he","hi-IN","hr","hsb","hu","hy-AM","hye","ia","id","is","it","ja","ka","kab","kk","km","kn","ko","lij","lo","lt","ltg","lv","meh","mk","mr","ms","my","nb-NO","ne-NP","nl","nn-NO","oc","pa-IN","pl","pt-BR","pt-PT","rm","ro","ru","sat","sc","scn","sco","si","sk","skr","sl","son","sq","sr","sv-SE","szl","ta","te","tg","th","tl","tr","trs","uk","ur","uz","vi","wo","xh","zh-CN","zh-TW"];</script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
     <script>
@@ -116,13 +116,9 @@
               </pre>
               <p class="fs-6 mb-0">Install using browser: </p>
               <pre class="d-flex bg-white border rounded language-markup mb-3">
-                <code>&lt;script type="module" src="https://cdn.skypack.dev/pdfjs-viewer-element"&gt;&lt;/script&gt;</code>
+                <code>&lt;script type="module" src="https://cdn.jsdelivr.net/npm/pdfjs-viewer-element/dist/pdfjs-viewer-element.js"&gt;&lt;/script&gt;</code>
               </pre>
               <p class="fs-6 mb-0">Usage: </p>
-              <pre class="d-flex bg-white border rounded language-markup">
-                <code>&lt;pdfjs-viewer-element src="/file.pdf" viewer-path="pdfjs-4.10.38-dist"&gt;&lt;/pdfjs-viewer-element&gt;</code>
-              </pre>
-              <hr>
               <p class="fs-6 mb-0">Change viewer CSS theme:</p>
               <pre class="d-flex bg-white border rounded language-markup">
 <code>&lt;pdfjs-viewer-element 
