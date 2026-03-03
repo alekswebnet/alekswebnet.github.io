@@ -60,7 +60,7 @@
               </a>
             </div>
             <p class="lead text-center text-muted pb-4">
-              A web component for viewing pdf files in the browser, based on 
+               PDF viewer web component, based on 
               <a href="https://github.com/mozilla/pdf.js" target="_blank">PDF.js</a> viewer.
             </p>
 
@@ -83,9 +83,9 @@
                   type="button" 
                   role="tab"
                   @click="window.history.pushState({}, '', `${window.location.origin}/pdfjs-viewer-element/#api`), tab = 'api'"
-                  aria-controls="api">⚙️ API</button>
+                  aria-controls="api">⚙️ API playground</button>
               </li>
-              <!-- <li class="nav-item bg-light" role="presentation">
+              <li class="nav-item bg-light" role="presentation">
                 <button 
                   class="nav-link bg-light"
                   :class="{ 'active': tab === 'demo' }"
@@ -93,8 +93,8 @@
                   type="button" 
                   role="tab"
                   @click="window.history.pushState({}, '', `${window.location.origin}/pdfjs-viewer-element/#demo`), tab = 'demo'"
-                  aria-controls="demo">⚡ Live examples</button>
-              </li> -->
+                  aria-controls="demo">⚡ Frameworks</button>
+              </li>
             </ul>
 
             <div style="display: none" class="pt-4 small" :class="{ 'd-block': tab === 'start' }">
@@ -113,14 +113,14 @@
               <pre class="d-flex flex-column bg-white border rounded language-js">
                 <code>import 'pdfjs-viewer-element'</code>
               </pre>
-              <p class="fs-6 mb-0">Install using browser: </p>
+              <p class="fs-6 mb-0">Or using browser CDN: </p>
               <pre class="d-flex bg-white border rounded language-markup mb-3">
                 <code>&lt;script type="module" src="https://cdn.jsdelivr.net/npm/pdfjs-viewer-element/dist/pdfjs-viewer-element.js"&gt;&lt;/script&gt;</code>
               </pre>
               <p class="fs-6 mb-0">Usage: </p>
               <pre class="d-flex bg-white border rounded language-markup">
 <code>&lt;pdfjs-viewer-element 
-  src="/file.pdf"
+  src="https://alekswebnet.github.io/sample-pdf-with-images.pdf"
   viewer-css-theme="DARK"&gt;
 &lt;/pdfjs-viewer-element&gt;
 </code>
@@ -330,45 +330,33 @@
               </div>
             </form>
 
-            <!-- <div style="display: none" class="pt-4 small" :class="{ 'd-block': tab === 'demo' }">
-              <p class="fs-6 pb-3">You can use <code style="color: #905">pdfjs-viewer-element</code> with different frameworks or without them. There are a few examples: </p>
+            <div style="display: none" class="pt-4 small" :class="{ 'd-block': tab === 'demo' }">
+              <p class="fs-6 pb-3">You can use <code style="color: #905">pdfjs-viewer-element</code> with frameworks or without them: </p>
               <hr>
-              <h2 class="fs-6 mb-3">HTML </h2>
+              <h2 class="fs-6 badge bg-secondary mb-0">Simple webpage</h2>
               <hr>
-              <iframe
-                class="mb-4"
-                width="100%"
-                style="aspect-ratio: 16 / 9;"
-                src="https://replit.com/@alekswebnet/HTML-pdfjs-viewer-element?embed=true"
-              ></iframe>
+              <iframe width="100%" style="aspect-ratio: 16 / 9;" scrolling="no" title="PDF.js viewer web component demo - pdfjs-viewer-element " src="https://codepen.io/redrobot753/embed/bNwVVvp?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true">
+                See the Pen <a href="https://codepen.io/redrobot753/pen/bNwVVvp">
+                PDF.js viewer web component demo - pdfjs-viewer-element </a> by Oleksandr Shevchuk (<a href="https://codepen.io/redrobot753">@redrobot753</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
               <hr>
-              <h2 class="fs-6 mb-3">Vue </h2>
+              <h2 class="fs-6 badge bg-primary mb-0">React </h2>
               <hr>
-              <iframe
-                class="mb-4"
-                width="100%"
-                style="aspect-ratio: 16 / 9;"
-                src="https://replit.com/@alekswebnet/EmbarrassedGainsboroCore?embed=true&src/App.vue"
-              ></iframe>
+              <iframe width="100%" style="aspect-ratio: 16 / 9;" scrolling="no" title="React + PDF.js viewer web component demo - pdfjs-viewer-element " src="https://codepen.io/redrobot753/embed/xbEwNrO?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true">
+                See the Pen <a href="https://codepen.io/redrobot753/pen/xbEwNrO">
+                React + PDF.js viewer web component demo - pdfjs-viewer-element </a> by Oleksandr Shevchuk (<a href="https://codepen.io/redrobot753">@redrobot753</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
               <hr>
-              <h2 class="fs-6 mb-3">React </h2>
+              <h2 class="fs-6 badge bg-success mb-0">Vue </h2>
               <hr>
-              <iframe
-                class="mb-4"
-                width="100%"
-                style="aspect-ratio: 16 / 9;"
-                src="https://replit.com/@alekswebnet/React-TypeScript-pdfjs-viewer-element?embed=true"
-              ></iframe>
-              <hr>
-              <h2 class="fs-6 mb-3">Svelte </h2>
-              <hr>
-              <iframe
-                class="mb-4"
-                width="100%"
-                style="aspect-ratio: 16 / 9;"
-                src="https://replit.com/@alekswebnet/Svelte-pdfjs-viewer-element?embed=true"
-              ></iframe>
-            </div> -->
+              <iframe width="100%" style="aspect-ratio: 16 / 9;" scrolling="no" title="Vue + PDF.js viewer web component demo - pdfjs-viewer-element " src="https://codepen.io/redrobot753/embed/JoRYqwN?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true">
+                See the Pen <a href="https://codepen.io/redrobot753/pen/JoRYqwN">
+                Vue + PDF.js viewer web component demo - pdfjs-viewer-element </a> by Oleksandr Shevchuk (<a href="https://codepen.io/redrobot753">@redrobot753</a>)
+                on <a href="https://codepen.io">CodePen</a>.
+              </iframe>
+            </div>
           </div>
           <hr class="d-block d-lg-none mb-0 mt-0 bg-secondary">
           <div class="col-lg-4 h-100 px-2 ps-lg-0 h-lg-auto" style="height: 100vh; height: 100dvh">
